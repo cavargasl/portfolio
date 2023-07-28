@@ -30,6 +30,7 @@ const config = {
       rootDir: ["./"],
     },
   },
+  ignorePatterns: ["node_modules", ".next", "out"],
 }
 
 module.exports = config
