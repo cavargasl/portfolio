@@ -1,9 +1,9 @@
-import type { Lang } from '@/types/lang'
-import { getDictionary } from './dictionaries'
+import type { Locale } from '@/config/i18n-config'
 import Link from 'next/link'
+import { getDictionary } from './dictionaries'
 
 interface PageProps {
-  params: { lang: Lang }
+  params: { lang: Locale }
 }
 export default async function Page({ params: { lang } }: PageProps) {
   const { home } = await getDictionary(lang)
