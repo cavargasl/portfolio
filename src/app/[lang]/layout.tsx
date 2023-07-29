@@ -1,3 +1,4 @@
+import { TailwindIndicator } from "@/components/TailwindIndicator"
 import { i18n, type Locale } from "@/config/i18n-config"
 
 export function generateStaticParams() {
@@ -11,7 +12,10 @@ interface RootProps {
 export default function Root({ children, params }: RootProps) {
   return (
     <html lang={params.lang}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <TailwindIndicator />
+      </body>
     </html>
   )
 }
