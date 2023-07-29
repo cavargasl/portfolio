@@ -1,6 +1,6 @@
-import type { Locale } from '@/config/i18n-config'
+
+import { getDictionary, type Locale } from '@/i18n'
 import Link from 'next/link'
-import { getDictionary } from './dictionaries'
 
 interface PageProps {
   params: { lang: Locale }

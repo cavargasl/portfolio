@@ -1,9 +1,10 @@
 'use server'
-import type { Locale } from '@/config/i18n-config';
+
+import type { Locale } from './i18n-config';
 
 const dictionaries = {
-  en: () => import('./dictionaries/en.json').then((module) => module.default),
-  es: () => import('./dictionaries/es.json').then((module) => module.default),
+  en: () => import('./messages/en.json').then((module) => module.default),
+  es: () => import('./messages/es.json').then((module) => module.default),
 }
 
 export const getDictionary = (locale: Locale) => dictionaries[locale]()
