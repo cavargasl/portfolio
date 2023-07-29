@@ -1,5 +1,5 @@
 import { TailwindIndicator } from "@/components/TailwindIndicator"
-import { i18n, type Locale } from "@/config/i18n-config"
+import { i18n, type Locale } from "@/i18n"
 
 export function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))

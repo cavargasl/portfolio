@@ -1,7 +1,7 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextResponse, type NextRequest } from 'next/server'
-import { i18n } from './config/i18n-config'
+import { i18n } from './i18n'
 
 const defaultLocale = 'es'
 const defaultHeaders = { 'accept-language': defaultLocale }
