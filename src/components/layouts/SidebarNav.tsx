@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
+import { Icons } from "../Icons"
 
 
 interface SidebarProps {
@@ -20,11 +21,9 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
 
   return (
     <>
-      <button type="button" onClick={toggleSidebar} className="fixed right-5 top-5 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
+      <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
         <span className="sr-only">{commons.openSidebarNav}</span>
-        <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-        </svg>
+        <Icons.menu className="h-6 w-6" aria-hidden="true" />
       </button>
 
       <aside
@@ -34,11 +33,9 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
         )}
         aria-label={commons.sidebarNav}
       >
-        <button type="button" onClick={toggleSidebar} className="fixed right-5 top-5 inline-flex items-center rounded-lg p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:hidden">
+        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:hidden">
           <span className="sr-only">{commons.closeSidebarNav}</span>
-          <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-          </svg>
+          <Icons.close className="h-6 w-6" aria-hidden="true" />
         </button>
 
         <Image src="/images/profile.png" alt={siteConfig.name} priority width={200} height={256} />
