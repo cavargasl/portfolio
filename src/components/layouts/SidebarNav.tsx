@@ -38,7 +38,14 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
           <Icons.close className="h-6 w-6" aria-hidden="true" />
         </button>
 
-        <Image src="/images/profile.png" alt={siteConfig.name} priority width={200} height={256} />
+        <Image
+          src="/images/profile.webp"
+          alt={siteConfig.name}
+          priority
+          width={232}
+          height={232}
+          className="object-cover"
+        />
 
         <ul className="w-full">
           {
