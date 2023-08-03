@@ -1,4 +1,5 @@
 'use client'
+import ChangeLanguage from "@/app/[lang]/components/ChangeLanguage"
 import useScreenSize from "@/hooks/useScreenSize"
 import { type Dictionary } from "@/i18n"
 import { cn } from "@/lib/utils"
@@ -13,7 +14,7 @@ interface SidebarProps {
   siteConfig: { mainNav: SidebarNavItems, name: string }
 }
 export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const { isScreenLargerThanSM } = useScreenSize()
   function toggleSidebar() {
     setIsOpen(!isOpen)
@@ -59,7 +60,7 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
           }
         </ul>
         <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 text-primary sm:w-64">
-          <p>change language</p>
+          <ChangeLanguage />
           <p>change theme</p>
         </div>
       </aside>
