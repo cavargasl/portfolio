@@ -1,4 +1,3 @@
-
 import { getDictionary, type Locale } from '@/i18n'
 import Link from 'next/link'
 
