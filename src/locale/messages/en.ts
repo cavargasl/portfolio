@@ -1,4 +1,4 @@
-{
+export default {
   "home": {
     "title": "Hello World!"
   },
@@ -19,4 +19,4 @@
     "openSidebarNav": "Open sidebar nav",
     "closeSidebarNav": "Close sidebar nav"
   }
-}
+} as const

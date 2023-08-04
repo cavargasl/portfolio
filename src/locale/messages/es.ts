@@ -1,4 +1,4 @@
-{
+export default {
   "home": {
     "title": "Hola mundo!"
   },
@@ -19,4 +19,4 @@
     "openSidebarNav": "Abrir menú de navegación lateral",
     "closeSidebarNav": "Cerrar menú de navegación lateral"
   }
-}
+} as const
