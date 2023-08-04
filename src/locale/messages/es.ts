@@ -17,6 +17,9 @@ export default {
   "commons": {
     "sidebarNav": "Menú de navegación lateral",
     "openSidebarNav": "Abrir menú de navegación lateral",
-    "closeSidebarNav": "Cerrar menú de navegación lateral"
+    "closeSidebarNav": "Cerrar menú de navegación lateral",
+    "openLanguageMenu": "Abrir menú de cambio de idioma",
+    "changeToSpanish": "Cambiar a Español",
+    "changeToEnglish": "Cambiar a Inglés"
   }
 } as const

@@ -1,22 +1,17 @@
 'use client'
 import useScreenSize from "@/hooks/useScreenSize"
-//import { type Dictionary } from "@/i18n"
+import { Icons } from "@/components/Icons"
 import { cn } from "@/lib/utils"
+import { useScopedI18n } from "@/locale/client"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
-import { useParams } from "next/navigation"
-import { useScopedI18n } from "@/locale/client"
 import ChangeLanguage from "../ChangeLanguage"
-import { Icons } from "@/components/Icons"
 
-
- interface SidebarProps {
-
+interface SidebarProps {
   siteConfig: { mainNav: SidebarNavItems, name: string }
-} 
-export default function SidebarNav({siteConfig}:SidebarProps) {
-
+}
+export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
   const [isOpen, setIsOpen] = useState(true)
   const { isScreenLargerThanSM } = useScreenSize()

@@ -4,6 +4,7 @@ import { getSiteConfig } from "@/config/siteConfig"
 import "@/styles/global.css"
 import I18nProvider from "./components/provider/I18nProvider"
 
+// TODO: generate metadata for the root
 interface RootProps {
   children: React.ReactNode
   params: { locale: string }
