@@ -1,6 +1,6 @@
 import SidebarNav from "@/app/[locale]/components/layouts/SidebarNav"
 import { TailwindIndicator } from "@/components/TailwindIndicator"
-import { I18nProvider } from "@/components/provider"
+import { I18nProvider, ThemeProvider } from "@/components/provider"
 import { getSiteConfig } from "@/config/siteConfig"
 import "@/styles/global.css"
 
@@ -16,10 +16,12 @@ export default async function Root({ children, params }: RootProps) {
     <html lang={params.locale} suppressHydrationWarning>
       <body>
         <I18nProvider locale={params.locale}>
-          <main className='p-4 sm:w-[calc(100%-16rem)]'>
-            {children}
-          </main>
-          <SidebarNav siteConfig={{ name, mainNav }} />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <main className='p-4 sm:w-[calc(100%-16rem)]'>
+              {children}
+            </main>
+            <SidebarNav siteConfig={{ name, mainNav }} />
+          </ThemeProvider>
         </I18nProvider>
         <TailwindIndicator />
       </body>
