@@ -1,19 +1,23 @@
 'use client'
-import ChangeLanguage from "@/app/[lang]/components/ChangeLanguage"
 import useScreenSize from "@/hooks/useScreenSize"
-import { type Dictionary } from "@/i18n"
+//import { type Dictionary } from "@/i18n"
 import { cn } from "@/lib/utils"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
-import { Icons } from "../Icons"
+import { useParams } from "next/navigation"
+import { useScopedI18n } from "@/locale/client"
+import ChangeLanguage from "../ChangeLanguage"
+import { Icons } from "@/components/Icons"
 
 
-interface SidebarProps {
-  commons: Dictionary["commons"]
+ interface SidebarProps {
+
   siteConfig: { mainNav: SidebarNavItems, name: string }
-}
-export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
+} 
+export default function SidebarNav({siteConfig}:SidebarProps) {
+
+  const scopedT = useScopedI18n("commons")
   const [isOpen, setIsOpen] = useState(true)
   const { isScreenLargerThanSM } = useScreenSize()
   function toggleSidebar() {
@@ -23,7 +27,7 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
   return (
     <>
       <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
-        <span className="sr-only">{commons.openSidebarNav}</span>
+        <span className="sr-only">{scopedT("openSidebarNav")}</span>
         <Icons.menu className="h-6 w-6" aria-hidden="true" />
       </button>
 
@@ -32,10 +36,10 @@ export default function SidebarNav({ commons, siteConfig }: SidebarProps) {
           "fixed right-0 top-0 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-foreground px-3 py-4 transition-transform duration-500 sm:w-64",
           isScreenLargerThanSM ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
         )}
-        aria-label={commons.sidebarNav}
+        aria-label={scopedT("sidebarNav")}
       >
         <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:hidden">
-          <span className="sr-only">{commons.closeSidebarNav}</span>
+          <span className="sr-only">{scopedT("closeSidebarNav")}</span>
           <Icons.close className="h-6 w-6" aria-hidden="true" />
         </button>
 

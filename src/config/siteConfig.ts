@@ -1,37 +1,38 @@
-
-import { getDictionary, type Locale } from "@/i18n"
+import { getI18n } from "@/locale/server"
 import type { SidebarNavItems } from "@/types"
 
-export async function getSiteConfig(lang: Locale) {
-  const { siteConfig } = await getDictionary(lang)
+export async function getSiteConfig() {
+  const t = await getI18n()
 
   return {
-    name: siteConfig.title,
-    description: siteConfig.description,
+    name: t("siteConfig.title"),
+    description: t("siteConfig.description"),
     url: process.env.NEXT_PUBLIC_APP_URL,
     //ogImage: `${process.env.NEXT_PUBLIC_APP_URL}/open-graph-image.png}`,
     mainNav: [
       {
-        title: siteConfig.sidebarNav.aboutMe,
+        title: t("siteConfig.sidebarNav.aboutMe"),
       },
       {
-        title: siteConfig.sidebarNav.projects,
+        title: t("siteConfig.sidebarNav.projects"),
       },
       {
-        title: siteConfig.sidebarNav.experience,
+        title: t("siteConfig.sidebarNav.experience"),
       },
       {
-        title: siteConfig.sidebarNav.education,
+        title: t("siteConfig.sidebarNav.education"),
       },
       {
-        title: siteConfig.sidebarNav.skills,
+        title: t("siteConfig.sidebarNav.skills"),
       },
       {
-        title: siteConfig.sidebarNav.contact,
+        title: t("siteConfig.sidebarNav.contact"),
       }
     ] satisfies SidebarNavItems,
     links: {
       twitter: "https://twitter.com/cavargasl",
+      github: "https://github.com/cavargasl",
+      LinkedIn: "https://www.linkedin.com/in/cavargasl/",
     }
   }
 }
