@@ -3,7 +3,7 @@ import { Select, SelectContent, SelectTrigger } from '@/components/ui/Select'
 import { useChangeLocale, useCurrentLocale, useScopedI18n } from '@/locale/client'
 import { type ReactElement } from 'react'
 
-export default function ChangeLanguage() {
+export function ChangeLanguage() {
   const locale = useCurrentLocale()
   const scopedT = useScopedI18n("commons")
   const flagIcon: { [key in typeof locale]: ReactElement } = {
@@ -18,7 +18,7 @@ export default function ChangeLanguage() {
   return (
     <div>
       <Select>
-        <SelectTrigger aria-label={scopedT("openLanguageMenu")}>
+        <SelectTrigger aria-label={scopedT("openLanguageMenu")} className='bg-background'>
           {flagIcon[locale]}
         </SelectTrigger>
         <SelectContent side="top" className='bg-background'>
