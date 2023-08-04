@@ -1,6 +1,6 @@
 import { Icons } from "@/components/Icons"
 import { cn } from "@/lib/utils"
-import { Content, Group, Icon as IconSelect, Item, ItemIndicator, ItemText, Label, Portal, Root, Separator, Trigger, Value, Viewport } from "@radix-ui/react-select"
+import { Content, Group, Item, ItemIndicator, ItemText, Label, Portal, Root, Separator, Trigger, Value, Viewport } from "@radix-ui/react-select"
 import { type ReactElement, forwardRef } from "react"
 
 const Select = Root
@@ -16,16 +16,15 @@ const SelectTrigger = forwardRef<
   return (
     <Trigger
       ref={ref}
+      aria-controls="radix-:Rp9mj9:"
       className={cn(
-        "flex h-10 w-full items-center justify-between rounded-md bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full items-center justify-between gap-1 rounded-md bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
     >
       {children}
-      <IconSelect asChild>
-        {iconSelect}
-      </IconSelect>
+      {iconSelect}
     </Trigger>
   )
 })
