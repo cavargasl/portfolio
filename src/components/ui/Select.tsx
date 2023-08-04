@@ -18,7 +18,7 @@ const SelectTrigger = forwardRef<
       ref={ref}
       aria-controls="radix-:Rp9mj9:"
       className={cn(
-        "flex h-10 w-full items-center justify-between gap-1 rounded-md bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full items-center justify-between gap-1 rounded-sm bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
@@ -49,7 +49,7 @@ const SelectContent = forwardRef<
       <Content
         ref={ref}
         className={cn(
-          "relative z-50 overflow-hidden rounded-md border text-foreground shadow-md",
+          "relative z-50 overflow-hidden rounded-sm border text-foreground shadow-md",
           position === "popper" && getTranslate(),
           className
         )}
