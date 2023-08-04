@@ -20,6 +20,7 @@ export default {
     "closeSidebarNav": "Close sidebar nav",
     "openLanguageMenu": "Open change language menu",
     "changeToSpanish": "Change to Spanish",
-    "changeToEnglish": "Change to english"
+    "changeToEnglish": "Change to english",
+    "toggleTheme": "Toggle theme",
   }
 } as const

@@ -20,6 +20,7 @@ export default {
     "closeSidebarNav": "Cerrar menú de navegación lateral",
     "openLanguageMenu": "Abrir menú de cambio de idioma",
     "changeToSpanish": "Cambiar a Español",
-    "changeToEnglish": "Cambiar a Inglés"
+    "changeToEnglish": "Cambiar a Inglés",
+    "toggleTheme": "Cambiar tema",
   }
 } as const
