@@ -50,7 +50,7 @@
     
   }
   .toggle-label {
-    @apply absolute w-full h-[40px] bg-dark cursor-pointer border-light rounded-full border-[2px] border-solid;
+    @apply absolute w-full h-[40px] bg-dark cursor-pointer rounded-full;
   }
   .toggle-checkbox {
     @apply sr-only;

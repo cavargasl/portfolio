@@ -29,7 +29,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
 
       <aside
         className={cn(
-          "fixed right-0 top-0 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-foreground px-3 py-4 transition-transform duration-500 sm:w-64",
+          "fixed right-0 top-0 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-foreground/10 px-3 py-4 transition-transform duration-500 sm:w-64",
           isScreenLargerThanSM ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-label={scopedT("sidebarNav")}
