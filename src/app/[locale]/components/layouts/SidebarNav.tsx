@@ -22,19 +22,22 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
 
   return (
     <>
-      <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
-        <span className="sr-only">{scopedT("openSidebarNav")}</span>
-        <Icons.menu className="h-6 w-6" aria-hidden="true" />
-      </button>
+      {
+        !isOpen &&
+        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
+          <span className="sr-only">{scopedT("openSidebarNav")}</span>
+          <Icons.menu className="h-6 w-6" aria-hidden="true" />
+        </button>
+      }
 
       <aside
         className={cn(
-          "fixed right-0 top-0 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-foreground/10 px-3 py-4 transition-transform duration-500 sm:w-64",
+          "fixed right-0 top-0 z-50 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-muted px-3 py-4 transition-transform duration-500 sm:w-64",
           isScreenLargerThanSM ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-label={scopedT("sidebarNav")}
       >
-        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:hidden">
+        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
           <span className="sr-only">{scopedT("closeSidebarNav")}</span>
           <Icons.close className="h-6 w-6" aria-hidden="true" />
         </button>
@@ -52,7 +55,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
           {
             siteConfig.mainNav.map(item => (
               <li key={item.title} className="text-center">
-                <button onClick={toggleSidebar} className="w-full rounded-sm p-2 text-lg font-semibold text-primary transition hover:bg-muted hover:text-muted-foreground" aria-label={item.title}>
+                <button onClick={toggleSidebar} className="w-full rounded-sm p-2 text-lg font-semibold text-primary transition hover:bg-accent hover:text-accent-foreground" aria-label={item.title}>
                   {item.title}
                 </button>
               </li>
