@@ -52,7 +52,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
           {
             siteConfig.mainNav.map(item => (
               <li key={item.title} className="text-center">
-                <button onClick={toggleSidebar} className="w-full p-2 text-lg font-semibold text-primary transition hover:text-primary-foreground" aria-label={item.title}>
+                <button onClick={toggleSidebar} className="w-full rounded-sm p-2 text-lg font-semibold text-primary transition hover:bg-muted hover:text-muted-foreground" aria-label={item.title}>
                   {item.title}
                 </button>
               </li>
