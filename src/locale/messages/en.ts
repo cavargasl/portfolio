@@ -1,6 +1,7 @@
 export default {
   "home": {
-    "title": "Hello World!"
+    "welcome": "Welcome to my professional portfolio, i'm from Colombia, i'm passionate about challenges and acquiring knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
+    "iAm": "Frontend Developer"
   },
   "siteConfig": {
     "title": "Camilo Vargas - Frontend Developer",
