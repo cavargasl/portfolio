@@ -50,22 +50,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@layer components {
-  .toggle-theme {
-    @apply relative w-[66px] h-[40px];
-    
-  }
-  .toggle-label {
-    @apply absolute w-full h-[40px] bg-dark cursor-pointer rounded-full;
-  }
-  .toggle-checkbox {
-    @apply sr-only;
-  }
-  .toggle-slider {
-    @apply absolute w-full h-full duration-300 rounded-full before:content-[""] before:absolute before:w-[20px] before:h-[20px] before:shadow-[inset_8px_-4px_0px_0px] before:shadow-light before:bg-dark before:duration-300 before:rounded-full before:left-2/4 before:top-2/4 before:transform before:-translate-y-2/4 before:-translate-x-[calc(100%+5px)];
-  }
-  .toggle-checkbox:checked ~ .toggle-slider {
-    @apply bg-dark before:translate-x-[calc(100%-15px)] before:bg-light before:shadow-none;
-  }
-}
