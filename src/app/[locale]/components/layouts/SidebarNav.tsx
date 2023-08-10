@@ -1,5 +1,5 @@
 'use client'
-import { Icons } from "@/components/Icons"
+import { IconClose, IconMenu } from "@/components/Icons"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
@@ -26,7 +26,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
         !isOpen &&
         <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground md:hidden">
           <span className="sr-only">{scopedT("openSidebarNav")}</span>
-          <Icons.menu className="h-6 w-6" aria-hidden="true" />
+          <IconMenu className="h-6 w-6" aria-hidden="true" />
         </button>
       }
 
@@ -39,7 +39,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
       >
         <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-foreground md:hidden">
           <span className="sr-only">{scopedT("closeSidebarNav")}</span>
-          <Icons.close className="h-6 w-6" aria-hidden="true" />
+          <IconClose className="h-6 w-6" aria-hidden="true" />
         </button>
 
         <Image
@@ -62,7 +62,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
             ))
           }
         </ul>
-        <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 text-primary md:w-64">
+        <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 md:w-64">
           <ChangeLanguage />
           <ThemeToggle />
         </div>

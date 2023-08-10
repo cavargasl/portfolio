@@ -1,34 +1,7 @@
-import {
-  X,
-  ChevronDown,
-  type LucideIcon,
-  type LucideProps,
-} from "lucide-react"
+import type { SVGProps } from 'react'
 
-export type Icon = LucideIcon
-
-export const Icons = {
-  close: X,
-  chevronDown: ChevronDown,
-  menu: (props: LucideProps) => (
-    <svg
-      aria-hidden="true"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-    </svg>
-  ),
-  flagCo: (props: LucideProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4" {...props}>
-      <path fill="#CE1126" d="M0 0h6v4H0z" />
-      <path fill="#003893" d="M0 0h6v3H0z" />
-      <path fill="#FCD116" d="M0 0h6v2H0z" />
-    </svg>
-  ),
-  flagUs: (props: LucideProps) => (
+export function FlagUs(props: SVGProps<SVGSVGElement>) {
+  return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -66,5 +39,5 @@ export const Icons = {
         <use xlinkHref="#e" x={2470} />
       </g>
     </svg>
-  ),
+  )
 }
