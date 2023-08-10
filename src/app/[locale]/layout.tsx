@@ -23,7 +23,7 @@ export default async function Root({ children, params }: RootProps) {
       )}>
         <I18nProvider locale={params.locale}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className='md:w-[calc(100%-16rem)]'>
+            <main className='lg:w-[calc(100%-16rem)]'>
               {children}
             </main>
             <SidebarNav siteConfig={{ name, mainNav }} />

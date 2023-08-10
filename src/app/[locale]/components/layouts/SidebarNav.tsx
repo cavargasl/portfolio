@@ -24,7 +24,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
     <>
       {
         !isOpen &&
-        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground md:hidden">
+        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground lg:hidden">
           <span className="sr-only">{scopedT("openSidebarNav")}</span>
           <IconMenu className="h-6 w-6" aria-hidden="true" />
         </button>
@@ -32,12 +32,12 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
 
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-muted px-3 py-4 transition-transform duration-500 md:w-64",
-          isScreenLargerThan.MD ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
+          "fixed right-0 top-0 z-50 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-muted px-3 py-4 transition-transform duration-500 lg:w-64",
+          isScreenLargerThan.LG ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-label={scopedT("sidebarNav")}
       >
-        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-foreground md:hidden">
+        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-foreground lg:hidden">
           <span className="sr-only">{scopedT("closeSidebarNav")}</span>
           <IconClose className="h-6 w-6" aria-hidden="true" />
         </button>
@@ -62,7 +62,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
             ))
           }
         </ul>
-        <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 md:w-64">
+        <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 lg:w-64">
           <ChangeLanguage />
           <ThemeToggle />
         </div>
