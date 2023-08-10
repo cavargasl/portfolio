@@ -13,6 +13,11 @@ export default {
       "education": "Education",
       "skills": "Skills",
       "contact": "Contact"
+    },
+    "socialLinks": {
+      "github": "go to Github",
+      "LinkedIn": "go to LinkedIn",
+      "twitter": "go to Twitter",
     }
   },
   "commons": {
