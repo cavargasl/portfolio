@@ -1,6 +1,6 @@
 export default {
   "home": {
-    "welcome": "Welcome to my professional portfolio, i'm from Colombia, i'm passionate about challenges and acquiring knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
+    "welcome": "Welcome to my professional portfolio, i am Multimedia Engineer, i live in Colombia, i'm passionate about challenges and acquire knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
     "iAm": "Frontend Developer"
   },
   "siteConfig": {

@@ -1,6 +1,6 @@
 export default {
   "home": {
-    "welcome": "Bienvenid@ a mi portafolio profesional, soy de Colombia, me apasionan los desafíos y adquirir conocimientos que me permitan crecer tanto a nivel profesional como personal. Mi objetivo es aportar valor a los que me rodean.",
+    "welcome": "Bienvenid@ a mi portafolio profesional, soy Ingeniero Multimedia, vivo en Colombia, me apasionan los desafíos y adquirir conocimientos que me permitan crecer tanto a nivel profesional como personal. Mi objetivo es aportar valor a los que me rodean.",
     "iAm": "Desarrollador Frontend"
   },
   "siteConfig": {
