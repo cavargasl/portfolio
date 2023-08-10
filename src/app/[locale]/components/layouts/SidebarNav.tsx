@@ -8,6 +8,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { ChangeLanguage } from "./components/ChangeLanguage"
 import { ThemeToggle } from "./components/ThemeToggle"
+import { Button } from "@/components/ui/Button"
 
 interface SidebarProps {
   siteConfig: { mainNav: SidebarNavItems, name: string }
@@ -51,13 +52,13 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
           className="object-cover"
         />
 
-        <ul className="w-full">
+        <ul className="flex w-full flex-col gap-1">
           {
             siteConfig.mainNav.map(item => (
               <li key={item.title} className="text-center">
-                <button onClick={toggleSidebar} className="w-full rounded-sm p-2 text-lg font-semibold text-primary transition hover:bg-accent hover:text-accent-foreground" aria-label={item.title}>
+                <Button variant="link" onClick={toggleSidebar} className="w-full text-lg font-semibold" aria-label={item.title}>
                   {item.title}
-                </button>
+                </Button>
               </li>
             ))
           }

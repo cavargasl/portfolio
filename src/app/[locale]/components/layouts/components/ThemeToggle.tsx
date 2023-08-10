@@ -1,5 +1,6 @@
 "use client"
 import { IconMoon, IconSun } from "@/components/Icons"
+import { Button } from "@/components/ui/Button"
 import { useScopedI18n } from "@/locale/client"
 import { useTheme } from "next-themes"
 
@@ -8,8 +9,9 @@ export function ThemeToggle() {
   const scopedT = useScopedI18n("commons")
 
   return (
-    <button
-      className="relative"
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       aria-label={scopedT("toggleTheme")}
     >
@@ -18,9 +20,9 @@ export function ThemeToggle() {
         aria-hidden="true"
       />
       <IconMoon
-        className="absolute left-0 top-0 h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
         aria-hidden="true"
       />
-    </button>
+    </Button>
   )
 }

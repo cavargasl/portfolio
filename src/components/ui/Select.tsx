@@ -18,7 +18,7 @@ const SelectTrigger = forwardRef<
       ref={ref}
       aria-controls="radix-:Rp9mj9:"
       className={cn(
-        "flex h-10 w-full items-center justify-between gap-1 rounded-sm bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-9 w-full items-center justify-between gap-1 rounded-sm bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
