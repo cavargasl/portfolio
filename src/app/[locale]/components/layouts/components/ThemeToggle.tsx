@@ -16,11 +16,11 @@ export function ThemeToggle() {
       aria-label={scopedT("toggleTheme")}
     >
       <IconSun
-        className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+        className="h-6 w-6 rotate-0 scale-100 transition-all duration-200 dark:-rotate-90 dark:scale-0"
         aria-hidden="true"
       />
       <IconMoon
-        className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        className="absolute h-6 w-6 rotate-90 scale-0 transition-all duration-200 dark:rotate-0 dark:scale-100"
         aria-hidden="true"
       />
     </Button>
