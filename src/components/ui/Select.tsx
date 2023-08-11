@@ -18,7 +18,7 @@ const SelectTrigger = forwardRef<
       ref={ref}
       aria-controls="radix-:Rp9mj9:"
       className={cn(
-        "flex h-9 w-full items-center justify-between gap-1 rounded-sm bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-9 w-full items-center justify-between gap-1 rounded-sm bg-transparent px-3 py-2 placeholder:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
@@ -35,32 +35,20 @@ const SelectContent = forwardRef<
   React.ElementRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content>
 >(({ className, children, position = "popper", ...props }, ref) => {
-  function getTranslate() {
-    switch (props.side) {
-      case "top": return "translate-y-[-1px]"
-      case "bottom": return "translate-y-1"
-      case "left": return "translate-x-[-1px]"
-      case "right": return "translate-x-1"
-      default: return ""
-    }
-  }
   return (
     <Portal>
       <Content
         ref={ref}
-        className={cn(
-          "relative z-50 overflow-hidden rounded-sm border text-foreground shadow-md",
-          position === "popper" && getTranslate(),
-          className
-        )}
+        className="relative z-50 overflow-hidden rounded-sm border text-foreground shadow-md"
         position={position}
         {...props}
       >
         <Viewport
           className={cn(
-            "px-3 py-2",
+            "flex flex-col p-2",
             position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+            "h-[var(--radix-select-trigger-height)] w-full",
+            className
           )}
         >
           {children}
