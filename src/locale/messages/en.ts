@@ -4,7 +4,7 @@ export default {
     "iAm": "Frontend Developer"
   },
   "siteConfig": {
-    "title": "Camilo Vargas - Frontend Developer",
+    "title": "Camilo Vargas | Frontend Developer",
     "description": "Professional portfolio of Camilo Vargas. frontend developer.",
     "sidebarNav": {
       "aboutMe": "About me",

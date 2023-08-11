@@ -5,12 +5,12 @@ export default async function Page() {
   const t = await getScopedI18n("home")
 
   return (
-    <section className='m-auto flex h-full min-h-screen max-w-screen-md flex-col items-center justify-center gap-16 px-8 lg:px-12'>
+    <section className='flex h-full min-h-screen flex-col items-center justify-center gap-16 px-8 py-10 lg:px-12'>
       <div className='flex flex-col items-center gap-2 lg:w-fit'>
-        <h1 className='w-fit bg-gradient-to-r from-primary to-accent bg-clip-text text-center font-mono text-6xl font-bold !leading-tight text-transparent sm:text-7xl'>Camilo Vargas</h1>
-        <h2 className='w-full rounded-sm bg-foreground px-2 py-1 text-center text-xl text-background'>{t("iAm")}</h2>
+        <h1 className='w-full bg-gradient-to-r from-primary to-accent bg-clip-text text-center font-mono text-6xl font-bold !leading-tight text-transparent sm:text-7xl'>Camilo Vargas</h1>
+        <h2 className='text-center text-xl text-foreground/80'>{t("iAm")}</h2>
       </div>
-      <p className='text-xl'>{t("welcome")}</p>
+      <p className='w-full text-xl md:w-[58ch] xl:w-[66ch]'>{t("welcome")}</p>
       <SocialMedia />
     </section>
   )

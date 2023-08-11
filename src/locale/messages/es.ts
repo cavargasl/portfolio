@@ -4,7 +4,7 @@ export default {
     "iAm": "Desarrollador Frontend"
   },
   "siteConfig": {
-    "title": "Camilo Vargas - Desarrollador Frontend",
+    "title": "Camilo Vargas | Desarrollador Frontend",
     "description": "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
     "sidebarNav": {
       "aboutMe": "Sobre mi",
