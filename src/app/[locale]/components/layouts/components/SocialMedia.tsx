@@ -16,7 +16,7 @@ export async function SocialMedia() {
         target='_blank'
         aria-label={scopeT("socialLinks.LinkedIn")}
       >
-        <span className='transition-transform duration-200 group-hover:-translate-y-1'>
+        <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
           <BrandLinkedIn className='h-6 w-6' />
         </span>
       </Link>
@@ -26,7 +26,7 @@ export async function SocialMedia() {
         target='_blank'
         aria-label={scopeT("socialLinks.github")}
       >
-        <span className='transition-transform duration-200 group-hover:-translate-y-1'>
+        <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
           <BrandGitHub className='h-6 w-6' />
         </span>
       </Link>
@@ -36,7 +36,7 @@ export async function SocialMedia() {
         target='_blank'
         aria-label={scopeT("socialLinks.twitter")}
       >
-        <span className='transition-transform duration-200 group-hover:-translate-y-1'>
+        <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
           <BrandX className='h-6 w-6' />
         </span>
       </Link>

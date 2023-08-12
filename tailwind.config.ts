@@ -40,6 +40,11 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
+      },
+      transitionTimingFunction: {
+        "out-circ": "cubic-bezier(0, 0.55, 0.45, 1)",
+        "in-out-expo": "cubic-bezier(0.87, 0, 0.13, 1)",
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)"
       }
     },
   },
