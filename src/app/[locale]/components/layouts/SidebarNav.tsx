@@ -1,11 +1,14 @@
 'use client'
-import { Icons } from "@/components/Icons"
+import IconClose from "@/components/Icons/Close"
+import IconMenu from "@/components/Icons/Menu"
+import { Button } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
+import { createPortal } from "react-dom"
 import { ChangeLanguage } from "./components/ChangeLanguage"
 import { ThemeToggle } from "./components/ThemeToggle"
 
@@ -15,54 +18,77 @@ interface SidebarProps {
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
   const [isOpen, setIsOpen] = useState(true)
-  const { isScreenLargerThanSM } = useScreenSize()
+  const isScreenLargerThan = useScreenSize()
   function toggleSidebar() {
     setIsOpen(!isOpen)
   }
 
   return (
     <>
-      <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:hidden">
-        <span className="sr-only">{scopedT("openSidebarNav")}</span>
-        <Icons.menu className="h-6 w-6" aria-hidden="true" />
-      </button>
+      {createPortal(
+        <>
+          {
+            isScreenLargerThan.LG ? null :
+              <Button
+                onClick={toggleSidebar}
+                variant="ghost"
+                size="icon"
+                className="fixed right-4 top-4 z-50"
+                aria-label={isOpen ? scopedT("closeSidebarNav") : scopedT("openSidebarNav")}
+              >
+                {
+                  isOpen ?
+                    <IconClose className="h-6 w-6" aria-hidden="true" />
+                    :
+                    <IconMenu className="h-6 w-6" aria-hidden="true" />
+                }
+              </Button>
+          }
+        </>,
+        document.body
+      )}
 
       <aside
         className={cn(
-          "fixed right-0 top-0 flex h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 overflow-y-auto bg-foreground px-3 py-4 transition-transform duration-500 sm:w-64",
-          isScreenLargerThanSM ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
+          "fixed right-0 top-0 z-40 flex min-h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 bg-muted px-4 py-8 transition-transform duration-[250ms] ease-out-circ lg:w-64",
+          !isOpen && "duration-200 ease-in-out-expo",
+          isScreenLargerThan.LG ? "translate-x-0" : isOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-label={scopedT("sidebarNav")}
       >
-        <button type="button" onClick={toggleSidebar} className="fixed right-4 top-4 inline-flex items-center rounded-lg p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:hidden">
-          <span className="sr-only">{scopedT("closeSidebarNav")}</span>
-          <Icons.close className="h-6 w-6" aria-hidden="true" />
-        </button>
-
-        <Image
-          src="/images/profile.webp"
-          alt={siteConfig.name}
-          priority
-          width={232}
-          height={232}
-          className="object-cover"
+        <span
+          className="mb-auto"
+          aria-hidden="true"
         />
 
-        <ul className="w-full">
-          {
-            siteConfig.mainNav.map(item => (
-              <li key={item.title} className="text-center">
-                <button onClick={toggleSidebar} className="w-full rounded-sm p-2 text-lg font-semibold text-primary transition hover:bg-muted hover:text-muted-foreground" aria-label={item.title}>
-                  {item.title}
-                </button>
-              </li>
-            ))
-          }
-        </ul>
-        <div className="fixed bottom-10 right-0 flex w-full items-center justify-center gap-4 text-primary sm:w-64">
+        <main className="flex w-full flex-col items-center justify-center gap-8">
+          <Image
+            src="/images/profile.webp"
+            alt={siteConfig.name}
+            priority
+            width={232}
+            height={232}
+            className="object-cover"
+          />
+          <nav className="w-full">
+            <ul className="flex flex-col gap-1">
+              {
+                siteConfig.mainNav.map(item => (
+                  <li key={item.title}>
+                    <Button variant="ghost" onClick={toggleSidebar} className="w-full text-lg font-semibold" aria-label={item.title}>
+                      {item.title}
+                    </Button>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </main>
+
+        <footer className="mt-auto flex w-full items-center justify-center gap-4">
           <ChangeLanguage />
           <ThemeToggle />
-        </div>
+        </footer>
       </aside>
     </>
   )

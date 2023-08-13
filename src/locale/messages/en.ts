@@ -1,9 +1,10 @@
 export default {
   "home": {
-    "title": "Hello World!"
+    "welcome": "Welcome to my professional portfolio, i am Multimedia Engineer, i live in Colombia, i'm passionate about challenges and acquire knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
+    "iAm": "Frontend Developer"
   },
   "siteConfig": {
-    "title": "Camilo Vargas - Frontend Developer",
+    "title": "Camilo Vargas | Frontend Developer",
     "description": "Professional portfolio of Camilo Vargas. frontend developer.",
     "sidebarNav": {
       "aboutMe": "About me",
@@ -12,6 +13,11 @@ export default {
       "education": "Education",
       "skills": "Skills",
       "contact": "Contact"
+    },
+    "socialLinks": {
+      "github": "go to Github",
+      "LinkedIn": "go to LinkedIn",
+      "twitter": "go to Twitter",
     }
   },
   "commons": {

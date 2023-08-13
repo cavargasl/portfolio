@@ -1,14 +1,26 @@
 import { getI18n } from "@/locale/server"
 import type { SidebarNavItems } from "@/types"
 
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+
+export const siteConfig = {
+  name:"Camilo Vargas | Frontend Developer",
+  description: "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
+  url: BASE_URL,
+  ogImage: `${BASE_URL}/og.png}`,
+  links: {
+    twitter: "https://twitter.com/cavargasl",
+    github: "https://github.com/cavargasl",
+    LinkedIn: "https://www.linkedin.com/in/cavargasl/",
+  }
+}
 export async function getSiteConfig() {
   const t = await getI18n()
 
   return {
+    ...siteConfig,
     name: t("siteConfig.title"),
     description: t("siteConfig.description"),
-    url: process.env.NEXT_PUBLIC_APP_URL,
-    //ogImage: `${process.env.NEXT_PUBLIC_APP_URL}/open-graph-image.png}`,
     mainNav: [
       {
         title: t("siteConfig.sidebarNav.aboutMe"),
@@ -29,11 +41,7 @@ export async function getSiteConfig() {
         title: t("siteConfig.sidebarNav.contact"),
       }
     ] satisfies SidebarNavItems,
-    links: {
-      twitter: "https://twitter.com/cavargasl",
-      github: "https://github.com/cavargasl",
-      LinkedIn: "https://www.linkedin.com/in/cavargasl/",
-    }
+    
   }
 }
 

@@ -4,19 +4,22 @@
 
 @layer base {
   :root {
-    --background: 165 10% 92%;
+    --background: 190 56% 95%;
     --foreground: 209 27% 24%;
 
     --primary: 33 70% 60%;
     --primary-foreground: 33 70% 98%;
 
     --secondary: 175 27% 65%;
-    --secondary-foreground: 175, 27%, 98%;
+    --secondary-foreground: 175 27% 98%;
 
-    --muted: 190 56% 77%;
-    --muted-foreground: 192 17% 23%;
+    --accent: 190 56% 77%;
+    --accent-foreground: 165 10% 10%;
 
-    --light: 165 10% 92%;
+    --muted: 190 56% 90%;
+    --muted-foreground: 190 56% 10%;
+
+    --light: 190 56% 95%;
     --dark: 209 27% 24%;
 
     --radius: 0.5rem;
@@ -24,13 +27,17 @@
 
   .dark {
     --background: 209 27% 24%;
-    --foreground: 165 10% 92%;
+    --foreground: 190 56% 95%;
 
     --primary: 33 70% 60%;
     --primary-foreground: 33 70% 98%;
 
-    --secondary: 175, 27%, 98%;
+    --secondary: 175 27% 98%;
     --secondary-foreground: 175 27% 65%;
+
+    --muted: 209 27% 19%;
+    --muted-foreground: 209 27% 81%;
+
   }
 }
 
@@ -45,20 +52,7 @@
 }
 
 @layer components {
-  .toggle-theme {
-    @apply relative w-[66px] h-[40px];
-    
-  }
-  .toggle-label {
-    @apply absolute w-full h-[40px] bg-dark cursor-pointer border-light rounded-full border-[2px] border-solid;
-  }
-  .toggle-checkbox {
-    @apply sr-only;
-  }
-  .toggle-slider {
-    @apply absolute w-full h-full duration-300 rounded-full before:content-[""] before:absolute before:w-[20px] before:h-[20px] before:shadow-[inset_8px_-4px_0px_0px] before:shadow-light before:bg-dark before:duration-300 before:rounded-full before:left-2/4 before:top-2/4 before:transform before:-translate-y-2/4 before:-translate-x-[calc(100%+5px)];
-  }
-  .toggle-checkbox:checked ~ .toggle-slider {
-    @apply bg-dark before:translate-x-[calc(100%-15px)] before:bg-light before:shadow-none;
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
