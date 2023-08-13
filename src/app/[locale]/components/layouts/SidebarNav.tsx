@@ -1,12 +1,13 @@
 'use client'
 import IconClose from "@/components/Icons/Close"
 import IconMenu from "@/components/Icons/Menu"
-import { Button } from "@/components/ui/Button"
+import { Button, buttonVariants } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 import { createPortal } from "react-dom"
 import { ChangeLanguage } from "./components/ChangeLanguage"
@@ -20,7 +21,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(true)
   const isScreenLargerThan = useScreenSize()
   function toggleSidebar() {
-    setIsOpen(!isOpen)
+    if(!isScreenLargerThan.LG) setIsOpen(!isOpen)
   }
 
   return (
@@ -75,9 +76,14 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
               {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
-                    <Button variant="ghost" onClick={toggleSidebar} className="w-full text-lg font-semibold" aria-label={item.title}>
+                    <Link
+                    className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
+                    href={`#${item.id}`}
+                    onClick={toggleSidebar}
+                    aria-label={item.title}
+                    >
                       {item.title}
-                    </Button>
+                    </Link>
                   </li>
                 ))
               }
