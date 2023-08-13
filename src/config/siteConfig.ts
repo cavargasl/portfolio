@@ -1,11 +1,13 @@
 import { getI18n } from "@/locale/server"
 import type { SidebarNavItems } from "@/types"
 
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+
 export const siteConfig = {
   name:"Camilo Vargas | Frontend Developer",
   description: "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
-  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
-  ogImage: `${process.env.NEXT_PUBLIC_APP_URL}/og.png}`,
+  url: BASE_URL,
+  ogImage: `${BASE_URL}/og.png}`,
   links: {
     twitter: "https://twitter.com/cavargasl",
     github: "https://github.com/cavargasl",
