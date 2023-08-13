@@ -71,7 +71,7 @@ export default async function Root({ children, params }: RootProps) {
   return (
     <html lang={params.locale} suppressHydrationWarning>
       <body className={cn(
-        "font-sans antialiased",
+        "scroll-smooth font-sans antialiased",
         fontMono.variable,
         fontSans.variable,
       )}>
