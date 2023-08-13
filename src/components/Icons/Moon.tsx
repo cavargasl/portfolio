@@ -1,6 +1,5 @@
-import type { SVGProps } from "react";
 
-export function IconMoon(props: SVGProps<SVGSVGElement>) {
+export default function IconMoon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"

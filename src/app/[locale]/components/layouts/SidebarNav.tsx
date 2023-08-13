@@ -1,5 +1,6 @@
 'use client'
-import { IconClose, IconMenu } from "@/components/Icons"
+import IconClose from "@/components/Icons/Close"
+import IconMenu from "@/components/Icons/Menu"
 import { Button } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
@@ -7,9 +8,9 @@ import { useScopedI18n } from "@/locale/client"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
+import { createPortal } from "react-dom"
 import { ChangeLanguage } from "./components/ChangeLanguage"
 import { ThemeToggle } from "./components/ThemeToggle"
-import { createPortal } from "react-dom"
 
 interface SidebarProps {
   siteConfig: { mainNav: SidebarNavItems, name: string }

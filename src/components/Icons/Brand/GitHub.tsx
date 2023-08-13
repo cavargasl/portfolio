@@ -1,6 +1,5 @@
 
-
-export function BrandGitHub(props: React.SVGProps<SVGSVGElement>) {
+export default function BrandGitHub(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"

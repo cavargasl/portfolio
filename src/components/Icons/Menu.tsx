@@ -1,6 +1,6 @@
 import { type SVGProps } from 'react'
 
-export function IconMenu(props: SVGProps<SVGSVGElement>) {
+export default function IconMenu(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"

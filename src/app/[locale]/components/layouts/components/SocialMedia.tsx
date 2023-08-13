@@ -1,4 +1,7 @@
-import { BrandGitHub, BrandLinkedIn, BrandX } from '@/components/Icons'
+
+import BrandGitHub from '@/components/Icons/Brand/GitHub'
+import BrandLinkedIn from '@/components/Icons/Brand/LinkedIn'
+import BrandX from '@/components/Icons/Brand/X'
 import { buttonVariants } from '@/components/ui/Button'
 import { getSiteConfig } from '@/config/siteConfig'
 import { cn } from '@/lib/utils'
