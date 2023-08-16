@@ -18,9 +18,16 @@ interface SidebarProps {
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
   const [isOpen, setIsOpen] = useState(true)
-  const isScreenLargerThan = useScreenSize()
+  const { isScreenLargerThan, isScreenTallerThan } = useScreenSize()
+  
   function toggleSidebar() {
     if (!isScreenLargerThan.LG) setIsOpen(!isOpen)
+  }
+
+  function getSizing(): number {
+    if(isScreenTallerThan.LG) return 232
+    if(isScreenTallerThan.MD) return 132
+    return 60
   }
 
   return (
@@ -66,8 +73,8 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
             src="/images/profile.webp"
             alt={siteConfig.name}
             priority
-            width={232}
-            height={232}
+            width={getSizing()}
+            height={getSizing()}
             className="object-cover"
           />
           <nav className="w-full">
