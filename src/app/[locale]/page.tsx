@@ -20,7 +20,15 @@ export default async function Page() {
     <>
       {
         mainNav.map(item => (
-          <section key={item.id} id={item.id} className='flex h-full min-h-screen flex-col items-center justify-center gap-16 px-8 py-10 lg:px-12'>
+          <section
+            key={item.id}
+            id={item.id}
+            aria-label={item.title}
+            className='flex h-full min-h-screen flex-col items-center gap-16 px-8 pb-14 pt-10 first:justify-center lg:px-12'
+          >
+            {
+              item.id !== 'aboutMe' && <h3 className='border-b-4 border-primary text-5xl font-bold'>{item.title}</h3>
+            }
             {views[item.id]}
           </section>
         ))
