@@ -1,6 +1,5 @@
 "use client"
-import IconMoon from "@/components/Icons/Moon"
-import IconSun from "@/components/Icons/Sun"
+import { IconMoon, IconSun } from "@/components/Icons"
 import { Button } from "@/components/ui/Button"
 import { useScopedI18n } from "@/locale/client"
 import { useTheme } from "next-themes"

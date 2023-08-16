@@ -1,6 +1,5 @@
 'use client'
-import IconClose from "@/components/Icons/Close"
-import IconMenu from "@/components/Icons/Menu"
+import { IconClose, IconMenu } from "@/components/Icons"
 import { Button, buttonVariants } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
@@ -21,7 +20,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(true)
   const isScreenLargerThan = useScreenSize()
   function toggleSidebar() {
-    if(!isScreenLargerThan.LG) setIsOpen(!isOpen)
+    if (!isScreenLargerThan.LG) setIsOpen(!isOpen)
   }
 
   return (
@@ -77,10 +76,10 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
                     <Link
-                    className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
-                    href={`#${item.id}`}
-                    onClick={toggleSidebar}
-                    aria-label={item.title}
+                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
+                      href={`#${item.id}`}
+                      onClick={toggleSidebar}
+                      aria-label={item.title}
                     >
                       {item.title}
                     </Link>

@@ -1,5 +1,5 @@
 
-export default function BrandLinkedIn(props: React.SVGProps<SVGSVGElement>) {
+export function BrandLinkedIn(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"
