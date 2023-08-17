@@ -23,25 +23,30 @@ export async function getSiteConfig() {
     description: t("siteConfig.description"),
     mainNav: [
       {
+        id: "aboutMe",
         title: t("siteConfig.sidebarNav.aboutMe"),
       },
       {
+        id: "projects",
         title: t("siteConfig.sidebarNav.projects"),
       },
       {
+        id: "experience",
         title: t("siteConfig.sidebarNav.experience"),
       },
       {
+        id: "education",
         title: t("siteConfig.sidebarNav.education"),
       },
       {
+        id: "skills",
         title: t("siteConfig.sidebarNav.skills"),
       },
       {
+        id: "contact",
         title: t("siteConfig.sidebarNav.contact"),
       }
     ] satisfies SidebarNavItems,
     
   }
 }
-

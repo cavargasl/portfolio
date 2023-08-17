@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Content, Group, Item, ItemIndicator, ItemText, Label, Portal, Root, Separator, Trigger, Value, Viewport } from "@radix-ui/react-select"
 import { forwardRef, type ReactElement } from "react"
-import IconClose from "../Icons/Close"
+import { IconClose } from "../Icons"
 
 const Select = Root
 

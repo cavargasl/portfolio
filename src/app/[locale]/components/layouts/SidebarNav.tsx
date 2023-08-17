@@ -1,12 +1,12 @@
 'use client'
-import IconClose from "@/components/Icons/Close"
-import IconMenu from "@/components/Icons/Menu"
-import { Button } from "@/components/ui/Button"
+import { IconClose, IconMenu } from "@/components/Icons"
+import { Button, buttonVariants } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
 import { type SidebarNavItems } from "@/types"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 import { createPortal } from "react-dom"
 import { ChangeLanguage } from "./components/ChangeLanguage"
@@ -18,9 +18,16 @@ interface SidebarProps {
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
   const [isOpen, setIsOpen] = useState(true)
-  const isScreenLargerThan = useScreenSize()
+  const { isScreenLargerThan, isScreenTallerThan } = useScreenSize()
+  
   function toggleSidebar() {
-    setIsOpen(!isOpen)
+    if (!isScreenLargerThan.LG) setIsOpen(!isOpen)
+  }
+
+  function getSizing(): number {
+    if(isScreenTallerThan.LG) return 232
+    if(isScreenTallerThan.MD) return 132
+    return 60
   }
 
   return (
@@ -66,8 +73,8 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
             src="/images/profile.webp"
             alt={siteConfig.name}
             priority
-            width={232}
-            height={232}
+            width={getSizing()}
+            height={getSizing()}
             className="object-cover"
           />
           <nav className="w-full">
@@ -75,9 +82,14 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
               {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
-                    <Button variant="ghost" onClick={toggleSidebar} className="w-full text-lg font-semibold" aria-label={item.title}>
+                    <Link
+                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
+                      href={`#${item.id}`}
+                      onClick={toggleSidebar}
+                      aria-label={item.title}
+                    >
                       {item.title}
-                    </Button>
+                    </Link>
                   </li>
                 ))
               }

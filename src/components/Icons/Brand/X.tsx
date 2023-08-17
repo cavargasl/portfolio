@@ -1,5 +1,5 @@
 
-export default function BrandX(props: React.SVGProps<SVGSVGElement>) {
+export function BrandX(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"
