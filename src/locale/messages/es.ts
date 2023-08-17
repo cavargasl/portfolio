@@ -3,6 +3,11 @@ export default {
     "welcome": "Bienvenid@ a mi portafolio profesional, soy Ingeniero Multimedia, vivo en Colombia, me apasionan los desafíos y adquirir conocimientos que me permitan crecer tanto a nivel profesional como personal. Mi objetivo es aportar valor a los que me rodean.",
     "iAm": "Desarrollador Frontend"
   },
+  "contact":{
+    title: "¿Buscando una nueva incorporación a tu equipo?",
+    content: "Actualmente estoy disponible para unirme a un equipo o empresa.{br}Si quieres saber más sobre mí o mi trabajo, o simplemente quieres saludar, contácteme por cualquiera de las siguientes opciones.",
+    cv: "Curriculum"
+  },
   "siteConfig": {
     "title": "Camilo Vargas | Desarrollador Frontend",
     "description": "Portafolio profesional de Camilo Vargas, desarrollador frontend.",

@@ -3,6 +3,11 @@ export default {
     "welcome": "Welcome to my professional portfolio, i am Multimedia Engineer, i live in Colombia, i'm passionate about challenges and acquire knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
     "iAm": "Frontend Developer"
   },
+  "contact":{
+    title: "Looking for a new addition to your team?",
+    content: "I am currently available to join a team or company.{br}If you want to know more about me or my work, or just want to say hello, contact me by any of the following options.",
+    cv: "Resume"
+  },
   "siteConfig": {
     "title": "Camilo Vargas | Frontend Developer",
     "description": "Professional portfolio of Camilo Vargas. frontend developer.",
