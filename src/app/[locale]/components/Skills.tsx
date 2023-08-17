@@ -1,7 +1,8 @@
-import { BrandChakraUI, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandChakraUI, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
+import { type SidebarNavItem } from '@/types';
 
 const skills = [
   {
@@ -154,6 +155,10 @@ const skills = [
         title: 'React Testing Library',
         icon: <BrandReactTesting />
       },
+      {
+        title: 'Cypress',
+        icon: <BrandCypress />
+      }
     ]
   },
   {
@@ -178,50 +183,62 @@ const skills = [
     ]
   },
 ]
-export default function Skills() {
+
+interface SkillsProps {
+  navItem?: SidebarNavItem
+}
+export default function Skills({ navItem }: SkillsProps = {}) {
+
   return (
-    <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
-      {
-        skills.map((item, idx) => (
-          <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-secondary p-4", item.colSpan)}>
-            <legend className="px-1 text-center text-2xl font-bold text-secondary">{item.section}</legend>
-            {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-secondary/70 sm:hidden")} />}
-            <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
+    <section
+      id={navItem?.id}
+      aria-label={navItem?.title}
+      className='flex h-full min-h-screen flex-col items-center gap-16 px-8 pb-14 pt-10 lg:px-12'
+    >
+      <h3 className='border-b-4 border-primary text-5xl font-bold'>{navItem?.title}</h3>
+      <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
+        {
+          skills.map((item, idx) => (
+            <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-muted-foreground p-4", item.colSpan)}>
+              <legend className="px-1 text-center text-2xl font-bold text-muted-foreground">{item.section}</legend>
+              {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-muted-foreground/70 sm:hidden")} />}
+              <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
+                {
+                  item.items.map(skill => (
+                    <SkillCard key={skill.title} title={skill.title} icon={skill.icon} />
+                  ))
+                }
+              </div>
               {
-                item.items.map(skill => (
-                  <SkillCard key={skill.title} title={skill.title} icon={skill.icon} />
-                ))
+                item.colSpan &&
+                <>
+                  {
+                    idx > 0 && !skills[idx - 1].colSpan &&
+                    <Separator
+                      orientation="horizontal"
+                      className="absolute left-0 top-[calc(-32px-2rem)] hidden bg-muted-foreground/70 sm:block"
+                    />
+                  }
+                  {
+                    idx !== skills.length - 1 &&
+                    <Separator
+                      orientation="horizontal"
+                      className="absolute -bottom-8 left-0 hidden bg-muted-foreground/70 sm:block"
+                    />
+                  }
+                </>
               }
-            </div>
-            {
-              item.colSpan &&
-              <>
-                {
-                  idx > 0 && !skills[idx - 1].colSpan &&
-                  <Separator
-                    orientation="horizontal"
-                    className="absolute left-0 top-[calc(-32px-2rem)] hidden bg-secondary/70 sm:block"
-                  />
-                }
-                {
-                  idx !== skills.length - 1 &&
-                  <Separator
-                    orientation="horizontal"
-                    className="absolute -bottom-8 left-0 hidden bg-secondary/70 sm:block"
-                  />
-                }
-              </>
-            }
-            {
-              idx !== skills.length - 1 && !item.colSpan && !skills[idx + 1].colSpan &&
-              <Separator
-                orientation="vertical"
-                className={"absolute -right-8 bottom-0 hidden bg-secondary/70 sm:block"}
-              />
-            }
-          </fieldset>
-        ))
-      }
-    </div>
+              {
+                idx !== skills.length - 1 && !item.colSpan && !skills[idx + 1].colSpan &&
+                <Separator
+                  orientation="vertical"
+                  className={"absolute -right-8 bottom-0 hidden bg-muted-foreground/70 sm:block"}
+                />
+              }
+            </fieldset>
+          ))
+        }
+      </div>
+    </section>
   )
 }

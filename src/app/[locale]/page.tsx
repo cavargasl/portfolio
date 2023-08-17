@@ -1,38 +1,25 @@
 import { getSiteConfig } from '@/config/siteConfig'
-import type { IdsNav } from '@/types'
-import type { ReactElement } from 'react'
 import AboutMe from './components/AboutMe'
+import Contact from './components/Contact'
 import Skills from './components/Skills'
-
-const views: Record<IdsNav, ReactElement> = {
-  aboutMe: <AboutMe />,
-  skills: <Skills />,
-  contact: <>contact</>,
-  projects: <>projects</>,
-  education: <>education</>,
-  experience: <>experience</>,
-}
+import { getScopedI18n } from '@/locale/server'
+import Link from 'next/link'
 
 export default async function Page() {
-  const { mainNav } = await getSiteConfig()
-
+  const { mainNav, links } = await getSiteConfig()
+  const scopeFooterT = await getScopedI18n('footer')
   return (
     <>
-      {
-        mainNav.map(item => (
-          <section
-            key={item.id}
-            id={item.id}
-            aria-label={item.title}
-            className='flex h-full min-h-screen flex-col items-center gap-16 px-8 pb-14 pt-10 first:justify-center lg:px-12'
-          >
-            {
-              item.id !== 'aboutMe' && <h3 className='border-b-4 border-primary text-5xl font-bold'>{item.title}</h3>
-            }
-            {views[item.id]}
-          </section>
-        ))
-      }
+      <AboutMe navItem={mainNav.find(item => item.id === 'aboutMe')} />
+      <Skills navItem={mainNav.find(item => item.id === 'skills')} />
+      <Contact navItem={mainNav.find(item => item.id === 'contact')} />
+      <footer className='flex flex-col items-center justify-center bg-foreground p-8 lg:px-12'>
+        <p className='text-center text-background'>
+          {scopeFooterT("content",
+            { fullName: <Link href={links.github} target='_blank' className='font-bold hover:underline'>Camilo Vargas</Link> })
+          }
+        </p>
+      </footer>
     </>
   )
 }

@@ -4,7 +4,7 @@ import { Button, buttonVariants } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
-import { type SidebarNavItems } from "@/types"
+import { type SidebarNavItem } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -13,7 +13,7 @@ import { ChangeLanguage } from "./components/ChangeLanguage"
 import { ThemeToggle } from "./components/ThemeToggle"
 
 interface SidebarProps {
-  siteConfig: { mainNav: SidebarNavItems, name: string }
+  siteConfig: { mainNav: SidebarNavItem[], name: string }
 }
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
@@ -83,7 +83,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
                     <Link
-                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
+                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold text-muted-foreground")}
                       href={`#${item.id}`}
                       onClick={toggleSidebar}
                       aria-label={item.title}
