@@ -83,7 +83,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
                     <Link
-                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
+                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold text-muted-foreground")}
                       href={`#${item.id}`}
                       onClick={toggleSidebar}
                       aria-label={item.title}

@@ -193,9 +193,9 @@ export default async function Skills() {
       <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
         {
           skills.map((item, idx) => (
-            <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-secondary p-4", item.colSpan)}>
-              <legend className="px-1 text-center text-2xl font-bold text-secondary">{item.section}</legend>
-              {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-secondary/70 sm:hidden")} />}
+            <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-muted-foreground p-4", item.colSpan)}>
+              <legend className="px-1 text-center text-2xl font-bold text-muted-foreground">{item.section}</legend>
+              {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-muted-foreground/70 sm:hidden")} />}
               <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
                 {
                   item.items.map(skill => (
@@ -210,14 +210,14 @@ export default async function Skills() {
                     idx > 0 && !skills[idx - 1].colSpan &&
                     <Separator
                       orientation="horizontal"
-                      className="absolute left-0 top-[calc(-32px-2rem)] hidden bg-secondary/70 sm:block"
+                      className="absolute left-0 top-[calc(-32px-2rem)] hidden bg-muted-foreground/70 sm:block"
                     />
                   }
                   {
                     idx !== skills.length - 1 &&
                     <Separator
                       orientation="horizontal"
-                      className="absolute -bottom-8 left-0 hidden bg-secondary/70 sm:block"
+                      className="absolute -bottom-8 left-0 hidden bg-muted-foreground/70 sm:block"
                     />
                   }
                 </>
@@ -226,7 +226,7 @@ export default async function Skills() {
                 idx !== skills.length - 1 && !item.colSpan && !skills[idx + 1].colSpan &&
                 <Separator
                   orientation="vertical"
-                  className={"absolute -right-8 bottom-0 hidden bg-secondary/70 sm:block"}
+                  className={"absolute -right-8 bottom-0 hidden bg-muted-foreground/70 sm:block"}
                 />
               }
             </fieldset>
