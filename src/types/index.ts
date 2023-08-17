@@ -7,4 +7,4 @@ interface NavItem {
   external?: boolean
 }
 
-export type SidebarNavItems = NavItem[]
+export type SidebarNavItem = NavItem

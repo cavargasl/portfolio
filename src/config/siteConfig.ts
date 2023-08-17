@@ -1,5 +1,5 @@
 import { getI18n } from "@/locale/server"
-import type { SidebarNavItems } from "@/types"
+import type { SidebarNavItem } from "@/types"
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
 
@@ -46,7 +46,7 @@ export async function getSiteConfig() {
         id: "contact",
         title: t("siteConfig.sidebarNav.contact"),
       }
-    ] satisfies SidebarNavItems,
+    ] satisfies SidebarNavItem[],
     
   }
 }

@@ -4,7 +4,7 @@ import { Button, buttonVariants } from "@/components/ui/Button"
 import useScreenSize from "@/hooks/useScreenSize"
 import { cn } from "@/lib/utils"
 import { useScopedI18n } from "@/locale/client"
-import { type SidebarNavItems } from "@/types"
+import { type SidebarNavItem } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -13,7 +13,7 @@ import { ChangeLanguage } from "./components/ChangeLanguage"
 import { ThemeToggle } from "./components/ThemeToggle"
 
 interface SidebarProps {
-  siteConfig: { mainNav: SidebarNavItems, name: string }
+  siteConfig: { mainNav: SidebarNavItem[], name: string }
 }
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
