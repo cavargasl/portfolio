@@ -1,16 +1,18 @@
 import { getScopedI18n } from "@/locale/server";
+import type { SidebarNavItem } from "@/types";
 import { SocialMedia } from "./layouts/components/SocialMedia";
-import { getSiteConfig } from "@/config/siteConfig";
 
-export default async function AboutMe() {
+interface AboutMeProps {
+  navItem?: SidebarNavItem
+}
+
+export default async function AboutMe({ navItem }: AboutMeProps) {
   const t = await getScopedI18n("home")
-  const { mainNav } = await getSiteConfig()
-  const aboutMe = mainNav.find(item => item.id === 'aboutMe')
 
   return (
     <section
-      id={aboutMe?.id}
-      aria-label={aboutMe?.title}
+      id={navItem?.id}
+      aria-label={navItem?.title}
       className='flex h-full min-h-screen flex-col items-center justify-center gap-16 px-8 pb-14 pt-10 lg:px-12'
     >
       <div className='flex flex-col items-center gap-2 lg:w-fit'>

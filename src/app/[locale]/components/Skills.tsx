@@ -1,8 +1,8 @@
 import { BrandChakraUI, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
-import { getSiteConfig } from '@/config/siteConfig';
 import { cn } from "@/lib/utils";
+import { type SidebarNavItem } from '@/types';
 
 const skills = [
   {
@@ -179,17 +179,19 @@ const skills = [
     ]
   },
 ]
-export default async function Skills() {
-  const { mainNav } = await getSiteConfig()
-  const nav = mainNav.find(item => item.id === 'skills')
+
+interface SkillsProps {
+  navItem?: SidebarNavItem
+}
+export default function Skills({ navItem }: SkillsProps = {}) {
 
   return (
     <section
-      id={nav?.id}
-      aria-label={nav?.title}
+      id={navItem?.id}
+      aria-label={navItem?.title}
       className='flex h-full min-h-screen flex-col items-center gap-16 px-8 pb-14 pt-10 lg:px-12'
     >
-      <h3 className='border-b-4 border-primary text-5xl font-bold'>{nav?.title}</h3>
+      <h3 className='border-b-4 border-primary text-5xl font-bold'>{navItem?.title}</h3>
       <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
         {
           skills.map((item, idx) => (
