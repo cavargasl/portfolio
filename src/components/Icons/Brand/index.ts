@@ -1,4 +1,5 @@
 export * from './ChakraUI';
+export * from './Cypress';
 export * from './Drizzle';
 export * from './Express';
 export * from './Figma';
