@@ -1,4 +1,4 @@
-import { BrandChakraUI, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandAxios, BrandChakraUI, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
@@ -55,6 +55,10 @@ const skills = [
       {
         title: 'Chakra UI',
         icon: <BrandChakraUI />
+      },
+      {
+        title: 'Radix',
+        icon: <BrandRadix />
       },
     ]
   },
@@ -116,6 +120,10 @@ const skills = [
         title: 'Redux',
         icon: <BrandRedux />
       },
+      {
+        title: 'Axios',
+        icon: <BrandAxios />
+      },
     ]
   },
   {
@@ -133,10 +141,6 @@ const skills = [
       {
         title: 'GitLab',
         icon: <BrandGitLab />
-      },
-      {
-        title: 'Jira Software',
-        icon: <BrandJira />
       },
     ]
   },
@@ -177,8 +181,12 @@ const skills = [
         icon: <BrandVSCode />
       },
       {
-        title: 'Radix',
-        icon: <BrandRadix />
+        title: 'Jira Software',
+        icon: <BrandJira />
+      },
+      {
+        title: 'Slack',
+        icon: <BrandSlack />
       },
     ]
   },
@@ -200,7 +208,7 @@ export default function Skills({ navItem }: SkillsProps = {}) {
         {
           skills.map((item, idx) => (
             <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-muted-foreground p-4", item.colSpan)}>
-              <legend className="px-1 text-center text-2xl font-bold text-muted-foreground">{item.section}</legend>
+              <legend className="line-clamp-1 px-1 text-center text-2xl font-bold text-muted-foreground">{item.section}</legend>
               {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-muted-foreground/70 sm:hidden")} />}
               <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
                 {
