@@ -1,3 +1,4 @@
+export * from './Axios';
 export * from './ChakraUI';
 export * from './Cypress';
 export * from './Drizzle';
@@ -24,6 +25,7 @@ export * from './React';
 export * from './ReactQuery';
 export * from './ReactTesting';
 export * from './Redux';
+export * from './Slack';
 export * from './StyledComponent';
 export * from './TRPC';
 export * from './Tailwind';
