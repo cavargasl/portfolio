@@ -27,20 +27,20 @@ export async function getSiteConfig() {
         title: t("siteConfig.sidebarNav.aboutMe"),
       },
       {
-        id: "projects",
-        title: t("siteConfig.sidebarNav.projects"),
+        id: "skills",
+        title: t("siteConfig.sidebarNav.skills"),
       },
       {
         id: "experience",
         title: t("siteConfig.sidebarNav.experience"),
       },
       {
-        id: "education",
-        title: t("siteConfig.sidebarNav.education"),
+        id: "projects",
+        title: t("siteConfig.sidebarNav.projects"),
       },
       {
-        id: "skills",
-        title: t("siteConfig.sidebarNav.skills"),
+        id: "education",
+        title: t("siteConfig.sidebarNav.education"),
       },
       {
         id: "contact",
