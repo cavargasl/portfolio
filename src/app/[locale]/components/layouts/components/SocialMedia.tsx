@@ -10,10 +10,10 @@ export async function SocialMedia() {
   const siteConfig = await getSiteConfig()
   const scopeT = await getScopedI18n("siteConfig")
   return (
-    <div className='flex gap-6 text-accent'>
+    <div className='flex gap-6'>
       <Link
         href={siteConfig.links.LinkedIn}
-        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group hover:bg-transparent')}
+        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
         aria-label={scopeT("socialLinks.LinkedIn")}
       >
@@ -23,7 +23,7 @@ export async function SocialMedia() {
       </Link>
       <Link
         href={siteConfig.links.github}
-        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group hover:bg-transparent')}
+        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
         aria-label={scopeT("socialLinks.github")}
       >
@@ -33,7 +33,7 @@ export async function SocialMedia() {
       </Link>
       <Link
         href={siteConfig.links.twitter}
-        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group hover:bg-transparent')}
+        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
         aria-label={scopeT("socialLinks.twitter")}
       >

@@ -24,7 +24,7 @@ export default async function Contact({ navItem }: ContactProps) {
         target="_blank"
         aria-label={t("cv")}
         rel="noopener noreferrer"
-        className={buttonVariants()}
+        className={buttonVariants({ variant: "outline" })}
       >
         {t("cv")}
       </Link>

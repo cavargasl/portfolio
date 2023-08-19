@@ -4,16 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { forwardRef } from "react"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 ease-out-circ",
+  "inline-flex items-center justify-center rounded-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 ease-out-circ",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-red-400 text-red-900 hover:bg-red-300",
-        outline: "border-2 border-primary text-primary bg-background hover:bg-primary/30",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
-        ghost: "hover:bg-foreground/10",
-        link: "text-primary underline-offset-4 hover:underline",
+        default: "bg-primary text-primary-foreground hover:shadow-md hover:shadow-foreground",
+        outline: "border-2 text-paragraph border-paragraph hover:shadow-md hover:shadow-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:shadow-md hover:shadow-foreground",
+        ghost: "hover:bg-primary text-paragraph hover:text-primary-foreground",
+        link: "hover:underline-offset-4 hover:underline text-paragraph",
       },
       size: {
         default: "h-9 px-4 py-2",

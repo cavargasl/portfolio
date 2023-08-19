@@ -4,34 +4,32 @@
 
 @layer base {
   :root {
-    --background: 190 56% 95%;
-    --foreground: 209 27% 24%;
+    --background: 60 100% 100%;
+    --foreground: 214 44% 19%;
+    --paragraph: 214 100% 15%;
 
-    --primary: 33 70% 60%;
-    --primary-foreground: 33 70% 98%;
+    --primary: 171 100% 46%;
+    --primary-foreground: 214 100% 15%;
 
-    --secondary: 175 27% 65%;
-    --secondary-foreground: 175 27% 98%;
+    --secondary: 350 100% 66%;
+    --secondary-foreground: 214 100% 15%;
 
-    --accent: 177 72% 50%;
-    --accent-foreground: 178 80% 18%;
-
-    --muted: 177 43% 91%;
-    --muted-foreground: 177 43% 40%;
-
-    --light: 190 56% 95%;
-    --dark: 209 27% 24%;
+    --tertiary: 51 98% 65%;
+    --muted: 210 18% 96%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 209 27% 24%;
-    --foreground: 190 56% 95%;
+    --background: 240 8% 9%;
+    --foreground: 214 16% 64%;
+    --paragraph: 60 100% 100%;
 
-    --muted: 209 27% 19%;
-    --muted-foreground: 209 27% 81%;
+    --primary-foreground: 240 8% 9%;
 
+    --secondary-foreground: 240 8% 9%;
+
+    --muted: 216 6% 15%;
   }
 }
 
@@ -42,6 +40,10 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply text-paragraph;
   }
 }
 
