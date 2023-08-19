@@ -39,7 +39,7 @@ const SelectContent = forwardRef<
     <Portal>
       <Content
         ref={ref}
-        className="relative z-50 overflow-hidden rounded-sm border text-foreground shadow-md"
+        className="relative z-50 overflow-hidden rounded-sm border text-paragraph shadow-md"
         position={position}
         {...props}
       >

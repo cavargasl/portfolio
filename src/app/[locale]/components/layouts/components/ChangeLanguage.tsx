@@ -11,12 +11,12 @@ export function ChangeLanguage() {
 
   return (
     <Select>
-      <SelectTrigger aria-label={scopedT("openLanguageMenu")} className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), "font-semibold")}>
-        {locale.toLocaleUpperCase()}
+      <SelectTrigger aria-label={scopedT("openLanguageMenu")} className={cn(buttonVariants({ variant: 'ghost' }), "w-fit font-semibold")}>
+        {locale === "es" ? scopedT("Spanish") : scopedT("English")}
       </SelectTrigger>
       <SelectContent side='top' className='bg-background p-0'>
-        <Button variant="ghost" size="icon" className='hover:bg-inherit' aria-label={scopedT("changeToEnglish")} onClick={() => changeLocale("en")} disabled={locale === "en"}>EN</Button>
-        <Button variant="ghost" size="icon" className='hover:bg-inherit' aria-label={scopedT("changeToSpanish")} onClick={() => changeLocale("es")} disabled={locale === "es"}>ES</Button>
+        <Button variant="ghost" aria-label={scopedT("changeToEnglish")} onClick={() => changeLocale("en")} disabled={locale === "en"}>{scopedT("English")}</Button>
+        <Button variant="ghost" aria-label={scopedT("changeToSpanish")} onClick={() => changeLocale("es")} disabled={locale === "es"}>{scopedT("Spanish")}</Button>
       </SelectContent>
     </Select>
   )

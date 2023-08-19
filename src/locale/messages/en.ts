@@ -36,5 +36,7 @@ export default {
     "changeToSpanish": "Change to Spanish",
     "changeToEnglish": "Change to english",
     "toggleTheme": "Toggle theme",
+    "English": "English",
+    "Spanish": "Spanish",
   }
 } as const
