@@ -1,55 +1,74 @@
 import type { SidebarNavItem } from "@/types"
 import { ExperienceList } from "./components/ExperienceList"
 import Card from "@/components/ui/Card"
+import { getScopedI18n } from "@/locale/server"
 
 interface ExperienceProps {
   navItem?: SidebarNavItem
 }
-const experience = [
-  {
-    position: 'Fullstack Developer',
-    title: 'Big Safe',
-    date: 'jul. 2023 · 1 mes',
-    descriptions: [
-      "E - Commerce de ventas de servicios de impresión en Next 13 con sus nuevas funcionalidades",
-      "Componentes reutilizable hechos con Tailwind, CVA y clsx frameworks",
-      "Manejo de usuarios con Clerk framework",
-      "Estado global con Redux toolkit para carrito de compra",
-      "Implementación de Firebase Database y Firebase Storage"
-    ]
-  },
-  {
-    position: 'Frontend Developer',
-    title: 'CloudAPPi',
-    date: 'abr. 2022 - ene. 2023 · 10 meses',
-    descriptions: ['this is my last work']
-  },
-  {
-    position: 'Fullstack Developer',
-    title: 'Proyecto de grado',
-    date: 'jul. 2021 - abr. 2022 · 10 meses',
-    descriptions: ['this is my last work']
-  },
-  {
-    position: 'Frontend Developer',
-    title: 'dexFreight',
-    date: 'jun. 2021 - nov. 2021 · 6 meses',
-    descriptions: ['this is my last work']
-  },
-]
 
-export default function Experience({ navItem }: ExperienceProps) {
+export default async function Experience({ navItem }: ExperienceProps) {
+  const t = await getScopedI18n("experience")
+  const experience = [
+    {
+      position: t("jobs.0.position"),
+      title: t("jobs.0.title"),
+      date: t("jobs.0.date"),
+      descriptions: [
+        t("jobs.0.descriptions.0"),
+        t("jobs.0.descriptions.1"),
+        t("jobs.0.descriptions.2"),
+        t("jobs.0.descriptions.3"),
+        t("jobs.0.descriptions.4"),
+      ]
+    },
+    {
+      position: t("jobs.1.position"),
+      title: t("jobs.1.title"),
+      date: t("jobs.1.date"),
+      descriptions: [
+        t("jobs.1.descriptions.0"),
+        t("jobs.1.descriptions.1"),
+        t("jobs.1.descriptions.2"),
+        t("jobs.1.descriptions.3"),
+        t("jobs.1.descriptions.4"),
+        t("jobs.1.descriptions.5"),
+      ]
+    },
+    {
+      position: t("jobs.2.position"),
+      title: t("jobs.2.title"),
+      date: t("jobs.2.date"),
+      descriptions: [
+        t("jobs.2.descriptions.0"),
+        t("jobs.2.descriptions.1"),
+        t("jobs.2.descriptions.2"),
+        t("jobs.2.descriptions.3"),
+        t("jobs.2.descriptions.4"),
+      ]
+    },
+    {
+      position: t("jobs.3.position"),
+      title: t("jobs.3.title"),
+      date: t("jobs.3.date"),
+      descriptions: [
+        t("jobs.3.descriptions.0"),
+        t("jobs.3.descriptions.1"),
+        t("jobs.3.descriptions.2"),
+      ]
+    },
+  ]
   return (
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
       className='flex h-full snap-y flex-col items-center gap-16 px-8 lg:px-12'
     >
-      <h3 className='border-b-4 border-primary text-5xl font-bold'>{navItem?.title}</h3>
+      <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <ExperienceList>
         {
           experience.map(item => (
-            <Card key={item.title} className="w-full items-start">
+            <Card key={item.title} className="w-full items-start p-2 sm:p-6">
               <header className="flex flex-col flex-wrap items-baseline justify-between">
                 <h2 className="text-left text-xl font-medium">{item.position}</h2>
                 <h2 className="text-left text-lg">{item.title}</h2>
@@ -58,7 +77,7 @@ export default function Experience({ navItem }: ExperienceProps) {
               <ul>
                 {
                   item.descriptions.map((description, idx) => (
-                    <li key={idx} className="relative flex items-center gap-2 pl-6 before:absolute before:left-0 before:top-0 before:text-primary before:content-['👉']">
+                    <li key={idx} className="relative flex items-center gap-2 pl-7 before:absolute before:left-0 before:top-0 before:text-primary before:content-['👉']">
                       {description}
                     </li>
                   ))

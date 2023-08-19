@@ -16,7 +16,7 @@ const ExperienceList = forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-4 gap-y-6 sm:gap-6 md:grid-cols-[1fr_1.5rem_1fr] md:gap-x-8", className)}
+      className={cn("relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 md:grid-cols-[1fr_1.5rem_1fr] md:gap-x-8", className)}
       {...props}
     >
       <Separator orientation="vertical" className="absolute left-3 bg-secondary md:left-1/2" />
