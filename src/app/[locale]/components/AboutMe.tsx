@@ -13,7 +13,7 @@ export default async function AboutMe({ navItem }: AboutMeProps) {
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center justify-center gap-16 px-8 lg:px-12'
+      className='flex h-full min-h-screen flex-col items-center justify-center gap-16 px-8 pt-10 lg:px-12'
     >
       <div className='flex flex-col items-center gap-2 lg:w-fit'>
         <h1 className='w-full bg-gradient-to-r from-primary to-tertiary bg-clip-text text-center font-mono text-6xl font-bold !leading-tight text-transparent sm:text-7xl'>Camilo Vargas</h1>

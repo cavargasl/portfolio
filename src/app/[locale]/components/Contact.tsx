@@ -16,7 +16,7 @@ export default async function Contact({ navItem }: ContactProps) {
       aria-label={navItem?.title}
       className='flex h-full min-h-screen flex-col items-center justify-center gap-12 px-8 pb-14 pt-10 lg:px-12'
     >
-      <h2 className='text-center text-4xl font-extrabold'>{t("title")}</h2>
+      <h2 className='text-center text-3xl font-extrabold sm:text-4xl'>{t("title")}</h2>
       <p className='w-full text-center text-lg md:w-[60ch]'>{t("content", { br: <br /> })}</p>
       <SocialMedia />
       <Link
