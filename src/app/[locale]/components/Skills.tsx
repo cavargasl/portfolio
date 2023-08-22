@@ -2,11 +2,21 @@ import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, Bran
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
-import { type SidebarNavItem } from '@/types';
+import type { SidebarNavItem, TypeSkills } from '@/types';
 
-const skills = [
+interface SkillsObject {
+  title: string
+  colSpan?: string
+  justifyCenter?: string
+  items: {
+    title: TypeSkills
+    icon: JSX.Element
+  }[]
+}
+
+const skills: SkillsObject[] = [
   {
-    section: 'Languages',
+    title: 'Languages',
     colSpan: "sm:col-span-2",
     justifyCenter: "justify-center",
     items: [
@@ -21,7 +31,7 @@ const skills = [
     ]
   },
   {
-    section: 'Frontend',
+    title: 'Frontend',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -63,7 +73,7 @@ const skills = [
     ]
   },
   {
-    section: 'Backend',
+    title: 'Backend',
     items: [
       {
         title: 'Node.js',
@@ -80,7 +90,7 @@ const skills = [
     ]
   },
   {
-    section: 'ORM',
+    title: 'ORM',
     items: [
       {
         title: 'tRPC',
@@ -97,7 +107,7 @@ const skills = [
     ]
   },
   {
-    section: 'Database & Cache',
+    title: 'Database & Cache',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -127,7 +137,7 @@ const skills = [
     ]
   },
   {
-    section: 'Version Control',
+    title: 'Version Control',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -145,7 +155,7 @@ const skills = [
     ]
   },
   {
-    section: 'Testing',
+    title: 'Testing',
     items: [
       {
         title: 'Vitest',
@@ -166,7 +176,7 @@ const skills = [
     ]
   },
   {
-    section: 'Others',
+    title: 'Others',
     items: [
       {
         title: 'Clerk',
@@ -211,8 +221,8 @@ export default function Skills({ navItem }: SkillsProps = {}) {
       <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
         {
           skills.map((item, idx) => (
-            <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-muted p-4", item.colSpan)}>
-              <legend className="line-clamp-1 px-1 text-center text-2xl font-bold text-paragraph">{item.section}</legend>
+            <fieldset key={item.title} className={cn("relative flex flex-col gap-2 rounded-sm border-muted p-4", item.colSpan)}>
+              <legend className="line-clamp-1 px-1 text-center text-2xl font-bold text-paragraph">{item.title}</legend>
               {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block sm:hidden")} />}
               <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
                 {
