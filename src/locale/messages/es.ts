@@ -64,6 +64,35 @@ export default {
       date: "2015 - 2021 · 6 años",
       description: "Durante mi formación, adquirí un sólido conocimiento en áreas clave como diseño gráfico, desarrollo web, animación, producción audiovisual y programación. Mi enfoque académico estuvo orientado al desarrollo web y diseño de soluciones combinando diferentes medios y tecnologías, con el fin de ofrecer experiencias digitales atractivas y de alto impacto."
     },
+    "courses": {
+      title: "Cursos",
+      items: [
+        {
+          title: "Curso de backend con NestJS",
+          where: "Platzi"
+        },
+        {
+          title: "Curso de Inglés Básico A1: Conversaciones Cortas y Habituales",
+          where: "Platzi"
+        },
+        {
+          title: "Curso de NestJS: Programación Modular, Documentación con Swagger y Deploy",
+          where: "Platzi"
+        },
+        {
+          title: "Curso de NextJS con GraphQL y Apollo",
+          where: "Platzi"
+        },
+        {
+          title: "Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL",
+          where: "Udemy"
+        },
+        {
+          title: "Web Personal MERN Full Stack: MongoDB, Express, React y Node",
+          where: "Udemy"
+        },
+      ]
+    }
   },
   "contact": {
     title: "¿Buscando una nueva incorporación a tu equipo?",
