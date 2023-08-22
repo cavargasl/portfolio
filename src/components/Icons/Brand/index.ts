@@ -1,5 +1,6 @@
 export * from './Axios';
 export * from './ChakraUI';
+export * from './Clerk';
 export * from './Cypress';
 export * from './Drizzle';
 export * from './Express';
@@ -33,3 +34,4 @@ export * from './TypeScript';
 export * from './VSCode';
 export * from './Vitest';
 export * from './X';
+export * from './index';
