@@ -13,8 +13,7 @@ module.exports = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        light: "hsl(var(--light))",
-        dark: "hsl(var(--dark))",
+        paragraph: "hsl(var(--paragraph))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -23,14 +22,8 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
+        tertiary: "hsl(var(--tertiary))",
+        muted: "hsl(var(--muted))",
       },
       borderRadius: {
         lg: "var(--radius)",

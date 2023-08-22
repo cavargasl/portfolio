@@ -1,12 +1,22 @@
-import { BrandChakraUI, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
-import { type SidebarNavItem } from '@/types';
+import type { SidebarNavItem, TypeSkills } from '@/types';
 
-const skills = [
+interface SkillsObject {
+  title: string
+  colSpan?: string
+  justifyCenter?: string
+  items: {
+    title: TypeSkills
+    icon: JSX.Element
+  }[]
+}
+
+const skills: SkillsObject[] = [
   {
-    section: 'Languages',
+    title: 'Languages',
     colSpan: "sm:col-span-2",
     justifyCenter: "justify-center",
     items: [
@@ -21,7 +31,7 @@ const skills = [
     ]
   },
   {
-    section: 'Frontend',
+    title: 'Frontend',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -56,10 +66,14 @@ const skills = [
         title: 'Chakra UI',
         icon: <BrandChakraUI />
       },
+      {
+        title: 'Radix',
+        icon: <BrandRadix />
+      },
     ]
   },
   {
-    section: 'Backend',
+    title: 'Backend',
     items: [
       {
         title: 'Node.js',
@@ -76,7 +90,7 @@ const skills = [
     ]
   },
   {
-    section: 'ORM',
+    title: 'ORM',
     items: [
       {
         title: 'tRPC',
@@ -93,7 +107,7 @@ const skills = [
     ]
   },
   {
-    section: 'Database & Cache',
+    title: 'Database & Cache',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -116,10 +130,14 @@ const skills = [
         title: 'Redux',
         icon: <BrandRedux />
       },
+      {
+        title: 'Axios',
+        icon: <BrandAxios />
+      },
     ]
   },
   {
-    section: 'Version Control',
+    title: 'Version Control',
     colSpan: "sm:col-span-2",
     items: [
       {
@@ -134,14 +152,10 @@ const skills = [
         title: 'GitLab',
         icon: <BrandGitLab />
       },
-      {
-        title: 'Jira Software',
-        icon: <BrandJira />
-      },
     ]
   },
   {
-    section: 'Testing',
+    title: 'Testing',
     items: [
       {
         title: 'Vitest',
@@ -162,8 +176,12 @@ const skills = [
     ]
   },
   {
-    section: 'Others',
+    title: 'Others',
     items: [
+      {
+        title: 'Clerk',
+        icon: <BrandClerk />
+      },
       {
         title: 'Figma',
         icon: <BrandFigma />
@@ -177,8 +195,12 @@ const skills = [
         icon: <BrandVSCode />
       },
       {
-        title: 'Radix',
-        icon: <BrandRadix />
+        title: 'Jira Software',
+        icon: <BrandJira />
+      },
+      {
+        title: 'Slack',
+        icon: <BrandSlack />
       },
     ]
   },
@@ -193,15 +215,15 @@ export default function Skills({ navItem }: SkillsProps = {}) {
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center gap-16 px-8 pb-14 pt-10 lg:px-12'
+      className='flex h-full min-h-screen flex-col items-center gap-16 px-8 lg:px-12'
     >
-      <h3 className='border-b-4 border-primary text-5xl font-bold'>{navItem?.title}</h3>
+      <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
         {
           skills.map((item, idx) => (
-            <fieldset key={item.section} className={cn("relative flex flex-col gap-2 rounded-sm border-muted-foreground p-4", item.colSpan)}>
-              <legend className="px-1 text-center text-2xl font-bold text-muted-foreground">{item.section}</legend>
-              {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block bg-muted-foreground/70 sm:hidden")} />}
+            <fieldset key={item.title} className={cn("relative flex flex-col gap-2 rounded-sm border-muted p-4", item.colSpan)}>
+              <legend className="line-clamp-1 px-1 text-center text-2xl font-bold text-paragraph">{item.title}</legend>
+              {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block sm:hidden")} />}
               <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
                 {
                   item.items.map(skill => (
@@ -216,14 +238,14 @@ export default function Skills({ navItem }: SkillsProps = {}) {
                     idx > 0 && !skills[idx - 1].colSpan &&
                     <Separator
                       orientation="horizontal"
-                      className="absolute left-0 top-[calc(-32px-2rem)] hidden bg-muted-foreground/70 sm:block"
+                      className="absolute left-0 top-[calc(-32px-2rem)] hidden sm:block"
                     />
                   }
                   {
                     idx !== skills.length - 1 &&
                     <Separator
                       orientation="horizontal"
-                      className="absolute -bottom-8 left-0 hidden bg-muted-foreground/70 sm:block"
+                      className="absolute -bottom-8 left-0 hidden sm:block"
                     />
                   }
                 </>
@@ -232,7 +254,7 @@ export default function Skills({ navItem }: SkillsProps = {}) {
                 idx !== skills.length - 1 && !item.colSpan && !skills[idx + 1].colSpan &&
                 <Separator
                   orientation="vertical"
-                  className={"absolute -right-8 bottom-0 hidden bg-muted-foreground/70 sm:block"}
+                  className={"absolute -right-8 bottom-0 hidden sm:block"}
                 />
               }
             </fieldset>

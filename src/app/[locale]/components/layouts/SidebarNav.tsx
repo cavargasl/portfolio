@@ -17,7 +17,7 @@ interface SidebarProps {
 }
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const { isScreenLargerThan, isScreenTallerThan } = useScreenSize()
   
   function toggleSidebar() {
@@ -40,7 +40,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                 onClick={toggleSidebar}
                 variant="ghost"
                 size="icon"
-                className="fixed right-4 top-4 z-50"
+                className="fixed right-2 top-2 z-50 sm:right-4 sm:top-4"
                 aria-label={isOpen ? scopedT("closeSidebarNav") : scopedT("openSidebarNav")}
               >
                 {
@@ -83,7 +83,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                 siteConfig.mainNav.map(item => (
                   <li key={item.title}>
                     <Link
-                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold text-muted-foreground")}
+                      className={cn(buttonVariants({ variant: "ghost" }), "w-full text-lg font-semibold")}
                       href={`#${item.id}`}
                       onClick={toggleSidebar}
                       aria-label={item.title}
