@@ -17,7 +17,7 @@ export default async function Page() {
       <Experience navItem={mainNav.find(item => item.id === 'experience')} />
       <Education navItem={mainNav.find(item => item.id === 'education')} />
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
-      <footer className='flex flex-col items-center justify-center bg-paragraph p-8 lg:px-12'>
+      <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
         <p className='text-center text-background'>
           {scopeFooterT("content",
             { fullName: <Link href={links.github} target='_blank' className='font-bold hover:underline'>Camilo Vargas</Link> })
