@@ -17,7 +17,7 @@ interface SidebarProps {
 }
 export default function SidebarNav({ siteConfig }: SidebarProps) {
   const scopedT = useScopedI18n("commons")
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const { isScreenLargerThan, isScreenTallerThan } = useScreenSize()
   
   function toggleSidebar() {
