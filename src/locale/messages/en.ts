@@ -56,6 +56,15 @@ export default {
       },
     ]
   },
+  "education": {
+    title: "Education",
+    "university": {
+      title: "Multimedia Engineering",
+      name: "San Buenaventura University | Cartagena - Colombia",
+      date: "2015 - 2021 · 6 years",
+      description: "During my training, I gained solid knowledge in key areas such as graphic design, web development, animation, audiovisual production, and programming. My academic focus was oriented to web development and design of solutions combining different media and technologies, in order to offer attractive and high-impact digital experiences."
+    }
+  },
   "contact": {
     title: "Looking for a new addition to your team?",
     content: "I am currently available to join a team or company.{br}If you want to know more about me or my work, or just want to say hello, contact me by any of the following options.",
