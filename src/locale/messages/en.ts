@@ -5,6 +5,7 @@ export default {
   },
   "experience": {
     amount: 4,
+    tech: "Technologies",
     jobs: [
       {
         position: 'Fullstack Developer',
