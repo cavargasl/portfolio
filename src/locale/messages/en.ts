@@ -4,12 +4,11 @@ export default {
     "iAm": "Frontend Developer"
   },
   "experience": {
-    amount: 4,
     tech: "Technologies",
     jobs: [
       {
         position: 'Fullstack Developer',
-        title: 'Big Safe',
+        title: 'Big Safe · Freelance',
         date: 'jul. 2023 · 1 month',
         descriptions: [
           "E - Commerce of sales of printing services in Next 13 with its new functionalities.",
@@ -21,7 +20,7 @@ export default {
       },
       {
         position: 'Frontend Developer',
-        title: 'CloudAPPi',
+        title: 'CloudAPPi · Full time',
         date: 'apr. 2022 - jan. 2023 · 10 months',
         descriptions: [
           "Create web application in charge of selection processes of technology professionals.",
@@ -34,7 +33,7 @@ export default {
       },
       {
         position: 'Fullstack Developer',
-        title: 'Degree project',
+        title: 'Degree project · Full time',
         date: 'jul. 2021 - apr. 2022 · 10 months',
         descriptions: [
           "DEVELOPMENT OF A WEB APPLICATION FOR THE EVALUATION OF PROPOSALS AND FINAL REPORTS OF DEGREE MODALITIES AT THE SAN BUENAVENTURA CARTAGENA UNIVERSITY.",
@@ -46,7 +45,7 @@ export default {
       },
       {
         position: 'Frontend Developer',
-        title: 'DexFreight',
+        title: 'DexFreight · Internship contract',
         date: 'jan. 2021 - jun. 2021 · 6 months',
         descriptions: [
           "Add new functionalities in React Native.",
