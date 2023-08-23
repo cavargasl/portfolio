@@ -1,4 +1,4 @@
-import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactHookForm, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, BrandZod, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
@@ -138,7 +138,6 @@ const skills: SkillsObject[] = [
   },
   {
     title: 'Version Control',
-    colSpan: "sm:col-span-2",
     items: [
       {
         title: 'Git',
@@ -177,14 +176,19 @@ const skills: SkillsObject[] = [
   },
   {
     title: 'Others',
+    colSpan: "sm:col-span-2",
     items: [
       {
         title: 'Clerk',
         icon: <BrandClerk />
       },
       {
-        title: 'Figma',
-        icon: <BrandFigma />
+        title: 'Zod',
+        icon: <BrandZod />
+      },
+      {
+        title: 'React Hook Form',
+        icon: <BrandReactHookForm />
       },
       {
         title: 'Postman',
@@ -201,6 +205,10 @@ const skills: SkillsObject[] = [
       {
         title: 'Slack',
         icon: <BrandSlack />
+      },
+      {
+        title: 'Figma',
+        icon: <BrandFigma />
       },
     ]
   },
