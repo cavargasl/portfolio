@@ -1,4 +1,4 @@
-import type { SidebarNavItem, TypeSkills } from "@/types"
+import type { SidebarNavItem, SkillName } from "@/types"
 import { ExperienceList } from "./components/ExperienceList"
 import Card from "@/components/ui/Card"
 import { getScopedI18n } from "@/locale/server"
@@ -30,8 +30,8 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "Redux",
         "Firebase",
         "Git",
-        "GitHub"
-      ] satisfies TypeSkills[]
+        "GitHub",
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.1.position"),
@@ -55,7 +55,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "SCRUM",
         "Git",
         "GitLab"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.2.position"),
@@ -76,7 +76,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "SCRUM",
         "Git",
         "JavaScript"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.3.position"),
@@ -95,9 +95,10 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "Git",
         "Jira Software",
         "React Native"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
   ]
+  
   return (
     <section
       id={navItem?.id}

@@ -2,14 +2,14 @@ import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, Bran
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
-import type { SidebarNavItem, TypeSkills } from '@/types';
+import type { SidebarNavItem, SkillName } from '@/types';
 
 interface SkillsObject {
   title: string
   colSpan?: string
   justifyCenter?: string
   items: {
-    title: TypeSkills
+    title: SkillName
     icon: JSX.Element
   }[]
 }
