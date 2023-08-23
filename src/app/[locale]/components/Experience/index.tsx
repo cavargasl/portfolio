@@ -31,6 +31,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "Firebase",
         "Git",
         "GitHub",
+        "Radix",
       ] satisfies ReadonlyArray<SkillName>
     },
     {
