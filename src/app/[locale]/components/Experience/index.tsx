@@ -104,7 +104,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full snap-y flex-col items-center gap-16 px-8 lg:px-12'
+      className='flex h-full snap-y flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <ExperienceList>
