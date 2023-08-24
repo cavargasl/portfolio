@@ -1,11 +1,12 @@
 import { getSiteConfig } from '@/config/siteConfig'
-import AboutMe from './components/AboutMe'
-import Contact from './components/Contact'
-import Skills from './components/Skills'
 import { getScopedI18n } from '@/locale/server'
 import Link from 'next/link'
-import Experience from './components/Experience'
+import AboutMe from './components/AboutMe'
+import Contact from './components/Contact'
 import Education from './components/Education'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
 
 export default async function Page() {
   const { mainNav, links } = await getSiteConfig()
@@ -15,6 +16,7 @@ export default async function Page() {
       <AboutMe navItem={mainNav.find(item => item.id === 'aboutMe')} />
       <Skills navItem={mainNav.find(item => item.id === 'skills')} />
       <Experience navItem={mainNav.find(item => item.id === 'experience')} />
+      <Projects navItem={mainNav.find(item => item.id === 'projects')} />
       <Education navItem={mainNav.find(item => item.id === 'education')} />
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
       <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
