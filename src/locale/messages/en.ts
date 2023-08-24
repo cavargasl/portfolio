@@ -55,8 +55,32 @@ export default {
       },
     ]
   },
+  "projects": {
+    tech: "Technologies",
+    items: [
+      {
+        title: "Portfolio",
+        description: "Personal web portfolio, where you can find information about me, my skills, my work experience and my projects.",
+      },
+      {
+        title: "Hackathon frontend · Periferia",
+        description: "React application, through HTTP requests to the backend built in NestJS, can detect patterns of more than four identical letters in a resizable array to receive the response. The queried attempts (successful and failed) are displayed, along with an average, thanks to the logic implemented in the backend.",
+      },
+      {
+        title: "Hackathon backend · Periferia",
+        description: "Backend built in NestJS that searches for patterns of more than four identical letters in an NxN matrix in different directions (diagonal, horizontal, or vertical). Additionally, it records the queried attempts and calculates their average, providing a comprehensive and efficient solution with best practices.",
+      },
+      {
+        title: "E-Commerce · Amar",
+        description: "E-commerce website, where beauty and personal care products can be purchased. A shopping cart is implemented to proceed with payment through WhatsApp, deployed on Vercel.",
+      },
+      {
+        title: "Backend course with NodeJS",
+        description: "Backend project built in NodeJS, where a REST API is implemented with Express, connected to a MongoDB database using mongoose, implementing Typescript and best practices.",
+      },
+    ]
+  },
   "education": {
-    title: "Education",
     "university": {
       title: "Multimedia Engineering",
       name: "San Buenaventura University | Cartagena - Colombia",

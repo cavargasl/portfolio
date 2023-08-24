@@ -55,8 +55,32 @@ export default {
       },
     ]
   },
+  "projects": {
+    tech: "Tecnologías",
+    items: [
+      {
+        title: "Portafolio",
+        description: "Portafolio web personal, donde puedes encontrar información sobre mí, mis habilidades, mi experiencia laboral y mis proyectos.",
+      },
+      {
+        title: "Hackathon frontend · Periferia",
+        description: "Aplicación de React, mediante solicitudes HTTP al backend construido en NestJS se puede detectar patrones de más de cuatro letras iguales en un matriz modificable en tamaño para recibir la respuesta. Se muestran los intentos consultados (satisfactorios y fallido) y un promedio, gracias a la lógica implementada en backend.",
+      },
+      {
+        title: "Hackathon backend · Periferia",
+        description: "Backend construido en NestJS que busca patrones de más de cuatro letras iguales en una matriz de NxN en diferentes direcciones (oblicua, horizontal o vertical). Además, registra los intentos consultados y calcula su promedio, brindando una solución completa y eficiente con las mejores practicas.",
+      },
+      {
+        title: "Comercio electrónico · Amar",
+        description: "Sitio web de comercio electrónico, donde se pueden comprar productos de belleza y cuidado personal. Se implementa un carrito de compras para proceder a pagar por WhatsApp desplegado en Vercel.",
+      },
+      {
+        title: "Curso de backend con NodeJS",
+        description: "Proyecto backend construido en NodeJS, donde se implementa una API REST con Express, se conecta a una base de datos MongoDB con mongoose, implementando Typescript y buenas practicas",
+      },
+    ]
+  },
   "education": {
-    title: "Educación",
     "university": {
       title: "Ingeniería Multimedia",
       name: "Universidad de San Buenaventura | Cartagena - Colombia",
