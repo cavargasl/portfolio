@@ -28,6 +28,14 @@ const skills: SkillsObject[] = [
         title: 'TypeScript',
         icon: <BrandTypeScript />
       },
+      {
+        title: 'HTML',
+        icon: <IconHTML />
+      },
+      {
+        title: 'CSS',
+        icon: <IconCSS />
+      },
     ]
   },
   {
@@ -41,14 +49,6 @@ const skills: SkillsObject[] = [
       {
         title: 'React.js',
         icon: <BrandReact />
-      },
-      {
-        title: 'HTML',
-        icon: <IconHTML />
-      },
-      {
-        title: 'CSS',
-        icon: <IconCSS />
       },
       {
         title: 'Tailwind CSS',
