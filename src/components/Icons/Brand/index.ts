@@ -1,3 +1,4 @@
+export * from './Auth0';
 export * from './Axios';
 export * from './ChakraUI';
 export * from './Clerk';
