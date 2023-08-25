@@ -17,9 +17,9 @@ export function BrandClerk(props: BrandClerkProps) {
       <path d="M15.9931 20.5624C18.5167 20.5624 20.5624 18.5167 20.5624 15.9931C20.5624 13.4696 18.5167 11.4238 15.9931 11.4238C13.4696 11.4238 11.4238 13.4696 11.4238 15.9931C11.4238 18.5167 13.4696 20.5624 15.9931 20.5624Z" fill={originalColor ? '#1F0256' : 'currentColor'} />
       <defs>
         <linearGradient id="paint0_linear_1251_8595" x1="21.8782" y1="-2.34508" x2="-10.513" y2="30.0487" gradientUnits="userSpaceOnUse">
-          <stop stop-color={originalColor ? '#17CCFC' : 'currentColor'} />
-          <stop offset="0.5" stop-color={originalColor ? '#5D31FF' : 'currentColor'} />
-          <stop offset="1" stop-color={originalColor ? '#F35AFF' : 'currentColor'} />
+          <stop stopColor={originalColor ? '#17CCFC' : 'currentColor'} />
+          <stop offset="0.5" stopColor={originalColor ? '#5D31FF' : 'currentColor'} />
+          <stop offset="1" stopColor={originalColor ? '#F35AFF' : 'currentColor'} />
         </linearGradient>
       </defs>
 

@@ -1,7 +1,7 @@
 import { getI18n } from "@/locale/server"
 import type { SidebarNavItem } from "@/types"
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://127.0.0.1:3000"
 
 export const siteConfig = {
   name:"Camilo Vargas | Frontend Developer",

@@ -12,16 +12,6 @@ export async function SocialMedia() {
   return (
     <div className='flex gap-6'>
       <Link
-        href={siteConfig.links.LinkedIn}
-        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
-        target='_blank'
-        aria-label={scopeT("socialLinks.LinkedIn")}
-      >
-        <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
-          <BrandLinkedIn className='h-8 w-8' />
-        </span>
-      </Link>
-      <Link
         href={siteConfig.links.github}
         className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
@@ -29,6 +19,16 @@ export async function SocialMedia() {
       >
         <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
           <BrandGitHub className='h-8 w-8' />
+        </span>
+      </Link>
+      <Link
+        href={siteConfig.links.LinkedIn}
+        className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
+        target='_blank'
+        aria-label={scopeT("socialLinks.LinkedIn")}
+      >
+        <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
+          <BrandLinkedIn className='h-8 w-8' />
         </span>
       </Link>
       <Link

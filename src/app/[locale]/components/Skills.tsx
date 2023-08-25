@@ -1,15 +1,15 @@
-import { BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrisma, BrandRadix, BrandReact, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandAntDesign, BrandAuth0, BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandESLint, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrettier, BrandPrisma, BrandRadix, BrandReact, BrandReactHookForm, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSass, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, BrandZod, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
-import type { SidebarNavItem, TypeSkills } from '@/types';
+import type { SidebarNavItem, SkillName } from '@/types';
 
 interface SkillsObject {
   title: string
   colSpan?: string
   justifyCenter?: string
   items: {
-    title: TypeSkills
+    title: SkillName
     icon: JSX.Element
   }[]
 }
@@ -28,6 +28,14 @@ const skills: SkillsObject[] = [
         title: 'TypeScript',
         icon: <BrandTypeScript />
       },
+      {
+        title: 'HTML',
+        icon: <IconHTML />
+      },
+      {
+        title: 'CSS',
+        icon: <IconCSS />
+      },
     ]
   },
   {
@@ -43,16 +51,12 @@ const skills: SkillsObject[] = [
         icon: <BrandReact />
       },
       {
-        title: 'HTML',
-        icon: <IconHTML />
-      },
-      {
-        title: 'CSS',
-        icon: <IconCSS />
-      },
-      {
         title: 'Tailwind CSS',
         icon: <BrandTailwind />
+      },
+      {
+        title: 'SASS',
+        icon: <BrandSass />
       },
       {
         title: 'Styled Components',
@@ -69,6 +73,10 @@ const skills: SkillsObject[] = [
       {
         title: 'Radix',
         icon: <BrandRadix />
+      },
+      {
+        title: 'Ant Design',
+        icon: <BrandAntDesign />
       },
     ]
   },
@@ -138,7 +146,6 @@ const skills: SkillsObject[] = [
   },
   {
     title: 'Version Control',
-    colSpan: "sm:col-span-2",
     items: [
       {
         title: 'Git',
@@ -177,14 +184,31 @@ const skills: SkillsObject[] = [
   },
   {
     title: 'Others',
+    colSpan: "sm:col-span-2",
     items: [
       {
         title: 'Clerk',
         icon: <BrandClerk />
       },
       {
-        title: 'Figma',
-        icon: <BrandFigma />
+        title: 'Zod',
+        icon: <BrandZod />
+      },
+      {
+        title: 'React Hook Form',
+        icon: <BrandReactHookForm />
+      },
+      {
+        title: 'ESLint',
+        icon: <BrandESLint />
+      },
+      {
+        title: 'Auth0',
+        icon: <BrandAuth0 />
+      },
+      {
+        title: 'Prettier',
+        icon: <BrandPrettier />
       },
       {
         title: 'Postman',
@@ -202,6 +226,10 @@ const skills: SkillsObject[] = [
         title: 'Slack',
         icon: <BrandSlack />
       },
+      {
+        title: 'Figma',
+        icon: <BrandFigma />
+      },
     ]
   },
 ]
@@ -215,7 +243,7 @@ export default function Skills({ navItem }: SkillsProps = {}) {
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center gap-16 px-8 lg:px-12'
+      className='flex h-full min-h-screen flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">

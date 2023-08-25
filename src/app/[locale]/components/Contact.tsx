@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/Button"
-import { getScopedI18n } from "@/locale/server"
+import { getScopedI18n, getCurrentLocale } from "@/locale/server"
 import { type SidebarNavItem } from "@/types"
 import Link from "next/link"
 import { SocialMedia } from "./layouts/components/SocialMedia"
@@ -20,7 +20,7 @@ export default async function Contact({ navItem }: ContactProps) {
       <p className='w-full text-center text-lg md:w-[60ch]'>{t("content", { br: <br /> })}</p>
       <SocialMedia />
       <Link
-        href={`/documents/es_CamiloVargas.pdf`}
+        href={`/documents/${getCurrentLocale()}_CamiloVargas.pdf`}
         target="_blank"
         aria-label={t("cv")}
         rel="noopener noreferrer"

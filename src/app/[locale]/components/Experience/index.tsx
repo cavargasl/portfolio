@@ -1,4 +1,4 @@
-import type { SidebarNavItem, TypeSkills } from "@/types"
+import type { SidebarNavItem, SkillName } from "@/types"
 import { ExperienceList } from "./components/ExperienceList"
 import Card from "@/components/ui/Card"
 import { getScopedI18n } from "@/locale/server"
@@ -30,8 +30,9 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "Redux",
         "Firebase",
         "Git",
-        "GitHub"
-      ] satisfies TypeSkills[]
+        "GitHub",
+        "Radix",
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.1.position"),
@@ -55,7 +56,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "SCRUM",
         "Git",
         "GitLab"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.2.position"),
@@ -76,7 +77,7 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "SCRUM",
         "Git",
         "JavaScript"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
     {
       position: t("jobs.3.position"),
@@ -95,14 +96,15 @@ export default async function Experience({ navItem }: ExperienceProps) {
         "Git",
         "Jira Software",
         "React Native"
-      ] satisfies TypeSkills[]
+      ] satisfies ReadonlyArray<SkillName>
     },
   ]
+  
   return (
     <section
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full snap-y flex-col items-center gap-16 px-8 lg:px-12'
+      className='flex h-full snap-y flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <ExperienceList>
