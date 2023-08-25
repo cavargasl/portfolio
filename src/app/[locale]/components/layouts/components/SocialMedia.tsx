@@ -15,6 +15,7 @@ export async function SocialMedia() {
         href={siteConfig.links.github}
         className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
+        rel="noopener noreferrer"
         aria-label={scopeT("socialLinks.github")}
       >
         <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
@@ -25,6 +26,7 @@ export async function SocialMedia() {
         href={siteConfig.links.LinkedIn}
         className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
+        rel="noopener noreferrer"
         aria-label={scopeT("socialLinks.LinkedIn")}
       >
         <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
@@ -35,6 +37,7 @@ export async function SocialMedia() {
         href={siteConfig.links.twitter}
         className={cn(buttonVariants({ variant: 'ghost', size: "icon" }), 'group text-secondary hover:bg-transparent hover:text-secondary')}
         target='_blank'
+        rel="noopener noreferrer"
         aria-label={scopeT("socialLinks.twitter")}
       >
         <span className='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>

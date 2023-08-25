@@ -21,8 +21,21 @@ export default async function Page() {
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
       <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
         <p className='text-center text-background'>
-          {scopeFooterT("content",
-            { fullName: <Link href={links.github} target='_blank' className='font-bold hover:underline'>Camilo Vargas</Link> })
+          {
+            scopeFooterT("content",
+              {
+                fullName:
+                  <Link
+                    href={links.github}
+                    target='_blank'
+                    className='font-bold hover:underline'
+                    aria-label='Github'
+                    rel="noopener noreferrer"
+                  >
+                    Camilo Vargas
+                  </Link>
+              }
+            )
           }
         </p>
       </footer>

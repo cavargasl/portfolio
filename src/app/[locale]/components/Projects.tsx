@@ -303,13 +303,13 @@ export default async function Projects({ navItem }: ProjectsProps) {
                   <div className="inline-flex gap-2">
                     {
                       project.webSite &&
-                      <Link href={project.webSite} target="_blank">
+                      <Link href={project.webSite} target="_blank" rel="noopener noreferrer" aria-label={project.webSite}>
                         <IconExternalLink className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-secondary' />
                       </Link>
                     }
                     {
                       project.github.map(url => (
-                        <Link key={url} href={url} target="_blank">
+                        <Link key={url} href={url} target="_blank" rel="noopener noreferrer" aria-label={url}>
                           <BrandGitHub className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
                         </Link>
                       ))
@@ -343,13 +343,13 @@ export default async function Projects({ navItem }: ProjectsProps) {
                   <div className="inline-flex gap-2">
                     {
                       test.webSite &&
-                      <Link href={test.webSite} target="_blank">
+                      <Link href={test.webSite} target="_blank" rel="noopener noreferrer" aria-label={test.webSite}>
                         <IconExternalLink className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
                       </Link>
                     }
                     {
                       test.github.map(url => (
-                        <Link key={url} href={url} target="_blank">
+                        <Link key={url} href={url} target="_blank" rel="noopener noreferrer" aria-label={url}>
                           <BrandGitHub className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
                         </Link>
                       ))
@@ -384,6 +384,8 @@ function ExternalLink({ url }: { url: string }) {
     <Link
       href={url}
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label={url}
       className={cn(buttonVariants({ variant: "link", size: "icon" }), "h-0 w-fit p-0 text-secondary transition-colors duration-200 ease-out-expo hover:text-primary")}>
       <IconLink className='h-4 w-4 ' />
     </Link>
