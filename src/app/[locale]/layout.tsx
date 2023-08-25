@@ -5,7 +5,6 @@ import { getSiteConfig, siteConfig } from "@/config/siteConfig"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import "@/styles/global.css"
-import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -85,7 +84,6 @@ export default async function Root({ children, params }: RootProps) {
           </ThemeProvider>
         </I18nProvider>
         <TailwindIndicator />
-        <Analytics />
       </body>
     </html>
   )
