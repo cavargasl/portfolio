@@ -64,11 +64,7 @@ export default {
       },
       {
         title: "Hackathon frontend · Periferia",
-        description: "React application, through HTTP requests to the backend built in NestJS, can detect patterns of more than four identical letters in a resizable array to receive the response. The queried attempts (successful and failed) are displayed, along with an average, thanks to the logic implemented in the backend.",
-      },
-      {
-        title: "Hackathon backend · Periferia",
-        description: "Backend built in NestJS that searches for patterns of more than four identical letters in an NxN matrix in different directions (diagonal, horizontal, or vertical). Additionally, it records the queried attempts and calculates their average, providing a comprehensive and efficient solution with best practices.",
+        description: "A ReactJs and NestJs application that, through HTTP requests to the backend, can detect patterns of more than four identical letters in an NxN matrix in different directions (diagonal, horizontal, or vertical) to receive the response. Additionally, it logs the queried attempts and calculates their average, providing a complete and efficient solution following best practices. On the front end, queried attempts (successful and unsuccessful) and an average are displayed, thanks to the logic implemented in the backend.",
       },
       {
         title: "E-Commerce · Amar",

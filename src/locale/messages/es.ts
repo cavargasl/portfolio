@@ -63,12 +63,8 @@ export default {
         description: "Portafolio web personal, donde puedes encontrar información sobre mí, mis habilidades, mi experiencia laboral y mis proyectos.",
       },
       {
-        title: "Hackathon frontend · Periferia",
-        description: "Aplicación de React, mediante solicitudes HTTP al backend construido en NestJS se puede detectar patrones de más de cuatro letras iguales en un matriz modificable en tamaño para recibir la respuesta. Se muestran los intentos consultados (satisfactorios y fallido) y un promedio, gracias a la lógica implementada en backend.",
-      },
-      {
-        title: "Hackathon backend · Periferia",
-        description: "Backend construido en NestJS que busca patrones de más de cuatro letras iguales en una matriz de NxN en diferentes direcciones (oblicua, horizontal o vertical). Además, registra los intentos consultados y calcula su promedio, brindando una solución completa y eficiente con las mejores practicas.",
+        title: "Hackathon · Periferia",
+        description: "Aplicación de ReactJs y NestJs, mediante solicitudes HTTP al backend se puede detectar patrones de más de cuatro letras iguales en una matriz de NxN en diferentes direcciones (oblicua, horizontal o vertical) para recibir la respuesta, Además, registra los intentos consultados y calcula su promedio, brindando una solución completa y eficiente con las mejores practicas. En El front se muestran los intentos consultados (satisfactorios y fallido) y un promedio, gracias a la lógica implementada en backend.",
       },
       {
         title: "Comercio electrónico · Amar",

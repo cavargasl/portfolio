@@ -50,33 +50,23 @@ export default async function Projects({ navItem }: ProjectsProps) {
       title: t("items.1.title"),
       description: t("items.1.description"),
       image: '/images/hackathon.png',
-      github: ["https://github.com/cavargasl/hackathon-periferia-front"],
+      github: ["https://github.com/cavargasl/hackathon-periferia-front", "https://github.com/cavargasl/hackathon-periferia-back"],
       skills: [
         "TypeScript",
         "React.js",
+        "Nest.js",
         "Chakra UI",
         "Git",
         "GitHub",
-        "Axios"
-      ]
-    },
-    {
-      title: t("items.2.title"),
-      description: t("items.2.description"),
-      github: ["https://github.com/cavargasl/hackathon-periferia-back"],
-      skills: [
-        "TypeScript",
-        "Nest.js",
-        "Git",
-        "GitHub",
+        "Axios",
         "MySQL",
         "Type ORM",
         "Class Validator"
       ]
     },
     {
-      title: t("items.3.title"),
-      description: t("items.3.description"),
+      title: t("items.2.title"),
+      description: t("items.2.description"),
       image: '/images/amar.png',
       webSite: 'http://amar-shop.vercel.app/',
       github: ["https://github.com/cavargasl/eCommerce-Amar"],
@@ -91,8 +81,8 @@ export default async function Projects({ navItem }: ProjectsProps) {
       ]
     },
     {
-      title: t("items.4.title"),
-      description: t("items.4.description"),
+      title: t("items.3.title"),
+      description: t("items.3.description"),
       github: ["https://github.com/cavargasl/course-node"],
       skills: [
         "TypeScript",
