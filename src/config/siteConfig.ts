@@ -7,7 +7,7 @@ export const siteConfig = {
   name:"Camilo Vargas | Frontend Developer",
   description: "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
   url: BASE_URL,
-  ogImage: `${BASE_URL}/og.png}`,
+  ogImage: `${BASE_URL}/images/og.png`,
   links: {
     twitter: "https://twitter.com/cavargasl",
     github: "https://github.com/cavargasl",
