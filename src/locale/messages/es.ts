@@ -171,7 +171,7 @@ export default {
   },
   "siteConfig": {
     "title": "Camilo Vargas | Desarrollador Frontend",
-    "description": "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
+    "description": "Portafolio web personal, donde puedes encontrar información sobre mí, mis habilidades, mi experiencia laboral y mis proyectos.",
     "sidebarNav": {
       "aboutMe": "Sobre mi",
       "projects": "Proyectos",

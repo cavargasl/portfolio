@@ -171,7 +171,7 @@ export default {
   },
   "siteConfig": {
     "title": "Camilo Vargas | Frontend Developer",
-    "description": "Professional portfolio of Camilo Vargas. frontend developer.",
+    "description": "Personal web portfolio, where you can find information about me, my skills, my work experience, and my projects.",
     "sidebarNav": {
       "aboutMe": "About me",
       "projects": "Projects",

@@ -5,7 +5,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://127.0.0.1:3000"
 
 export const siteConfig = {
   name:"Camilo Vargas | Frontend Developer",
-  description: "Portafolio profesional de Camilo Vargas, desarrollador frontend.",
+  description: "Personal web portfolio, where you can find information about me, my skills, my work experience, and my projects.",
   url: BASE_URL,
   ogImage: `${BASE_URL}/images/og.png`,
   links: {
