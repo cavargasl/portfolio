@@ -250,7 +250,7 @@ export default function Skills({ navItem }: SkillsProps = {}) {
         {
           skills.map((item, idx) => (
             <fieldset key={item.title} className={cn("relative flex flex-col gap-2 rounded-sm border-muted p-4", item.colSpan)}>
-              <legend className="line-clamp-1 px-1 text-center text-2xl font-bold text-paragraph">{item.title}</legend>
+              <legend className="line-clamp-1 w-full px-1 text-center text-2xl font-bold text-paragraph">{item.title}</legend>
               {idx > 0 && <Separator orientation="horizontal" className={cn("absolute left-0 top-[calc(-32px-1.25rem)] block sm:hidden")} />}
               <div className={cn("grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6", item.justifyCenter)}>
                 {
