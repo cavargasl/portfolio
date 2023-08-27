@@ -1,4 +1,5 @@
 export * from './AntDesign';
+export * from './Atlassian';
 export * from './Auth0';
 export * from './Axios';
 export * from './ChakraUI';
