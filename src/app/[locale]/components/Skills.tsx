@@ -1,4 +1,4 @@
-import { BrandAntDesign, BrandAuth0, BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandESLint, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrettier, BrandPrisma, BrandRadix, BrandReact, BrandReactHookForm, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSass, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, BrandZod, IconCSS, IconHTML } from '@/components/Icons';
+import { BrandAntDesign, BrandAtlassian, BrandAuth0, BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandESLint, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrettier, BrandPrisma, BrandRadix, BrandReact, BrandReactHookForm, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSass, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, BrandZod, IconCSS, IconHTML } from '@/components/Icons';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
@@ -221,6 +221,10 @@ const skills: SkillsObject[] = [
       {
         title: 'Jira Software',
         icon: <BrandJira />
+      },
+      {
+        title: 'Atlassian',
+        icon: <BrandAtlassian />
       },
       {
         title: 'Slack',
