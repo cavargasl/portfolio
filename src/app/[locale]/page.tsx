@@ -6,6 +6,7 @@ import Contact from './components/Contact'
 import Education from './components/Education'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import ScrollIndicator from './components/ScrollIndicator'
 import Skills from './components/Skills'
 
 export default async function Page() {
@@ -13,6 +14,7 @@ export default async function Page() {
   const scopeFooterT = await getScopedI18n('footer')
   return (
     <>
+      <ScrollIndicator />
       <AboutMe navItem={mainNav.find(item => item.id === 'aboutMe')} />
       <Skills navItem={mainNav.find(item => item.id === 'skills')} />
       <Experience navItem={mainNav.find(item => item.id === 'experience')} />
