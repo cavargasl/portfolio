@@ -20,7 +20,7 @@ export default async function Page() {
       <Education navItem={mainNav.find(item => item.id === 'education')} />
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
       <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
-        <p className='text-center text-background'>
+        <p className='flex flex-wrap justify-center gap-1 text-center text-background'>
           {
             scopeFooterT("content",
               {
@@ -28,7 +28,7 @@ export default async function Page() {
                   <Link
                     href={links.github}
                     target='_blank'
-                    className='font-bold hover:underline'
+                    className='line-clamp-1 font-bold hover:underline'
                     aria-label='Github'
                     rel="noopener noreferrer"
                   >
