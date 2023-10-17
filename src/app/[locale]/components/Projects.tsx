@@ -97,6 +97,32 @@ export default async function Projects({ navItem }: ProjectsProps) {
 
   const techTest: TechTest[] = [
     {
+      title: t("itemsTest.9.title"),
+      description: t("itemsTest.9.description", {
+        url: <ExternalLink url={"https://dummyjson.com/docs/todos"} />
+      }),
+      time: t("itemsTest.9.time"),
+      github: ["https://github.com/cavargasl/cs3-test"],
+      webSite: "https://cs3-test-camilovargas123.vercel.app/",
+      enterprise: "CS3 - Comercializadora de software, servicios y suministros",
+      skills: [
+        "TypeScript",
+        "React.js",
+        "Git",
+        "GitHub",
+        "Tailwind CSS",
+        "React Query",
+        "Zod",
+        "Jest",
+        "Redux",
+        "Radix",
+        "Axios",
+        "Tailwind-merge",
+        "React Hook Form",
+        "clsx",
+      ]
+    },
+    {
       title: t("itemsTest.0.title"),
       description: t("itemsTest.0.description"),
       time: t("itemsTest.0.time"),

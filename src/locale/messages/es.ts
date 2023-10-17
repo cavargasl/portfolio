@@ -122,6 +122,11 @@ export default {
         description: "Realizar en React una lista To-Do, la cual es una serie de ítems, organizados, que corresponden a las tareas pendientes del usuario. debe contener las siguientes características: Permitir al usuario ver una lista con las actividades pendientes, permitir al usuario agregar una nueva actividad a la lista, permitir al usuario marcar una actividad como realizada, permitir al usuario eliminar una actividad de la lista, permitir editar la descripción de una actividad, permitir filtrar lista de actividades por texto de descripción, permitir al usuario llenar la lista de actividades con frases aleatorias de gatos {url} indicando cuantas quiere agregar.",
         time: "Tiempo para la prueba: 1 día"
       },
+      {
+        title: "lista To-Do",
+        description: "La aplicación es una herramienta de gestión de tareas que ayuda a los usuarios a organizar sus actividades diarias de manera eficiente. Permite ver consumiendo la API {url}, agregar, editar y eliminar actividades de una lista. Los usuarios pueden marcar las actividades como realizadas y filtrarlas según su estado (pendientes o completadas) o descripción. El diseño es responsive y ofrece una experiencia de usuario agradable para mantenerse organizado y productivo.",
+        time: "Tiempo para la prueba: 3 días"
+      },
     ]
   },
   "education": {
