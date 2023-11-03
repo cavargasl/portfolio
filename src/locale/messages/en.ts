@@ -127,6 +127,11 @@ export default {
         description: "The application is a task management tool that helps users organize their daily activities efficiently. It allows you to view by consuming the API {url}, add, edit, and delete tasks from a list. Users can mark tasks as completed and filter them based on their status (pending or completed) or description. The design is responsive and offers a pleasant user experience to stay organized and productive.",
         time: "Time for the test: 3 days"
       },
+      {
+        title: "Authentication and CRUD",
+        description: "Create a login form, a table to list users, and a form to create new users. For login, use the {url} API and store the generated token, which must be sent in each subsequent request to the API in a header called 'Authorization'. Organize your code following the proper structure guidelines for React. Additionally, consider performing unit testing and optionally e2e functional testing if relevant to your project.",
+        time: "Time for the test: 2 days"
+      },
     ]
   },
   "education": {

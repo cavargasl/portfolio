@@ -97,6 +97,31 @@ export default async function Projects({ navItem }: ProjectsProps) {
 
   const techTest: TechTest[] = [
     {
+      title: t("itemsTest.10.title"),
+      description: t("itemsTest.10.description", {
+        url: <ExternalLink url={"https://reqres.in/api/"} />
+      }),
+      time: t("itemsTest.10.time"),
+      github: ["https://github.com/cavargasl/soluciones-americanas-test"],
+      webSite: "https://soluciones-americanas-test.vercel.app/",
+      enterprise: "Soluciones Americanas S.A.S",
+      skills: [
+        "TypeScript",
+        "React.js",
+        "Git",
+        "GitHub",
+        "Tailwind CSS",
+        "Zod",
+        "Cypress",
+        "Radix",
+        "Axios",
+        "Tailwind-merge",
+        "React Hook Form",
+        "clsx",
+        "React Router Dom"
+      ]
+    },
+    {
       title: t("itemsTest.9.title"),
       description: t("itemsTest.9.description", {
         url: <ExternalLink url={"https://dummyjson.com/docs/todos"} />
@@ -346,7 +371,7 @@ export default async function Projects({ navItem }: ProjectsProps) {
                 <footer className="flex flex-col gap-1">
                   <p>{t("tech") + ":"}</p>
                   <div className="flex flex-wrap gap-1">
-                    {project.skills.sort().map((skill, idx) => <Badge key={idx} variant={"secondary"}>{skill}</Badge>)}
+                    {project.skills.sort().map(skill => <Badge key={skill} variant={"secondary"}>{skill}</Badge>)}
                   </div>
                 </footer>
               </div>
@@ -388,7 +413,7 @@ export default async function Projects({ navItem }: ProjectsProps) {
                 <footer className="flex flex-col gap-1">
                   <p>{t("tech") + ":"}</p>
                   <div className="flex flex-wrap gap-1">
-                    {test.skills.sort().map((skill, idx) => <Badge key={idx} variant={"default"} className="px-1.5 py-0">{skill}</Badge>)}
+                    {test.skills.sort().map(skill => <Badge key={skill} variant={"default"} className="px-1.5 py-0">{skill}</Badge>)}
                   </div>
                 </footer>
               </div>

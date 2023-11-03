@@ -127,6 +127,11 @@ export default {
         description: "La aplicación es una herramienta de gestión de tareas que ayuda a los usuarios a organizar sus actividades diarias de manera eficiente. Permite ver consumiendo la API {url}, agregar, editar y eliminar actividades de una lista. Los usuarios pueden marcar las actividades como realizadas y filtrarlas según su estado (pendientes o completadas) o descripción. El diseño es responsive y ofrece una experiencia de usuario agradable para mantenerse organizado y productivo.",
         time: "Tiempo para la prueba: 3 días"
       },
+      {
+        title: "Autenticación y CRUD",
+        description: "Crear un formulario de inicio de sesión, una tabla para listar usuarios y un formulario para crear nuevos usuarios. Para el inicio de sesión, utiliza el API {url} y almacena el token generado, que se debe enviar en cada solicitud subsiguiente al API en un encabezado llamado 'Authorization'. Organiza tu código siguiendo las pautas de estructura adecuadas para React. Además, considera realizar pruebas de unidad y, opcionalmente, pruebas funcionales e2e si es relevante para tu proyecto.",
+        time: "Tiempo para la prueba: 2 días"
+      },
     ]
   },
   "education": {
