@@ -13,6 +13,7 @@ export * from './Firebase';
 export * from './Git';
 export * from './GitHub';
 export * from './GitLab';
+export * from './GraphQl';
 export * from './JavaScript';
 export * from './Jest';
 export * from './Jira';
