@@ -87,7 +87,6 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
                       href={`#${item.id}`}
                       onClick={toggleSidebar}
                       aria-label={item.title}
-                      rel="noopener noreferrer"
                     >
                       {item.title}
                     </Link>
