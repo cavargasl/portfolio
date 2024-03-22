@@ -129,12 +129,12 @@ export default {
         time: "Time for the test: 2 days"
       },
       {
-        title: "To-Do list",
+        title: "To-Do list 1",
         description: "Create a To-Do list in React, which is a series of organized items corresponding to the user's pending tasks. It should include the following features: Allow users to view a list of pending activities, let users add a new activity to the list, allow users to mark an activity as done, let users delete an activity from the list, allow users to edit the description of an activity, enable filtering the activity list by description text, and allow users to populate the activity list with random cat phrases from {url}, indicating how many they want to add.",
         time: "Time for the test: 1 day"
       },
       {
-        title: "To-Do list",
+        title: "To-Do list 2",
         description: "The application is a task management tool that helps users organize their daily activities efficiently. It allows you to view by consuming the API {url}, add, edit, and delete tasks from a list. Users can mark tasks as completed and filter them based on their status (pending or completed) or description. The design is responsive and offers a pleasant user experience to stay organized and productive.",
         time: "Time for the test: 3 days"
       },
