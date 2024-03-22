@@ -53,6 +53,17 @@ export default {
           "Resolver tareas de ajustes de estilos con sass y correcciones de bugs en la web."
         ]
       },
+      {
+        position: 'Frontend Developer',
+        title: 'CS3 Comercializadora de Software, Servicios y Suministros S.A.S · Jornada completa',
+        date: 'nov. 2023 - feb. 2024 · 4 meses',
+        descriptions: [
+          "Implementación de buenas prácticas en Next.js (refactorización de componentes, manejo de variables, clean code, etc).",
+          "Organización del proyecto para mantener sincronía entre los desarrolladores utilizando ESLint y Prettier.",
+          "Consumo de servicios brindados por el backend mediante GraphQL, utilizando tecnologías como Codegen.",
+          "Refactorización de componentes para facilitar el uso y la escalabilidad, empleando Tailwind CSS, Tailwind Merge y Class Variant Authority."
+        ]
+      },
     ]
   },
   "projects": {

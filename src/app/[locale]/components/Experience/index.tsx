@@ -12,6 +12,26 @@ export default async function Experience({ navItem }: ExperienceProps) {
   const t = await getScopedI18n("experience")
   const experience = [
     {
+      position: t("jobs.4.position"),
+      title: t("jobs.4.title"),
+      date: t("jobs.4.date"),
+      descriptions: [
+        t("jobs.4.descriptions.0"),
+        t("jobs.4.descriptions.1"),
+        t("jobs.4.descriptions.2"),
+        t("jobs.4.descriptions.3"),
+      ],
+      skills: [
+        "Zustand",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Git",
+        "Atlassian",
+        "GraphQL",
+      ] satisfies ReadonlyArray<SkillName>
+    },
+    {
       position: t("jobs.0.position"),
       title: t("jobs.0.title"),
       date: t("jobs.0.date"),
