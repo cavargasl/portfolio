@@ -1,4 +1,4 @@
-export type IdsNav = 'aboutMe' | 'projects' | 'experience' | 'education' | 'skills' | 'contact'
+export type IdsNav = 'aboutMe' | 'projects' | 'experience' | 'education' | 'skills' | 'contact' | 'technicalTest'
 interface NavItem {
   id: IdsNav
   title: string
@@ -14,3 +14,11 @@ const skillsNames = [
 ] as const
 
 export type SkillName = (typeof skillsNames)[number]
+
+export type Cards = {
+  title: string
+  description: React.ReactNode
+  webSite?: string
+  github: Array<string>
+  skills: Array<SkillName>
+}
