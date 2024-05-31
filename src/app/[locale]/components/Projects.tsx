@@ -326,7 +326,7 @@ export default async function Projects({ navItem }: ProjectsProps) {
       className='flex h-full min-h-screen flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-secondary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,25rem),1fr))] gap-8">
+      <div className="grid max-w-screen-2xl grid-cols-[repeat(auto-fit,minmax(min(100%,25rem),1fr))] gap-8">
         {
           projects.map(project => (
             <div
@@ -381,7 +381,7 @@ export default async function Projects({ navItem }: ProjectsProps) {
       </div>
 
       <h3 className='border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl'>{t("techTest")}</h3>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6">
+      <div className="grid max-w-screen-2xl grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6">
         {
           techTest.map(test => (
             <div
