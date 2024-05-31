@@ -39,6 +39,10 @@ export async function getSiteConfig() {
         title: t("siteConfig.sidebarNav.projects"),
       },
       {
+        id: "technicalTest",
+        title: t("siteConfig.sidebarNav.technicalTest"),
+      },
+      {
         id: "education",
         title: t("siteConfig.sidebarNav.education"),
       },

@@ -219,6 +219,7 @@ export default {
       aboutMe: "Sobre mi",
       projects: "Proyectos",
       experience: "Experiencia",
+      technicalTest: "Pruebas técnicas",
       education: "Educación",
       skills: "Habilidades",
       contact: "Contacto",

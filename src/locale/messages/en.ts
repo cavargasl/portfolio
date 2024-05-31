@@ -219,6 +219,7 @@ export default {
     sidebarNav: {
       aboutMe: "About me",
       projects: "Projects",
+      technicalTest: "Technical tests",
       experience: "Experience",
       education: "Education",
       skills: "Skills",
