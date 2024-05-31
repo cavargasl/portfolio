@@ -1,6 +1,7 @@
 import { getScopedI18n } from "@/locale/server";
 import type { SidebarNavItem } from "@/types";
 import { SocialMedia } from "./layouts/components/SocialMedia";
+import SectionContainer from "@/components/SectionContainer";
 
 interface AboutMeProps {
   navItem?: SidebarNavItem
@@ -10,10 +11,10 @@ export default async function AboutMe({ navItem }: AboutMeProps) {
   const t = await getScopedI18n("home")
 
   return (
-    <section
+    <SectionContainer
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center justify-center gap-16 p-8 lg:px-12'
+      className='min-h-screen justify-center'
     >
       <div className='flex flex-col items-center gap-2 lg:w-fit'>
         <h1 className='w-full bg-gradient-to-r from-primary to-tertiary bg-clip-text text-center font-mono text-6xl font-bold !leading-tight text-transparent sm:text-7xl'>Camilo Vargas</h1>
@@ -21,6 +22,6 @@ export default async function AboutMe({ navItem }: AboutMeProps) {
       </div>
       <p className='w-full text-center text-xl md:w-[58ch] xl:w-[66ch]'>{t("welcome")}</p>
       <SocialMedia />
-    </section>
+    </SectionContainer>
   )
 }

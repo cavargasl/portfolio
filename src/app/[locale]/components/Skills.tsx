@@ -1,4 +1,5 @@
 import { BrandAntDesign, BrandAtlassian, BrandAuth0, BrandAxios, BrandChakraUI, BrandClerk, BrandCypress, BrandDrizzle, BrandESLint, BrandExpress, BrandFigma, BrandFirebase, BrandGit, BrandGitHub, BrandGitLab, BrandGraphQL, BrandJavaScript, BrandJest, BrandJira, BrandMUI, BrandMongoDB, BrandMySQL, BrandNest, BrandNext, BrandNode, BrandPostman, BrandPrettier, BrandPrisma, BrandRadix, BrandReact, BrandReactHookForm, BrandReactQuery, BrandReactTesting, BrandRedux, BrandSass, BrandSlack, BrandStyledComponent, BrandTRPC, BrandTailwind, BrandTypeScript, BrandVSCode, BrandVitest, BrandZod, IconCSS, IconHTML } from '@/components/Icons';
+import SectionContainer from '@/components/SectionContainer';
 import SkillCard from "@/components/SkillCard";
 import { Separator } from "@/components/ui/Separator";
 import { cn } from "@/lib/utils";
@@ -248,13 +249,12 @@ interface SkillsProps {
 export default function Skills({ navItem }: SkillsProps = {}) {
 
   return (
-    <section
+    <SectionContainer
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
-      <div className="grid w-full max-w-screen-2xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
+      <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16">
         {
           skills.map((item, idx) => (
             <fieldset key={item.title} className={cn("relative flex flex-col gap-2 rounded-sm border-muted p-4", item.colSpan)}>
@@ -297,6 +297,6 @@ export default function Skills({ navItem }: SkillsProps = {}) {
           ))
         }
       </div>
-    </section>
+    </SectionContainer>
   )
 }

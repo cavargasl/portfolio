@@ -16,17 +16,17 @@ const ExperienceList = forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("relative grid w-full max-w-screen-2xl grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 md:grid-cols-[1fr_1.5rem_1fr] md:gap-x-8", className)}
+      className={cn("relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 lg:grid-cols-[1fr_1.5rem_1fr] lg:gap-x-8", className)}
       {...props}
     >
-      <Separator orientation="vertical" className="absolute left-3 bg-secondary md:left-1/2" />
+      <Separator orientation="vertical" className="absolute left-3 bg-secondary lg:left-1/2" />
       {
         childrenArray.map((job, idx) => {
           return (
             <Fragment key={idx}>
-              <Dot className="col-start-1 md:hidden" />
+              <Dot className="col-start-1 lg:hidden" />
               {idx % 2 === 0 ? job : null}
-              <Dot className="col-start-2 hidden md:flex" />
+              <Dot className="col-start-2 hidden lg:flex" />
               {idx % 2 !== 0 ? job : null}
             </Fragment>
           )

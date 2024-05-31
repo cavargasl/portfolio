@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/Badge"
 import { buttonVariants } from "@/components/ui/Button"
 import { BrandGitHub, IconExternalLink, IconLink } from "@/components/Icons"
+import SectionContainer from "@/components/SectionContainer"
 
 type TechTest = Cards & {
   time: string
@@ -251,15 +252,11 @@ export default async function TechnicalTest({
   ]
 
   return (
-    <section
-      id={navItem?.id}
-      aria-label={navItem?.title}
-      className="flex h-full min-h-screen flex-col items-center gap-16 p-8 lg:px-12"
-    >
+    <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
       <h3 className="border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl">
         {t("techTest")}
       </h3>
-      <div className="grid max-w-screen-2xl grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6">
         {techTest.map((test) => (
           <div
             key={test.title}
@@ -322,7 +319,7 @@ export default async function TechnicalTest({
           </div>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   )
 }
 

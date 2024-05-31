@@ -3,6 +3,7 @@ import { getScopedI18n, getCurrentLocale } from "@/locale/server"
 import { type SidebarNavItem } from "@/types"
 import Link from "next/link"
 import { SocialMedia } from "./layouts/components/SocialMedia"
+import SectionContainer from "@/components/SectionContainer"
 
 interface ContactProps {
   navItem?: SidebarNavItem
@@ -11,10 +12,10 @@ export default async function Contact({ navItem }: ContactProps) {
   const t = await getScopedI18n("contact")
 
   return (
-    <section
+    <SectionContainer
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full min-h-screen flex-col items-center justify-center gap-12 px-8 pb-14 pt-10 lg:px-12'
+      className='min-h-screen justify-center'
     >
       <h2 className='text-center text-3xl font-extrabold sm:text-4xl'>{t("title")}</h2>
       <p className='w-full text-center text-lg md:w-[60ch]'>{t("content", { br: <br /> })}</p>
@@ -28,6 +29,6 @@ export default async function Contact({ navItem }: ContactProps) {
       >
         {t("cv")}
       </Link>
-    </section>
+    </SectionContainer>
   )
 }

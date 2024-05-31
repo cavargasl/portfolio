@@ -3,6 +3,7 @@ import { ExperienceList } from "./components/ExperienceList"
 import Card from "@/components/ui/Card"
 import { getScopedI18n } from "@/locale/server"
 import { Badge } from "@/components/ui/Badge"
+import SectionContainer from "@/components/SectionContainer"
 
 interface ExperienceProps {
   navItem?: SidebarNavItem
@@ -121,10 +122,9 @@ export default async function Experience({ navItem }: ExperienceProps) {
   ]
   
   return (
-    <section
+    <SectionContainer
       id={navItem?.id}
       aria-label={navItem?.title}
-      className='flex h-full snap-y flex-col items-center gap-16 p-8 lg:px-12'
     >
       <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <ExperienceList>
@@ -155,6 +155,6 @@ export default async function Experience({ navItem }: ExperienceProps) {
           ))
         }
       </ExperienceList>
-    </section>
+    </SectionContainer>
   )
 }

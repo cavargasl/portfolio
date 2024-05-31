@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/siteConfig"
 import { AspectRatio } from "@/components/ui/AspectRatio"
 import { Badge } from "@/components/ui/Badge"
 import { BrandGitHub, IconExternalLink, IconImage } from "@/components/Icons"
+import SectionContainer from "@/components/SectionContainer"
 
 type ProjectsProps = {
   navItem?: SidebarNavItem
@@ -88,15 +89,14 @@ export default async function Projects({ navItem }: ProjectsProps) {
   ]
 
   return (
-    <section
+    <SectionContainer
       id={navItem?.id}
       aria-label={navItem?.title}
-      className="flex h-full min-h-screen flex-col items-center gap-16 p-8 lg:px-12"
     >
       <h3 className="border-b-4 border-secondary text-4xl font-bold sm:text-5xl">
         {navItem?.title}
       </h3>
-      <div className="grid max-w-screen-2xl grid-cols-[repeat(auto-fit,minmax(min(100%,25rem),1fr))] gap-8">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,25rem),1fr))] gap-8">
         {projects.map((project) => (
           <div
             key={project.title}
@@ -168,6 +168,6 @@ export default async function Projects({ navItem }: ProjectsProps) {
           </div>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   )
 }

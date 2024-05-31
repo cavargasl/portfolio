@@ -77,7 +77,7 @@ export default async function Root({ children, params }: RootProps) {
       )}>
         <I18nProvider locale={params.locale}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className='flex flex-col gap-20 lg:w-[calc(100%-16rem)]'>
+            <main className='flex snap-y flex-col gap-20 lg:w-[calc(100%-16rem)]'>
               {children}
             </main>
             <SidebarNav siteConfig={{ name, mainNav }} />
