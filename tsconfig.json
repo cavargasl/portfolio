@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist"
+  },
+  "include": ["./**/*"],
+  "exclude": [
+    "node_modules",
+    "./infrastructure/views/**/*"
+  ]
+}
