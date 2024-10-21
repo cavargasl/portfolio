@@ -1,5 +1,7 @@
 dist
 node_modules
 build
-infrastructure/views/**/*
+infrastructure/views
+pnpm-lock.yaml
+package-lock.json
 .env

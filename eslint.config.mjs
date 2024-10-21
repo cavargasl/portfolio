@@ -13,11 +13,10 @@ export default [
   eslintConfigPrettier,
   {
     rules: {
-      '@typescript-eslint/consistent-type-imports': [
-        'warn',
-        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
-      ],
+      '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports', fixStyle: 'inline-type-imports' }],
     },
   },
-  { ignores: ['node_modules', 'infrastructure/views/*', 'dist'] },
+  {
+    ignores: ['node_modules', 'dist', 'pnpm-lock.yaml', 'package-lock.json', 'infrastructure/views/**'],
+  },
 ]
