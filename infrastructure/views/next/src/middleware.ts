@@ -1,8 +1,9 @@
-import { createI18nMiddleware } from 'next-international/middleware'
 import { type NextRequest } from 'next/server'
 
+import { createI18nMiddleware } from 'next-international/middleware'
+
 const I18nMiddleware = createI18nMiddleware(['es', 'en'] as const, 'es', {
-  urlMappingStrategy: 'rewrite'
+  urlMappingStrategy: 'rewrite',
 })
 
 export function middleware(request: NextRequest) {
@@ -10,5 +11,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)"],
+  matcher: ['/((?!.*\\..*|_next).*)'],
 }

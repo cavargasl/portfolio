@@ -1,6 +1,7 @@
-import { getSiteConfig } from '@/config/siteConfig'
-import { getScopedI18n } from '@/locale/server'
 import Link from 'next/link'
+
+import { getSiteConfig } from '@/config/siteConfig'
+
 import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
 import Education from './components/Education'
@@ -9,6 +10,7 @@ import Projects from './components/Projects'
 import ScrollIndicator from './components/ScrollIndicator'
 import Skills from './components/Skills'
 import TechnicalTest from './components/TechnicalTest'
+import { getScopedI18n } from '@/locale/server'
 
 export default async function Page() {
   const { mainNav, links } = await getSiteConfig()
@@ -25,22 +27,19 @@ export default async function Page() {
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
       <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
         <p className='flex flex-wrap justify-center gap-1 text-center text-background'>
-          {
-            scopeFooterT("content",
-              {
-                fullName:
-                  <Link
-                    href={links.github}
-                    target='_blank'
-                    className='line-clamp-1 font-bold hover:underline'
-                    aria-label='Github'
-                    rel="noopener noreferrer"
-                  >
-                    Camilo Vargas
-                  </Link>
-              }
-            )
-          }
+          {scopeFooterT('content', {
+            fullName: (
+              <Link
+                href={links.github}
+                target='_blank'
+                className='line-clamp-1 font-bold hover:underline'
+                aria-label='Github'
+                rel='noopener noreferrer'
+              >
+                Camilo Vargas
+              </Link>
+            ),
+          })}
         </p>
       </footer>
     </>

@@ -15,14 +15,20 @@ const breakpointsTaller = {
   MD: 564,
   LG: 664,
 }
-const initialScreenSize: ScreenSize = {
-  SM: false,
-  MD: false,
-  LG: false,
-}
+const getInitialScreenSize = (): ScreenSize => ({
+  SM: window.innerWidth >= breakpoints.SM,
+  MD: window.innerWidth >= breakpoints.MD,
+  LG: window.innerWidth >= breakpoints.LG,
+})
+
+const getInitialScreenTallerSize = (): ScreenSize => ({
+  SM: window.innerHeight >= breakpointsTaller.SM,
+  MD: window.innerHeight >= breakpointsTaller.MD,
+  LG: window.innerHeight >= breakpointsTaller.LG,
+})
 export default function useScreenSize() {
-  const [isScreenLargerThan, setIsScreenLargerThan] = useState<ScreenSize>(initialScreenSize)
-  const [isScreenTallerThan, setIsScreenTallerThan] = useState<ScreenSize>(initialScreenSize)
+  const [isScreenLargerThan, setIsScreenLargerThan] = useState<ScreenSize>(getInitialScreenSize)
+  const [isScreenTallerThan, setIsScreenTallerThan] = useState<ScreenSize>(getInitialScreenTallerSize)
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -36,7 +42,6 @@ export default function useScreenSize() {
       setIsScreenTallerThan({ SM: isLargerTallerSM, MD: isLargerTallerMD, LG: isLargerTallerLG })
     }
 
-    checkScreenSize()
     window.addEventListener('resize', checkScreenSize)
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])

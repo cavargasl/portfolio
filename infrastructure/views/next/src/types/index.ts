@@ -9,11 +9,61 @@ interface NavItem {
 
 export type SidebarNavItem = NavItem
 
-const skillsNames = [
-  'JavaScript', 'TypeScript', 'Next.js', 'React.js', 'HTML', 'CSS', 'Tailwind CSS', 'Styled Components', 'Material UI', 'Chakra UI', 'Radix', 'Node.js', 'Express.js', 'Nest.js', 'tRPC', 'Drizzle ORM', 'Prisma', 'Firebase', 'MongoDB', 'MySQL', 'React Query', 'Redux', 'Axios', 'Git', 'GitHub', 'GitLab', 'Vitest', 'Jest', 'React Testing Library', 'Cypress', 'Clerk', 'Figma', 'Postman', 'Visual Studio Code', 'Jira Software', 'Slack', 'Keycloak', 'SCRUM', 'SASS', 'React Native', 'Zod', 'React Hook Form', 'Type ORM', 'Class Validator', 'ESLint', 'Prettier', 'Tailwind-merge', 'clsx', 'Auth0', "Ant Design", "Atlassian", "React Router Dom", "GraphQL", "Zustand"
-] as const
-
-export type SkillName = (typeof skillsNames)[number]
+export type SkillName =
+  | 'JavaScript'
+  | 'TypeScript'
+  | 'Next.js'
+  | 'React.js'
+  | 'HTML'
+  | 'CSS'
+  | 'Tailwind CSS'
+  | 'Styled Components'
+  | 'Material UI'
+  | 'Chakra UI'
+  | 'Radix'
+  | 'Node.js'
+  | 'Express.js'
+  | 'Nest.js'
+  | 'tRPC'
+  | 'Drizzle ORM'
+  | 'Prisma'
+  | 'Firebase'
+  | 'MongoDB'
+  | 'MySQL'
+  | 'React Query'
+  | 'Redux'
+  | 'Axios'
+  | 'Git'
+  | 'GitHub'
+  | 'GitLab'
+  | 'Vitest'
+  | 'Jest'
+  | 'React Testing Library'
+  | 'Cypress'
+  | 'Clerk'
+  | 'Figma'
+  | 'Postman'
+  | 'Visual Studio Code'
+  | 'Jira Software'
+  | 'Slack'
+  | 'Keycloak'
+  | 'SCRUM'
+  | 'SASS'
+  | 'React Native'
+  | 'Zod'
+  | 'React Hook Form'
+  | 'Type ORM'
+  | 'Class Validator'
+  | 'ESLint'
+  | 'Prettier'
+  | 'Tailwind-merge'
+  | 'clsx'
+  | 'Auth0'
+  | 'Ant Design'
+  | 'Atlassian'
+  | 'React Router Dom'
+  | 'GraphQL'
+  | 'Zustand'
 
 export type Cards = {
   title: string
