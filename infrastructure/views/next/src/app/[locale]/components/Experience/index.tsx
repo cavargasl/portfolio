@@ -1,12 +1,9 @@
 import type { SidebarNavItem, SkillName } from '@/types'
-
 import { Badge } from '@/components/ui/Badge'
 import Card from '@/components/ui/Card'
-
 import SectionContainer from '@/components/SectionContainer'
-
-import { ExperienceList } from './components/ExperienceList'
 import { getScopedI18n } from '@/locale/server'
+import { ExperienceList } from './components/ExperienceList'
 
 interface ExperienceProps {
   navItem?: SidebarNavItem

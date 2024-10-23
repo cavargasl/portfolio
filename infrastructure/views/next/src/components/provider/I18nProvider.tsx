@@ -1,7 +1,6 @@
 'use client'
 
 import { type ReactNode } from 'react'
-
 import { I18nProviderClient } from '@/locale/client'
 import es from '@core/messages/es'
 

@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { type SidebarNavItem } from '@/types'
-
 import { cn } from '@/lib/utils'
 
 type SectionContainerProps = {

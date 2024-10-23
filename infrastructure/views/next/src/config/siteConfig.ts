@@ -1,5 +1,4 @@
 import type { SidebarNavItem } from '@/types'
-
 import { getI18n } from '@/locale/server'
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://127.0.0.1:3000'

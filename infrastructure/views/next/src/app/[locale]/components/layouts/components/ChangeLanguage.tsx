@@ -1,8 +1,6 @@
 import { cn } from '@/lib/utils'
-
 import { Button, buttonVariants } from '@/components/ui/Button'
 import { Select, SelectContent, SelectTrigger } from '@/components/ui/Select'
-
 import { useChangeLocale, useCurrentLocale, useScopedI18n } from '@/locale/client'
 
 export function ChangeLanguage() {

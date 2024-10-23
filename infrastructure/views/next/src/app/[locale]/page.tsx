@@ -1,7 +1,6 @@
 import Link from 'next/link'
-
 import { getSiteConfig } from '@/config/siteConfig'
-
+import { getScopedI18n } from '@/locale/server'
 import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
 import Education from './components/Education'
@@ -10,7 +9,6 @@ import Projects from './components/Projects'
 import ScrollIndicator from './components/ScrollIndicator'
 import Skills from './components/Skills'
 import TechnicalTest from './components/TechnicalTest'
-import { getScopedI18n } from '@/locale/server'
 
 export default async function Page() {
   const { mainNav, links } = await getSiteConfig()

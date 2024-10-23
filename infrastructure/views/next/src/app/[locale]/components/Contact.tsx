@@ -1,13 +1,9 @@
 import Link from 'next/link'
-
 import { type SidebarNavItem } from '@/types'
-
 import { buttonVariants } from '@/components/ui/Button'
-
 import SectionContainer from '@/components/SectionContainer'
-
-import { SocialMedia } from './layouts/components/SocialMedia'
 import { getCurrentLocale, getScopedI18n } from '@/locale/server'
+import { SocialMedia } from './layouts/components/SocialMedia'
 
 interface ContactProps {
   navItem?: SidebarNavItem

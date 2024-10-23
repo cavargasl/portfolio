@@ -1,7 +1,5 @@
 import { type ReactElement, forwardRef } from 'react'
-
 import { cn } from '@/lib/utils'
-
 import { IconClose } from '../Icons'
 import {
   Content,

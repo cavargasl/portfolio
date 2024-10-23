@@ -1,16 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
 import type { Cards, SidebarNavItem } from '@/types'
-
 import { siteConfig } from '@/config/siteConfig'
-
 import { AspectRatio } from '@/components/ui/AspectRatio'
 import { Badge } from '@/components/ui/Badge'
-
 import { BrandGitHub, IconExternalLink, IconImage } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
-
 import { getScopedI18n } from '@/locale/server'
 
 type ProjectsProps = {

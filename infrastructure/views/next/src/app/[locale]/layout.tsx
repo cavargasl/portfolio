@@ -1,15 +1,10 @@
 import type { Metadata } from 'next'
-
 import { getSiteConfig, siteConfig } from '@/config/siteConfig'
-
 import { fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-
 import { TailwindIndicator } from '@/components/TailwindIndicator'
 import { I18nProvider, ThemeProvider } from '@/components/provider'
-
 import '@/styles/global.css'
-
 import SidebarNav from '@/app/[locale]/components/layouts/SidebarNav'
 
 export const metadata: Metadata = {

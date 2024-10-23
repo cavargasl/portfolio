@@ -1,9 +1,7 @@
 import type { SidebarNavItem } from '@/types'
-
 import SectionContainer from '@/components/SectionContainer'
-
-import { SocialMedia } from './layouts/components/SocialMedia'
 import { getScopedI18n } from '@/locale/server'
+import { SocialMedia } from './layouts/components/SocialMedia'
 
 interface AboutMeProps {
   navItem?: SidebarNavItem

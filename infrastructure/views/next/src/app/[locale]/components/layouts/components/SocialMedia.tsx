@@ -1,13 +1,8 @@
 import Link from 'next/link'
-
 import { getSiteConfig } from '@/config/siteConfig'
-
 import { cn } from '@/lib/utils'
-
 import { buttonVariants } from '@/components/ui/Button'
-
 import { BrandGitHub, BrandLinkedIn, BrandX } from '@/components/Icons'
-
 import { getScopedI18n } from '@/locale/server'
 
 export async function SocialMedia() {

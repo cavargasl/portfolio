@@ -1,7 +1,5 @@
 import React, { Fragment, type ReactElement, forwardRef } from 'react'
-
 import { cn } from '@/lib/utils'
-
 import { Separator } from '@/components/ui/Separator'
 
 interface ExperienceListProps extends React.HTMLAttributes<HTMLDivElement> {

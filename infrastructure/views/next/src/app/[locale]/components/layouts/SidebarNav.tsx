@@ -1,23 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { type SidebarNavItem } from '@/types'
-
 import { cn } from '@/lib/utils'
-
 import useScreenSize from '@/hooks/useScreenSize'
-
 import { Button, buttonVariants } from '@/components/ui/Button'
-
 import { IconClose, IconMenu } from '@/components/Icons'
-
+import { useScopedI18n } from '@/locale/client'
 import { ChangeLanguage } from './components/ChangeLanguage'
 import { ThemeToggle } from './components/ThemeToggle'
-import { useScopedI18n } from '@/locale/client'
 import { createPortal } from 'react-dom'
 
 interface SidebarProps {
