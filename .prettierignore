@@ -1,5 +1,7 @@
 dist
 node_modules
-.next
 build
-.contentlayer
+infrastructure/views
+pnpm-lock.yaml
+package-lock.json
+.env

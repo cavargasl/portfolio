@@ -1,0 +1,31 @@
+/** @type {import('prettier').Config} */
+module.exports = {
+  endOfLine: 'lf',
+  semi: false,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  quoteProps: 'preserve',
+  jsxSingleQuote: true,
+  arrowParens: 'avoid',
+  printWidth: 140,
+
+  importOrder: [
+    '^(react/(.*)$)|^(react$)',
+    '^(next/(.*)$)|^(next$)',
+    '^@/types(.*)$',
+    '^@/config(.*)$',
+    '^@/lib(.*)$',
+    '^@/hooks(.*)$',
+    '^@/components/ui(.*)$',
+    '^@/components(.*)$',
+    '^@/styles(.*)$',
+    '^@/(.*)$',
+    '',
+    '^[./]',
+    '<THIRD_PARTY_MODULES>',
+  ],
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
+}
