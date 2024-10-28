@@ -1,6 +1,6 @@
 import { createI18nServer } from 'next-international/server'
 
 export const { getI18n, getScopedI18n, getStaticParams, getCurrentLocale } = createI18nServer({
-  en: () => import('@core/messages/en'),
-  es: () => import('@core/messages/es'),
+  en: () => import('@core/locale/messages/en'),
+  es: () => import('@core/locale/messages/es'),
 })
