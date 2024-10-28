@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Portfolio web donde implementé arquitectura hexagonal para tener mayor flexibilidad a la hora de usar framework de UI. La configuración incluye ESLint y Prettier para asegurar un código limpio y organizado siguiendo principios SOLID del clean code. También se utiliza lint-staged para formatear automáticamente los archivos modificados.",
   "main": "dist/index.js",
   "scripts": {
