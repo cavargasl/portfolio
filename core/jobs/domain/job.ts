@@ -9,8 +9,8 @@ export type Job = Readonly<{
 
 export const skillNameOrdered = [
   // Fundamentos
-  'JavaScript',
   'TypeScript',
+  'JavaScript',
 
   // Frameworks y bibliotecas esenciales
   'React.js',
