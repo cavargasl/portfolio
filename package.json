@@ -6,7 +6,8 @@
   "description": "Portfolio web donde implementé arquitectura hexagonal para tener mayor flexibilidad a la hora de usar framework de UI. La configuración incluye ESLint y Prettier para asegurar un código limpio y organizado siguiendo principios SOLID del clean code. También se utiliza lint-staged para formatear automáticamente los archivos modificados.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint .",
@@ -30,13 +31,16 @@
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/jest": "^29.5.14",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.10.0"
