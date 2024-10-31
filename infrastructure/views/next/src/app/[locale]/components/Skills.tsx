@@ -2,6 +2,7 @@ import type { SidebarNavItem } from '@/types'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/Separator'
 import {
+  BrandAngular,
   BrandAntDesign,
   BrandAtlassian,
   BrandAuth0,
@@ -97,6 +98,10 @@ const skills: SkillsObject[] = [
       {
         title: 'React.js',
         icon: <BrandReact />,
+      },
+      {
+        title: 'Angular',
+        icon: <BrandAngular />,
       },
       {
         title: 'Tailwind CSS',

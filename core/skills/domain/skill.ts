@@ -7,6 +7,7 @@ export const skillNameOrdered = [
   'React.js',
   'Next.js',
   'React Native',
+  'Angular',
 
   // Estructura y estilos
   'HTML',

@@ -8,11 +8,11 @@ const esJobs: JobDTO[] = [
     title: 'DexFreight · Contrato de prácticas',
     date: 'ene. 2021 - jun. 2021 · 6 meses',
     descriptions: [
-      'Agregar funcionalidades nuevas en React Native.',
-      'Migración de funcionalidades de Redux a hooks nativos de React que no eran necesario mantener en un estado global.',
-      'Resolver tareas de ajustes de estilos con sass y correcciones de bugs en la web.',
+      'Desarrollo de nuevas funcionalidades en una aplicación React Native.',
+      'Optimización de gestión de estado en React Native mediante la migración de Redux a hooks nativos de React, reduciendo el uso de estados globales innecesarios.',
+      'Ajustes de estilos y corrección de bugs en una aplicación web desarrollada con Angular, utilizando SASS para optimizar y estandarizar los estilos.',
     ],
-    skills: ['SASS', 'TypeScript', 'Redux', 'SCRUM', 'Git', 'Jira Software', 'React Native'],
+    skills: ['SASS', 'TypeScript', 'Redux', 'SCRUM', 'Git', 'Jira Software', 'React Native', 'Angular'],
     indexOrder: 1,
   },
   {
@@ -78,11 +78,11 @@ const enJobs: JobDTO[] = [
     title: 'DexFreight · Internship contract',
     date: 'jan. 2021 - jun. 2021 · 6 months',
     descriptions: [
-      'Add new functionalities in React Native.',
-      'Migration of Redux functionalities to native React hooks that did not need to be maintained in a global state.',
-      'Resolve tasks of style adjustments with sass and bug fixes on the web.',
+      'Developed new features in a React Native application.',
+      'Optimized state management in React Native by migrating from Redux to native React hooks, reducing unnecessary global states.',
+      'Style adjustments and bug fixes in a web application built with Angular, utilizing SASS to enhance and standardize styles.',
     ],
-    skills: ['SASS', 'TypeScript', 'Redux', 'SCRUM', 'Git', 'Jira Software', 'React Native'],
+    skills: ['SASS', 'TypeScript', 'Redux', 'SCRUM', 'Git', 'Jira Software', 'React Native', 'Angular'],
     indexOrder: 1,
   },
   {
