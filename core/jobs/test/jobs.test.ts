@@ -2,19 +2,12 @@ import { type Language } from '@core/locale/domain'
 
 import { jobsServices } from '../application/jobService'
 import { sortJobs } from '../domain/jobSort'
-import { sortSkills } from '../domain/sortSkills'
 import { httpFakeJobs } from '../infrastructure/instances/httpFakeJobs'
 import { jobRepository } from '../infrastructure/jobRepository'
 import { JobEnFakeDisordered, JobEnFakeOrdered, JobsFake } from '../mock'
 
 describe('jobs', () => {
   describe('test all domain functions', () => {
-    it('should sortSkills', () => {
-      const skills = JobEnFakeDisordered.filter((job) => job.order === 1)[0].skills
-      const skillsOrdered = JobEnFakeOrdered.filter((job) => job.order === 1)[0].skills
-      expect(sortSkills(skills)).toEqual(skillsOrdered)
-      expect(sortSkills(skills).length).toEqual(skillsOrdered.length)
-    })
     it('should sortJobs', () => {
       const sortedJobs = sortJobs(JobEnFakeDisordered)
       expect(sortedJobs).toBeDefined()

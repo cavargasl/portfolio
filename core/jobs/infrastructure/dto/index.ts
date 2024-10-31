@@ -1,4 +1,4 @@
-import { type SkillName } from '@core/jobs/domain/job'
+import { type SkillName } from '@core/skills/domain/skill'
 
 export type JobDTO = Readonly<{
   position: string
