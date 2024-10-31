@@ -1,7 +1,8 @@
-import type { SidebarNavItem, SkillName } from '@/types'
+import type { SidebarNavItem } from '@/types'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/Separator'
 import {
+  BrandAngular,
   BrandAntDesign,
   BrandAtlassian,
   BrandAuth0,
@@ -50,6 +51,7 @@ import {
 } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import SkillCard from '@/components/SkillCard'
+import { type SkillName } from '@core/skills/domain/skill'
 
 interface SkillsObject {
   title: string
@@ -96,6 +98,10 @@ const skills: SkillsObject[] = [
       {
         title: 'React.js',
         icon: <BrandReact />,
+      },
+      {
+        title: 'Angular',
+        icon: <BrandAngular />,
       },
       {
         title: 'Tailwind CSS',

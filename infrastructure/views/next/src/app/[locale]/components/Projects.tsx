@@ -1,55 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Cards, SidebarNavItem } from '@/types'
-import { siteConfig } from '@/config/siteConfig'
+import type { SidebarNavItem } from '@/types'
 import { AspectRatio } from '@/components/ui/AspectRatio'
 import { Badge } from '@/components/ui/Badge'
 import { BrandGitHub, IconExternalLink, IconImage } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
-import { getScopedI18n } from '@/locale/server'
+import { getCurrentLocale } from '@/locale/server'
+import { projectsServices } from '@core/projects/application/projectService'
+import { httpLocalProjects } from '@core/projects/infrastructure/instances/httpLocalProjects'
+import { projectRepository } from '@core/projects/infrastructure/projectRepository'
 
 type ProjectsProps = {
   navItem?: SidebarNavItem
 }
 
-type Project = Cards & {
-  image?: string
-}
-
 export default async function Projects({ navItem }: ProjectsProps) {
-  const t = await getScopedI18n('projects')
-
-  const projects: Project[] = [
-    {
-      title: t('items.0.title'),
-      description: t('items.0.description'),
-      image: '/images/og.png',
-      webSite: siteConfig.url,
-      github: ['https://github.com/cavargasl/portfolio'],
-      skills: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Git', 'GitHub', 'Radix'],
-    },
-    {
-      title: t('items.1.title'),
-      description: t('items.1.description'),
-      image: '/images/hackathon.png',
-      github: ['https://github.com/cavargasl/hackathon-periferia-front', 'https://github.com/cavargasl/hackathon-periferia-back'],
-      skills: ['TypeScript', 'React.js', 'Nest.js', 'Chakra UI', 'Git', 'GitHub', 'Axios', 'MySQL', 'Type ORM', 'Class Validator'],
-    },
-    {
-      title: t('items.2.title'),
-      description: t('items.2.description'),
-      image: '/images/amar.png',
-      webSite: 'http://amar-shop.vercel.app/',
-      github: ['https://github.com/cavargasl/eCommerce-Amar'],
-      skills: ['TypeScript', 'Next.js', 'Git', 'GitHub', 'Chakra UI', 'Axios', 'Redux'],
-    },
-    {
-      title: t('items.3.title'),
-      description: t('items.3.description'),
-      github: ['https://github.com/cavargasl/course-node'],
-      skills: ['TypeScript', 'Node.js', 'Git', 'GitHub', 'ESLint', 'Express.js'],
-    },
-  ]
+  const projects = await projectsServices(projectRepository(httpLocalProjects)).getAll(getCurrentLocale())
 
   return (
     <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
@@ -87,13 +53,12 @@ export default async function Projects({ navItem }: ProjectsProps) {
                   ))}
                 </div>
               </header>
-              <p className='line-clamp-3 leading-tight' title={project.description?.toString()}>
+              <p className='line-clamp-3 leading-tight' title={project.description.toString()}>
                 {project.description}
               </p>
               <footer className='flex flex-col gap-1'>
-                <p>{t('tech') + ':'}</p>
                 <div className='flex flex-wrap gap-1'>
-                  {project.skills.sort().map(skill => (
+                  {project.skills.map(skill => (
                     <Badge key={skill} variant={'secondary'}>
                       {skill}
                     </Badge>

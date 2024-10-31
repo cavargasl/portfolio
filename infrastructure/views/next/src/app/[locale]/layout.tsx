@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { getSiteConfig, siteConfig } from '@/config/siteConfig'
+import { getSiteConfig } from '@/config/siteConfig'
 import { fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
 import { I18nProvider, ThemeProvider } from '@/components/provider'
 import '@/styles/global.css'
 import SidebarNav from '@/app/[locale]/components/layouts/SidebarNav'
+import { siteConfig } from '@core/shared/infrastructure/const'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

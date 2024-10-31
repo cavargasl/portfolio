@@ -4,69 +4,6 @@ export default {
       "Welcome to my professional portfolio, I am Multimedia Engineer, I live in Colombia, I'm passionate about challenges and acquire knowledge that allows me to grow both professionally and personally. My goal is to add value to those around me.",
     iAm: 'Frontend Developer',
   },
-  experience: {
-    tech: 'Technologies',
-    jobs: [
-      {
-        position: 'Fullstack Developer',
-        title: 'Big Safe · Freelance',
-        date: 'jul. 2023 · 1 month',
-        descriptions: [
-          'E - Commerce of sales of printing services in Next 13 with its new functionalities.',
-          'Reusable components made with Tailwind, CVA and clsx frameworks.',
-          'User management with Clerk framework.',
-          'Global state with Redux toolkit for shopping cart.',
-          'Implementation of Firebase Database and Firebase Storage.',
-        ],
-      },
-      {
-        position: 'Frontend Developer',
-        title: 'CloudAPPi · Full time',
-        date: 'apr. 2022 - jan. 2023 · 10 months',
-        descriptions: [
-          'Create web application in charge of selection processes of technology professionals.',
-          'User management using the Keycloack framework.',
-          'Consumption of REST API with React Query and Axios to the Django backend implementing adapters.',
-          'Figma designs converted to code using the pixel perfect concept.',
-          'Migration of React project to Next 12 to optimize SEO.',
-          'Teleworking using the SCRUM methodology.',
-        ],
-      },
-      {
-        position: 'Fullstack Developer',
-        title: 'Degree project · Full time',
-        date: 'jul. 2021 - apr. 2022 · 10 months',
-        descriptions: [
-          'DEVELOPMENT OF A WEB APPLICATION FOR THE EVALUATION OF PROPOSALS AND FINAL REPORTS OF DEGREE MODALITIES AT THE SAN BUENAVENTURA CARTAGENA UNIVERSITY.',
-          'Identify the functional and non-functional requirements that the Web application must have to manage the evaluation process, applying SCRUM.',
-          'Design the application, using Figma and the UX / UI bases to make it intuitive and comfortable for use.',
-          'Implement the database using Firebase services.',
-          'Develop the frontend with React JS',
-        ],
-      },
-      {
-        position: 'Frontend Developer',
-        title: 'DexFreight · Internship contract',
-        date: 'jan. 2021 - jun. 2021 · 6 months',
-        descriptions: [
-          'Add new functionalities in React Native.',
-          'Migration of Redux functionalities to native React hooks that did not need to be maintained in a global state.',
-          'Resolve tasks of style adjustments with sass and bug fixes on the web.',
-        ],
-      },
-      {
-        position: 'Frontend Developer',
-        title: 'CS3 Comercializadora de Software, Servicios y Suministros S.A.S · Full time',
-        date: 'nov. 2023 - feb. 2024 · 4 months',
-        descriptions: [
-          'Implementation of best practices based on SOLID principles in a Next.js project, resulting in a 30% reduction in the time needed to implement new features.',
-          'Implementation of ESLint and Prettier in the project to maintain synchronization among developers, leading to better code readability and easier understanding.',
-          'Consumption of services provided by the backend using GraphQL and Codegen.',
-          'Refactoring of components to facilitate usability and scalability using Tailwind CSS, Tailwind Merge, and Class Variant Authority.',
-        ],
-      },
-    ],
-  },
   projects: {
     tech: 'Technologies',
     items: [
@@ -235,5 +172,6 @@ export default {
     toggleTheme: 'Toggle theme',
     English: 'English',
     Spanish: 'Spanish',
+    tech: 'Technologies',
   },
 } as const

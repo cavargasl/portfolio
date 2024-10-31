@@ -2,7 +2,7 @@
 
 import { type ReactNode } from 'react'
 import { I18nProviderClient } from '@/locale/client'
-import es from '@core/messages/es'
+import es from '@core/locale/messages/es'
 
 export function I18nProvider({ children, locale }: { children: ReactNode; locale: string }) {
   return (

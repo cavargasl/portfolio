@@ -1,14 +1,16 @@
 import Link from 'next/link'
-import { type Cards, type SidebarNavItem } from '@/types'
+import { type SidebarNavItem } from '@/types'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/Badge'
 import { buttonVariants } from '@/components/ui/Button'
 import { BrandGitHub, IconExternalLink, IconLink } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import { getScopedI18n } from '@/locale/server'
+import { type Project } from '@core/projects/domain/project'
 
-type TechTest = Cards & {
+type TechTest = Omit<Project, 'description'> & {
   time: string
+  description: React.ReactNode
   enterprise: string
 }
 
