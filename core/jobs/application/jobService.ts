@@ -1,6 +1,5 @@
 import { type Language } from '@core/locale/domain'
-
-import { type Order } from '@core/domain'
+import { type Order } from '@core/shared/domain'
 
 import { type JobRepository } from '../domain/jobRepository'
 

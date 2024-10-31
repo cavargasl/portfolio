@@ -1,4 +1,4 @@
-import { type Order } from '@core/domain'
+import { type Order } from '@core/shared/domain'
 
 import { type Job } from './job'
 

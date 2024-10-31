@@ -1,7 +1,7 @@
 import { type Language } from '@core/locale/domain'
 
-import { siteConfig } from '@core/const/siteConfig'
 import { type Project } from '@core/projects/domain/project'
+import { siteConfig } from '@core/shared/infrastructure/const'
 
 const esProjects: Project[] = [
   {

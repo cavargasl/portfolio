@@ -6,7 +6,7 @@ import { TailwindIndicator } from '@/components/TailwindIndicator'
 import { I18nProvider, ThemeProvider } from '@/components/provider'
 import '@/styles/global.css'
 import SidebarNav from '@/app/[locale]/components/layouts/SidebarNav'
-import { siteConfig } from '@core/const/siteConfig'
+import { siteConfig } from '@core/shared/infrastructure/const'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
