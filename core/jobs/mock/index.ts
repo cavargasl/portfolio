@@ -1,5 +1,7 @@
 import { type Language } from '@core/locale/domain'
 
+import { skillNameOrdered } from '@core/skills/domain/skill'
+
 import { type Job } from '../domain/job'
 import { type JobDTO } from '../infrastructure/dto'
 
@@ -134,7 +136,7 @@ export const JobEnFakeOrdered: Job[] = [
       'Optimized performance for both frontend and backend.',
       'Collaborated across teams to ensure project success.',
     ],
-    skills: ['TypeScript', 'React.js', 'Node.js'],
+    skills: [skillNameOrdered[0], skillNameOrdered[2], skillNameOrdered[13]],
     order: 3,
   },
   {

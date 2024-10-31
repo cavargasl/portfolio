@@ -32,10 +32,20 @@ describe('jobs', () => {
         expect(jobs[0].skills.length).toEqual(JobsFake[lang][0].skills.length)
       }
     })
-    it('should return all jobs ordered', async () => {
+    it('should return all jobs ordered descending', async () => {
       const jobs = await jobsServices(jobRepository(httpFakeJobs)).getAll('en')
       expect(jobs).toBeDefined()
-      expect(jobs).toEqual(JobEnFakeOrdered)
+      expect(jobs[0].order).toEqual(JobEnFakeOrdered.find((job) => job.order === 3)?.order)
+    })
+    it('should return all jobs ordered ascending', async () => {
+      const jobs = await jobsServices(jobRepository(httpFakeJobs)).getAll('en', 'asc')
+      expect(jobs).toBeDefined()
+      expect(jobs[0].order).toEqual(JobEnFakeOrdered.find((job) => job.order === 1)?.order)
+    })
+    it('should return jobs with ordered skills', async () => {
+      const jobs = await jobsServices(jobRepository(httpFakeJobs)).getAll('en', 'desc')
+      expect(jobs[0].skills).toBeDefined()
+      expect(jobs[0].skills).toEqual(JobEnFakeOrdered.find((job) => job.order === 3)?.skills)
     })
   })
 })
