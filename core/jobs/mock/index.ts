@@ -54,7 +54,7 @@ const enJobs: JobDTO[] = [
       'Optimized performance for both frontend and backend.',
       'Collaborated across teams to ensure project success.',
     ],
-    skills: ['React.js', 'Node.js', 'TypeScript'],
+    skills: [skillNameOrdered[13], skillNameOrdered[2], skillNameOrdered[0]],
     indexOrder: 3,
   },
   {
