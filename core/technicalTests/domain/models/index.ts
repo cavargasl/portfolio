@@ -4,4 +4,5 @@ export type TechnicalTest = Project & {
   testTime: string
   enterprise: string
   order: number
+  urlDescription?: string
 }

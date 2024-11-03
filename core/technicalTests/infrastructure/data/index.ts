@@ -11,6 +11,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'ProMarketing',
     skills: ['TypeScript', 'Next.js', 'Git', 'GitHub', 'Tailwind CSS', 'clsx', 'Tailwind-merge'],
     order: 9,
+    urlDescription: 'https://www.material-tailwind.com/docs/react/stepper',
   },
   {
     title: 'Maquetación pagina de producto',
@@ -22,6 +23,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Maquila Internacional de Confección (MIC)',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Chakra UI', 'Redux', 'Styled Components'],
     order: 8,
+    urlDescription: 'https://www.moviesshop.co/chaqueta-genero-neutro-mandalorian-236732/p?skuId=12253',
   },
   {
     title: 'Capturar información personal',
@@ -43,6 +45,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Cobrando BPO',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Chakra UI', 'Material UI', 'SASS', 'Redux', 'Axios', 'React Query'],
     order: 6,
+    urlDescription: 'https://www.coinlore.com/cryptocurrency-data-api',
   },
   {
     title: 'Subasta de propiedades',
@@ -64,6 +67,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Empleamos Temporales',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Material UI', 'Redux', 'React Hook Form', 'Axios', 'Styled Components'],
     order: 4,
+    urlDescription: 'https://jsonplaceholder.typicode.com/',
   },
   {
     title: 'Red social',
@@ -75,6 +79,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Tita Media',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Redux', 'React Hook Form', 'Axios', 'Styled Components', 'Auth0'],
     order: 3,
+    urlDescription: 'https://dummyapi.io/',
   },
   {
     title: 'Formulario de registro',
@@ -86,6 +91,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Intuition Business',
     skills: ['JavaScript', 'React.js', 'Git', 'GitHub', 'React Hook Form', 'SASS', 'Express.js', 'Node.js', 'MongoDB'],
     order: 2,
+    urlDescription: '/documents/test_weplot.pdf',
   },
   {
     title: 'lista To-Do 1',
@@ -97,6 +103,7 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'LA Electronic',
     skills: ['JavaScript', 'React.js', 'Git', 'GitHub', 'SASS', 'Ant Design'],
     order: 1,
+    urlDescription: 'https://catfact.ninja/',
   },
   {
     title: 'lista To-Do 2',
@@ -123,6 +130,7 @@ const esTechnicalTests: TechnicalTest[] = [
       'clsx',
     ],
     order: 10,
+    urlDescription: 'https://reqres.in/api/',
   },
   {
     title: 'Autenticación y CRUD',
@@ -148,16 +156,18 @@ const esTechnicalTests: TechnicalTest[] = [
       'React Router Dom',
     ],
     order: 11,
+    urlDescription: 'https://reqres.in/api/',
   },
   {
     title: 'To-Do-List Mobile',
     description:
-      'Desarrollar una aplicación de "to-do list" usando React Native, donde el usuario pueda agregar, marcar como realizado o eliminar elementos de la lista, almacenando los datos localmente en el dispositivo y utilizando React Hooks para la gestión de estado. La app debe incluir animaciones simples al agregar, marcar o eliminar elementos, y se permite el uso de librerías de animación como react-native-reanimated. La apariencia debe ser minimalista, con un campo de entrada para nuevas tareas y una lista de ítems, inspirado en el diseño "Dona mobile composer interactions" {url} de Jakub Antalik.',
+      'Desarrollar una aplicación de "to-do list" inspirado en el diseño "Dona mobile composer interactions" de @JakubAntalik {url}, usando React Native, donde el usuario pueda agregar, marcar como realizado o eliminar elementos de la lista, almacenando los datos localmente en el dispositivo y utilizando React Hooks para la gestión de estado. La app debe incluir animaciones simples al agregar, marcar o eliminar elementos, y se permite el uso de librerías de animación como react-native-reanimated. La apariencia debe ser minimalista, con un campo de entrada para nuevas tareas y una lista de ítems.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/DoneApp_test'],
     enterprise: 'Colurs, dinero sin fronteras',
     skills: ['TypeScript', 'React Native', 'Git', 'GitHub', 'CSS'],
     order: 12,
+    urlDescription: 'https://dribbble.com/shots/14568765-Dona-mobile-composer-interactions',
   },
   {
     title: 'GitHub user search app',
@@ -180,6 +190,7 @@ const esTechnicalTests: TechnicalTest[] = [
       'lint-staged',
     ],
     order: 13,
+    urlDescription: 'https://api.github.com/',
   },
 ]
 
