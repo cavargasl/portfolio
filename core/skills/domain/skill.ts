@@ -13,6 +13,7 @@ export const skillNameOrdered = [
   'HTML',
   'CSS',
   'Tailwind CSS',
+  'Shadcn/ui',
   'Styled Components',
 
   // UI Libraries
@@ -20,6 +21,36 @@ export const skillNameOrdered = [
   'Chakra UI',
   'Radix',
   'Ant Design',
+
+  // APIs y manejo de datos
+  'Axios',
+  'Zustand',
+  'React Query',
+  'Redux',
+
+  // Testing
+  'Vitest',
+  'Jest',
+  'React Testing Library',
+  'Cypress',
+
+  // Calidad de  código y arquitectura
+  'Hexagonal Architecture',
+  'Clean Code',
+  'ESLint',
+  'Prettier',
+  'Husky',
+  'lint-staged',
+
+  // Herramientas CSS avanzadas
+  'SASS',
+  'Tailwind-merge',
+  'clsx',
+
+  // Herramientas de validación y formularios
+  'React Hook Form',
+  'Zod',
+  'Class Validator',
 
   // Backend y full-stack
   'Node.js',
@@ -34,22 +65,10 @@ export const skillNameOrdered = [
   'MongoDB',
   'MySQL',
 
-  // APIs y manejo de datos
-  'Axios',
-  'Zustand',
-  'React Query',
-  'Redux',
-
   // Git y control de versiones
   'Git',
   'GitHub',
   'GitLab',
-
-  // Testing
-  'Vitest',
-  'Jest',
-  'React Testing Library',
-  'Cypress',
 
   // Autenticación y seguridad
   'Auth0',
@@ -60,16 +79,6 @@ export const skillNameOrdered = [
   'Jira Software',
   'Slack',
   'SCRUM',
-
-  // Herramientas CSS avanzadas
-  'SASS',
-  'Tailwind-merge',
-  'clsx',
-
-  // Herramientas de validación y formularios
-  'React Hook Form',
-  'Zod',
-  'Class Validator',
 
   // Herramientas de desarrollo y diseño
   'Visual Studio Code',
@@ -83,8 +92,6 @@ export const skillNameOrdered = [
 
   // Otros
   'Atlassian',
-  'Prettier',
-  'ESLint',
 ] as const
 
 export type SkillName = (typeof skillNameOrdered)[number]
