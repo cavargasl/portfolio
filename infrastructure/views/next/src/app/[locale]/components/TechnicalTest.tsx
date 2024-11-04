@@ -5,13 +5,13 @@ import { BrandGitHub, IconExternalLink } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import { getCurrentLocale, getScopedI18n } from '@/locale/server'
 import { technicalTestUseCases } from '@core/technicalTests/application/technicalTestUseCases'
-import { localTechnicalTest } from '@core/technicalTests/infrastructure/instances/localTechnicalTest'
+import { loadTechnicalTestsMarkdown } from '@core/technicalTests/infrastructure/instances/loadTechnicalTestsMarkdown'
 import { technicalTestRepository } from '@core/technicalTests/infrastructure/repository'
 
 export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavItem }) {
   const t = await getScopedI18n('commons')
 
-  const techTest = await technicalTestUseCases(technicalTestRepository(localTechnicalTest)).getAll({
+  const techTest = await technicalTestUseCases(technicalTestRepository(loadTechnicalTestsMarkdown)).getAll({
     lang: getCurrentLocale(),
     order: 'desc',
   })
@@ -21,7 +21,7 @@ export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavI
       <h3 className='border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl'>{t('techTest')}</h3>
       <div className='grid grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6'>
         {techTest.map(test => (
-          <div key={test.title} className='flex flex-col rounded-sm border border-primary shadow-md shadow-primary'>
+          <div key={test.title} className='neumorphism flex flex-col border border-primary/40'>
             <div className='grid h-full content-between gap-4 p-4'>
               <header className='grid grid-cols-[1fr,auto] gap-2'>
                 <p className='text-xl font-bold leading-none'>{test.title}</p>
@@ -40,9 +40,11 @@ export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavI
                 <span className='font-semibold leading-none'>{test.enterprise}</span>
                 <span className='col-span-2 text-sm font-light'>{test.testTime}</span>
               </header>
-              <p
-                className='line-clamp-[7] leading-tight'
-                dangerouslySetInnerHTML={{ __html: removerObjectInString(test.description.toString(), test.urlDescription) }}
+              <div
+                className={test.isMarkdown ? 'markdown-content line-clamp-[8] leading-tight' : 'line-clamp-[8] leading-tight'}
+                dangerouslySetInnerHTML={{
+                  __html: test.isMarkdown ? test.description : removerObjectInString(test.description.toString(), test.urlDescription),
+                }}
               />
 
               <footer className='flex flex-col gap-1'>
@@ -66,7 +68,7 @@ function removerObjectInString(str: string, url?: string): string {
   return str.replace(
     /\{url\}/g,
     url
-      ? `<a href="${url}" target='_blank' rel='noopener noreferrer' aria-label={url} class='text-secondary transition-colors duration-200 ease-out-expo hover:text-primary'>
+      ? `<a href="${url}" target='_blank' rel='noopener noreferrer' aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
         link
       </a>`
       : ''
