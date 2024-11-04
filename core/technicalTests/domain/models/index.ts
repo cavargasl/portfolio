@@ -5,4 +5,5 @@ export type TechnicalTest = Project & {
   enterprise: string
   order: number
   urlDescription?: string
+  isMarkdown?: boolean
 }
