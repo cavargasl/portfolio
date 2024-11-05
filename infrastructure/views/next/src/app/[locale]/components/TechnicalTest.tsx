@@ -5,13 +5,13 @@ import { BrandGitHub, IconExternalLink } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import { getCurrentLocale, getScopedI18n } from '@/locale/server'
 import { technicalTestUseCases } from '@core/technicalTests/application/technicalTestUseCases'
-import { localTechnicalTest } from '@core/technicalTests/infrastructure/instances/localTechnicalTest'
+import { loadTechnicalTestsMarkdown } from '@core/technicalTests/infrastructure/instances/loadTechnicalTestsMarkdown'
 import { technicalTestRepository } from '@core/technicalTests/infrastructure/repository'
 
 export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavItem }) {
   const t = await getScopedI18n('commons')
 
-  const techTest = await technicalTestUseCases(technicalTestRepository(localTechnicalTest)).getAll({
+  const techTest = await technicalTestUseCases(technicalTestRepository(loadTechnicalTestsMarkdown)).getAll({
     lang: getCurrentLocale(),
     order: 'desc',
   })

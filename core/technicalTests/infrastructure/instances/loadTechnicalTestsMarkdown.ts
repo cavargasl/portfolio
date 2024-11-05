@@ -10,7 +10,7 @@ import path from 'path'
 export const loadTechnicalTestsMarkdown: Http = {
   get: async <T>(_url: string, params?: Params) => {
     const lang = params?.lang ?? DEFAULT_LANG
-    const directoryPath = path.join('../../../core/technicalTests/infrastructure/data/markdown', lang)
+    const directoryPath = path.join(process.cwd(), '../../../core/technicalTests/infrastructure/data/markdown', lang)
 
     try {
       const files = await fs.readdir(directoryPath)
