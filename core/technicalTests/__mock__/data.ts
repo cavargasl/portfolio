@@ -1,5 +1,5 @@
 import { skillNameOrdered } from '@core/skills/domain/skill'
-import { type TechnicalTest } from '@core/technicalTests/domain/models'
+import { type TechnicalTest } from '@core/technicalTests/domain/technicalTest'
 
 export const mockTechnicalTests: TechnicalTest[] = [
   {

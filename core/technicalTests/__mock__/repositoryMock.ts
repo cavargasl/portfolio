@@ -1,4 +1,4 @@
-import { type TechnicalTestRepository } from '@core/technicalTests/domain/repository'
+import { type TechnicalTestRepository } from '@core/technicalTests/domain/technicalTestRepository'
 
 import { mockTechnicalTests } from './data'
 
