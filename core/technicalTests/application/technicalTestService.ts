@@ -1,10 +1,10 @@
 import { sortArray } from '@core/shared/utils'
 import { sortSkills } from '@core/skills/domain/sortSkills'
 
-import { type TechnicalTest } from '../domain/models'
-import { type TechnicalTestRepository } from '../domain/repository'
+import { type TechnicalTest } from '../domain/technicalTest'
+import { type TechnicalTestRepository } from '../domain/technicalTestRepository'
 
-export const technicalTestUseCases = (repository: TechnicalTestRepository): TechnicalTestRepository => ({
+export const technicalTestService = (repository: TechnicalTestRepository): TechnicalTestRepository => ({
   getAll: async (params) => {
     const tests = await repository.getAll(params)
     const sortedTests = sortArray<TechnicalTest>(tests, 'order', params.order)

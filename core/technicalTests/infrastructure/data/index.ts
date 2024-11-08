@@ -1,4 +1,4 @@
-import { type TechnicalTest } from '@core/technicalTests/domain/models'
+import { type TechnicalTest } from '@core/technicalTests/domain/technicalTest'
 
 const esTechnicalTests: TechnicalTest[] = [
   {

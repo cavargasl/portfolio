@@ -1,7 +1,7 @@
 import { type Language } from '@core/locale/domain'
 import { type Params } from '@core/shared/domain'
 
-import { type TechnicalTest } from '../models'
+import { type TechnicalTest } from './technicalTest'
 
 export type TechnicalTestRepository = {
   /**
