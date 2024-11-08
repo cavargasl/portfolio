@@ -38,19 +38,19 @@ export default async function Education({ navItem }: EducationProps) {
 
   return (
     <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
-      <h3 className='border-b-4 border-tertiary/30 text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
+      <h3 className='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{navItem?.title}</h3>
       <main className='w-full max-w-4xl'>
-        <Card className='w-full items-start gap-0 border-2 border-tertiary/30 bg-transparent p-1 sm:p-3'>
+        <Card className='w-full items-start gap-0 border-2 border-primary bg-transparent p-1 sm:p-3'>
           <h3 className='font-mono text-2xl font-bold'>{t('university.title')}</h3>
           <span className='text-xl'>{t('university.name')}</span>
           <span className='font-light'>{t('university.date')}</span>
           <br />
           <p>{t('university.description')}</p>
         </Card>
-        <h3 className='mt-10 w-fit border-b-2 border-tertiary/30 text-2xl font-semibold'>{t('courses.title')}</h3>
+        <h3 className='mt-10 w-fit border-b-2 border-primary text-2xl font-semibold'>{t('courses.title')}</h3>
         <div className='mt-4 grid gap-4'>
           {courses.map(course => (
-            <Card key={course.title} className='w-full items-start gap-0 border border-tertiary/30 bg-transparent p-1 sm:p-3'>
+            <Card key={course.title} className='w-full items-start gap-0 border border-primary bg-transparent p-1 sm:p-3'>
               <h3 className='font-mono text-lg font-bold'>{course.title}</h3>
               <span className=''>{course.where}</span>
             </Card>

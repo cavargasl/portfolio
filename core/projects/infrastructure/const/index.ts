@@ -1,7 +1,7 @@
 import { type Language } from '@core/locale/domain'
 
 import { type Project } from '@core/projects/domain/project'
-import { siteConfig } from '@core/shared/infrastructure/const'
+import { siteConfig } from '@core/shared/const/siteConfig'
 
 const esProjects: Project[] = [
   {
@@ -9,7 +9,23 @@ const esProjects: Project[] = [
     description:
       'Portafolio web personal, donde puedes encontrar información sobre mí, mis habilidades, mi experiencia laboral y mis proyectos.',
     webSite: siteConfig.url,
-    skills: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Git', 'GitHub', 'Radix'],
+    skills: [
+      'TypeScript',
+      'Next.js',
+      'Tailwind CSS',
+      'Git',
+      'GitHub',
+      'Radix',
+      'clsx',
+      'Class Validator',
+      'Hexagonal Architecture',
+      'Clean Code',
+      'ESLint',
+      'Prettier',
+      'Husky',
+      'lint-staged',
+      'Jest',
+    ],
     image: '/images/og.png',
     github: ['https://github.com/cavargasl/portfolio'],
   },

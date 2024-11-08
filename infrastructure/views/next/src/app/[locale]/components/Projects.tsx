@@ -56,14 +56,12 @@ export default async function Projects({ navItem }: ProjectsProps) {
               <p className='line-clamp-3 leading-tight' title={project.description.toString()}>
                 {project.description}
               </p>
-              <footer className='flex flex-col gap-1'>
-                <div className='flex flex-wrap gap-1'>
-                  {project.skills.map(skill => (
-                    <Badge key={skill} variant={'secondary'}>
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
+              <footer className='flex flex-wrap gap-1'>
+                {project.skills.map(skill => (
+                  <Badge key={skill} variant={'secondary'}>
+                    {skill}
+                  </Badge>
+                ))}
               </footer>
             </div>
           </div>

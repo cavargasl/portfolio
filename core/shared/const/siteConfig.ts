@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://127.0.0.1:3000'
+import { BASE_URL } from './infrastructure'
 
 export const siteConfig = {
   name: 'Camilo Vargas | Frontend Developer',
