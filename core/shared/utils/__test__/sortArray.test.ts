@@ -1,4 +1,4 @@
-import { sortArray } from '@core/shared/utils'
+import { sortArray } from '../sortArray'
 
 describe('sortArray', () => {
   const array = [
