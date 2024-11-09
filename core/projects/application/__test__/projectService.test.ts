@@ -22,8 +22,15 @@ describe('Projects services', () => {
       for (const lang of languages) {
         const projects = await service.getAll(lang)
         expect(projects).toBeDefined()
-        expect(projects).toEqual(expect.arrayContaining(mockProjects[lang]))
         expect(projects.length).toEqual(mockProjects[lang].length)
+        projects.forEach((project, index) => {
+          expect(project).toEqual(
+            expect.objectContaining({
+              ...mockProjects[lang][index],
+              skills: expect.arrayContaining(mockProjects[lang][index].skills),
+            })
+          )
+        })
       }
     })
     it('return ordered skills', async () => {
