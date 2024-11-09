@@ -7,15 +7,15 @@ import { BrandGitHub, IconExternalLink, IconImage } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import { getCurrentLocale } from '@/locale/server'
 import { projectsServices } from '@core/projects/application/projectService'
-import { httpLocalProjects } from '@core/projects/infrastructure/instances/httpLocalProjects'
-import { projectRepository } from '@core/projects/infrastructure/projectRepository'
+import { localProjects } from '@core/projects/infrastructure/localProjects.repository'
 
 type ProjectsProps = {
   navItem?: SidebarNavItem
 }
+const projectsService = projectsServices(localProjects())
 
 export default async function Projects({ navItem }: ProjectsProps) {
-  const projects = await projectsServices(projectRepository(httpLocalProjects)).getAll(getCurrentLocale())
+  const projects = await projectsService.getAll(getCurrentLocale())
 
   return (
     <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
