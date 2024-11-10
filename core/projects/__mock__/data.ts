@@ -10,7 +10,7 @@ const enProjectsFake: Project[] = [
     description: 'A real-time weather dashboard with location-based forecasts, historical data, and a clean, responsive UI.',
     webSite: 'https://weather-dashboard.example.com',
     github: ['https://github.com/fakeuser/weather-dashboard'],
-    skills: [skillNameOrdered[2], skillNameOrdered[0], skillNameOrdered[7], skillNameOrdered[22]],
+    skills: [skillNameOrdered[2], skillNameOrdered[0], skillNameOrdered[15], skillNameOrdered[7]],
     image: 'https://example.com/images/weather-dashboard.png',
   },
   {
@@ -38,8 +38,8 @@ const esProjectsFake: Project[] = [
     skills: ['Node.js', 'GraphQL', 'CSS', 'Next.js', 'Jest'],
   },
 ]
-export const ProjectsFake: Record<Language, Project[]> = {
+export const mockProjects: Record<Language, Project[]> = {
   en: enProjectsFake,
   es: esProjectsFake,
 }
-export const enSkillsProjectsFakeOrdered = [skillNameOrdered[0], skillNameOrdered[2], skillNameOrdered[7], skillNameOrdered[22]]
+export const enMockSkillsProjectsOrdered = [skillNameOrdered[0], skillNameOrdered[2], skillNameOrdered[7], skillNameOrdered[15]]

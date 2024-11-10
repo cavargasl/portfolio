@@ -14,18 +14,18 @@ const ExperienceList = forwardRef<HTMLDivElement, ExperienceListProps>(({ classN
     <div
       ref={ref}
       className={cn(
-        'relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 lg:grid-cols-[1fr_1.5rem_1fr] lg:gap-x-8',
+        'relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 xl:grid-cols-[1fr_1.5rem_1fr] xl:gap-x-8',
         className
       )}
       {...props}
     >
-      <Separator orientation='vertical' className='absolute left-3 bg-secondary lg:left-1/2' />
+      <Separator orientation='vertical' className='absolute left-3 bg-secondary xl:left-1/2' />
       {childrenArray.map((job, idx) => {
         return (
           <Fragment key={idx}>
-            <Dot className='col-start-1 lg:hidden' />
+            <Dot className='col-start-1 xl:hidden' />
             {idx % 2 === 0 ? job : null}
-            <Dot className='col-start-2 hidden lg:flex' />
+            <Dot className='col-start-2 hidden xl:flex' />
             {idx % 2 !== 0 ? job : null}
           </Fragment>
         )

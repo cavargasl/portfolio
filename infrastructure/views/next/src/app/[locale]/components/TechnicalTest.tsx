@@ -33,16 +33,16 @@ export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavI
                 <header className='grid grid-cols-[1fr,auto] gap-2'>
                   <p className='text-xl font-bold leading-none'>{test.title}</p>
                   <div className='inline-flex gap-2'>
-                    {test.webSite && (
-                      <Link href={test.webSite} target='_blank' rel='noopener noreferrer' aria-label={test.webSite}>
-                        <IconExternalLink className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
-                      </Link>
-                    )}
                     {test.github.map(url => (
                       <Link key={url} href={url} target='_blank' rel='noopener noreferrer' aria-label={url}>
                         <BrandGitHub className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
                       </Link>
                     ))}
+                    {test.webSite && (
+                      <Link href={test.webSite} target='_blank' rel='noopener noreferrer' aria-label={test.webSite}>
+                        <IconExternalLink className='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
+                      </Link>
+                    )}
                   </div>
                   <span className='font-semibold leading-none'>{test.enterprise}</span>
                   <span className='col-span-2 text-sm font-light'>{test.testTime}</span>
@@ -57,7 +57,7 @@ export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavI
                 <footer className='flex flex-col gap-1'>
                   <div className='flex flex-wrap gap-1'>
                     {test.skills.map(skill => (
-                      <Badge key={skill} variant={'default'} className='px-1.5 py-0'>
+                      <Badge key={skill} variant={'default'}>
                         {skill}
                       </Badge>
                     ))}

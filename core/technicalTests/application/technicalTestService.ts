@@ -1,4 +1,4 @@
-import { sortArray } from '@core/shared/utils'
+import { sortArray } from '@core/shared/utils/sortArray'
 import { sortSkills } from '@core/skills/domain/sortSkills'
 
 import { type TechnicalTest } from '../domain/technicalTest'

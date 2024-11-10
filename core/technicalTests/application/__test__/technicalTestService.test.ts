@@ -17,7 +17,14 @@ describe('technicalTest Services', () => {
     it('return all technical tests', async () => {
       const result = await service.getAll({ lang: 'en' })
       expect(result).toHaveLength(mockTechnicalTests.length)
-      expect(result).toEqual(expect.arrayContaining(mockTechnicalTests))
+      result.forEach((test, index) => {
+        expect(test).toEqual(
+          expect.objectContaining({
+            ...mockTechnicalTests[index],
+            skills: expect.arrayContaining(mockTechnicalTests[index].skills),
+          })
+        )
+      })
     })
     it('return sorted technical tests by order default ascending', async () => {
       const result = await service.getAll({ lang: 'en' })

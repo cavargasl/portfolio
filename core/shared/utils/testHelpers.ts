@@ -15,8 +15,8 @@ export function isTextInLanguage(text: string, lang: Language, isHtml = false) {
   const normalizedText = text.replace(/[\r\n]+/g, ' ').trim()
   const sampleText = normalizedText.split(' ').slice(0, 15).join(' ')
 
-  const commonEnglishWords = ['the', 'and', 'is', 'in', 'of', 'to', 'a', 'that', 'it', 'on', 'at', 'an', 'for']
-  const commonSpanishWords = ['el', 'la', 'es', 'y', 'en', 'de', 'que', 'un', 'se', 'no', 'una', 'para']
+  const commonEnglishWords = ['the', 'and', 'is', 'in', 'of', 'to', 'a', 'that', 'it', 'on', 'at', 'an', 'for', 'my', 'you', 'can']
+  const commonSpanishWords = ['el', 'la', 'es', 'y', 'en', 'de', 'que', 'un', 'se', 'una', 'para', 'mi', 'donde', 'al', 'los']
 
   const commonWords: Record<Language, string[]> = {
     en: commonEnglishWords,

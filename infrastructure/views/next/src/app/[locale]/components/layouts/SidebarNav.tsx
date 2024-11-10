@@ -40,7 +40,7 @@ export default function SidebarNav({ siteConfig }: SidebarProps) {
               onClick={toggleSidebar}
               variant='ghost'
               size='icon'
-              className='fixed right-2 top-2 z-50 bg-background sm:right-4 sm:top-4'
+              className='fixed right-2 top-2 z-50 bg-background sm:right-8 sm:top-5'
               aria-label={isOpen ? scopedT('closeSidebarNav') : scopedT('openSidebarNav')}
             >
               {isOpen ? <IconClose className='h-6 w-6' aria-hidden='true' /> : <IconMenu className='h-6 w-6' aria-hidden='true' />}
