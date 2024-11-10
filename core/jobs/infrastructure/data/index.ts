@@ -72,9 +72,8 @@ const esJobs: JobDTO[] = [
     indexOrder: 5,
   },
 ]
-const enJobs: JobDTO[] = [
+const tempEnJobs: Omit<JobDTO, 'skills' | 'position'>[] = [
   {
-    position: 'Frontend Developer',
     title: 'DexFreight · Internship contract',
     date: 'jan. 2021 - jun. 2021 · 6 months',
     descriptions: [
@@ -82,11 +81,9 @@ const enJobs: JobDTO[] = [
       'Optimized state management in React Native by migrating from Redux to native React hooks, reducing unnecessary global states.',
       'Style adjustments and bug fixes in a web application built with Angular, utilizing SASS to enhance and standardize styles.',
     ],
-    skills: ['SASS', 'TypeScript', 'Redux', 'SCRUM', 'Git', 'Jira Software', 'React Native', 'Angular'],
     indexOrder: 1,
   },
   {
-    position: 'Fullstack Developer',
     title: 'Degree project · Full time',
     date: 'jul. 2021 - apr. 2022 · 10 months',
     descriptions: [
@@ -96,11 +93,9 @@ const enJobs: JobDTO[] = [
       'Implement the database using Firebase services.',
       'Develop the frontend with React JS',
     ],
-    skills: ['Firebase', 'GitHub', 'Redux', 'React.js', 'SCRUM', 'Git', 'JavaScript'],
     indexOrder: 2,
   },
   {
-    position: 'Frontend Developer',
     title: 'CloudAPPi · Full time',
     date: 'apr. 2022 - jan. 2023 · 10 months',
     descriptions: [
@@ -111,11 +106,9 @@ const enJobs: JobDTO[] = [
       'Migration of React project to Next 12 to optimize SEO.',
       'Teleworking using the SCRUM methodology.',
     ],
-    skills: ['Keycloak', 'TypeScript', 'Next.js', 'Chakra UI', 'Redux', 'React.js', 'SCRUM', 'Git', 'GitLab'],
     indexOrder: 3,
   },
   {
-    position: 'Fullstack Developer',
     title: 'Big Safe · Freelance',
     date: 'jul. 2023 · 1 month',
     descriptions: [
@@ -125,12 +118,10 @@ const enJobs: JobDTO[] = [
       'Global state with Redux toolkit for shopping cart.',
       'Implementation of Firebase Database and Firebase Storage.',
     ],
-    skills: ['Clerk', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux', 'Firebase', 'Git', 'GitHub', 'Radix'],
     indexOrder: 4,
   },
 
   {
-    position: 'Frontend Developer',
     title: 'CS3 Comercializadora de Software, Servicios y Suministros S.A.S · Full time',
     date: 'nov. 2023 - feb. 2024 · 4 months',
     descriptions: [
@@ -139,10 +130,15 @@ const enJobs: JobDTO[] = [
       'Consumption of services provided by the backend using GraphQL and Codegen.',
       'Refactoring of components to facilitate usability and scalability using Tailwind CSS, Tailwind Merge, and Class Variant Authority.',
     ],
-    skills: ['Zustand', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Git', 'Atlassian', 'GraphQL'],
     indexOrder: 5,
   },
 ]
+const enJobs: JobDTO[] = esJobs.map((job) => ({
+  ...job,
+  title: tempEnJobs.find((t) => t.indexOrder === job.indexOrder)?.title || job.title,
+  date: tempEnJobs.find((t) => t.indexOrder === job.indexOrder)?.date || job.date,
+  descriptions: tempEnJobs.find((t) => t.indexOrder === job.indexOrder)?.descriptions || job.descriptions,
+}))
 
 export const Jobs: Record<Language, JobDTO[]> = {
   es: esJobs,
