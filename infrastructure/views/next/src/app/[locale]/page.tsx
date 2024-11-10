@@ -23,12 +23,12 @@ export default async function Page() {
       <TechnicalTest navItem={mainNav.find(item => item.id === 'technicalTest')} />
       <Education navItem={mainNav.find(item => item.id === 'education')} />
       <Contact navItem={mainNav.find(item => item.id === 'contact')} />
-      <footer className='flex flex-col items-center justify-center bg-muted-foreground p-8 lg:px-12'>
+      <footer className='flex flex-col items-center justify-center bg-muted-foreground p-6 lg:px-12'>
         <p className='flex flex-wrap justify-center gap-1 text-center text-background'>
           {scopeFooterT('content', {
             fullName: (
               <Link
-                href={links.github}
+                href={links.LinkedIn}
                 target='_blank'
                 className='line-clamp-1 font-bold hover:underline'
                 aria-label='Github'
