@@ -5,15 +5,14 @@ import SectionContainer from '@/components/SectionContainer'
 import { getCurrentLocale } from '@/locale/server'
 import { ExperienceList } from './components/ExperienceList'
 import { jobsServices } from '@core/jobs/application/jobService'
-import { httpLocalJobs } from '@core/jobs/infrastructure/instances/httpLocalJobs'
-import { jobRepository } from '@core/jobs/infrastructure/jobRepository'
+import { localJobs } from '@core/jobs/infrastructure/localJobs.repository'
 
 interface ExperienceProps {
   navItem?: SidebarNavItem
 }
 
 export default async function Experience({ navItem }: ExperienceProps) {
-  const experience = await jobsServices(jobRepository(httpLocalJobs)).getAll(getCurrentLocale())
+  const experience = await jobsServices(localJobs()).getAll({ lang: getCurrentLocale() })
 
   return (
     <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
