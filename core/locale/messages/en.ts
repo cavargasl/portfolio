@@ -47,6 +47,7 @@ export default {
     content:
       'I am currently available to join a team or company.{br}If you want to know more about me or my work, or just want to say hello, contact me by any of the following options.',
     cv: 'Resume',
+    downloadCV: 'Download Resume',
   },
   footer: {
     content: 'Designed & Built by {fullName}',
