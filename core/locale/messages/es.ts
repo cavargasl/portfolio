@@ -47,6 +47,7 @@ export default {
     content:
       'Actualmente estoy disponible para unirme a un equipo o empresa.{br}Si quieres saber más sobre mí o mi trabajo, o simplemente quieres saludar, contácteme por cualquiera de las siguientes opciones.',
     cv: 'Curriculum',
+    downloadCV: 'Descargar currículum',
   },
   footer: {
     content: 'Diseñado y construido por {fullName}',
