@@ -75,7 +75,7 @@
     @apply font-bold text-paragraph/90;
   }
   .markdown-content a {
-    @apply text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline;
+    @apply text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline whitespace-nowrap;
   }
   .markdown-content ol {
     @apply list-decimal pl-4 gap-2;

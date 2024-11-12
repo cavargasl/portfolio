@@ -26,7 +26,7 @@ export default async function TechnicalTest({ navItem }: { navItem?: SidebarNavI
     <SectionContainer id={navItem?.id} aria-label={navItem?.title}>
       <h3 className='border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl'>{t('techTest')}</h3>
       {techTest.length ? (
-        <div className='grid grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-6'>
+        <div className='grid grid-cols-[repeat(auto-fill,minmax(min(100%,25rem),1fr))] gap-6'>
           {techTest.map(test => (
             <div key={test.title} className='neumorphism flex flex-col border border-primary/40'>
               <div className='grid h-full content-between gap-4 p-4'>
