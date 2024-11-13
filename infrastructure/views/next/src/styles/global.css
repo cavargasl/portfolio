@@ -39,12 +39,16 @@
     --muted-foreground: 210 18% 96%;
   }
 }
-* {
-  font-size: 18px;
-}
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply box-border;
+    font-size: 18px;
+    scrollbar-color: hsl(var(--foreground)) hsl(var(--muted));
   }
 
   body {
@@ -58,15 +62,6 @@
   h5,
   h6 {
     @apply text-paragraph;
-  }
-}
-
-@layer components {
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  html {
-    scroll-behavior: smooth;
   }
 }
 
