@@ -11,6 +11,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.2
     version: 5.1.2(astro@4.16.12)(tailwindcss@3.4.14)
+  '@fontsource-variable/karla':
+    specifier: ^5.1.0
+    version: 5.1.0
+  '@fontsource/fira-mono':
+    specifier: ^5.1.0
+    version: 5.1.0
   astro:
     specifier: ^4.16.12
     version: 4.16.12(typescript@5.6.3)
@@ -603,6 +609,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/karla@5.1.0:
+    resolution: {integrity: sha512-YRmNh8L3wYO+iQhaCjt4aL3RmlGtEcxjGZQs3rAzFodJfDangKZg7jRRc4wWjlc8f9n/JSQdr9+iQ3f91stiTw==}
+    dev: false
+
+  /@fontsource/fira-mono@5.1.0:
+    resolution: {integrity: sha512-6+nftSKApXyN0I9FC5GJuG5TUCh+in5OehtrXRIsHJvq38Pm//oA1kZZYNdXv99JYzLzJ3lzsTAavmS+xGLGDw==}
+    dev: false
 
   /@img/sharp-darwin-arm64@0.33.5:
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}

@@ -13,6 +13,8 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
+    "@fontsource-variable/karla": "^5.1.0",
+    "@fontsource/fira-mono": "^5.1.0",
     "astro": "^4.16.12",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4",
