@@ -3,6 +3,7 @@ import '@/styles/global.css'
 import '@/styles/fonts.css'
 import { siteConfig } from '@core/shared/const/siteConfig';
 import { cn } from '@/lib/utils';
+import SidebarNav from '@/components/SidebarNav.astro';
 const { currentLocale } = Astro
 interface Props {
   title?: string
@@ -24,6 +25,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 	<body class={cn('scroll-smooth font-sans antialiased')}>
 		<main class='flex snap-y flex-col gap-20 lg:w-[calc(100%-16rem)]'>
 			<slot />
+			<SidebarNav />
 		</main>
 	</body>
 </html>
