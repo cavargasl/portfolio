@@ -1,14 +1,16 @@
 ---
-
 import { cn } from '@/lib/utils'
 
 import { getI18N } from '@/i18n'
+import { getLangFromUrl } from '@/i18n/utils'
 import { Close, Menu } from './icons'
 import type { SidebarNavItem } from '@core/shared/domain/navBar'
 import { Button, buttonVariants } from './react/ui/Button'
+import { ChangeLanguage } from './react/ChangeLanguage'
 
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
+const lang = getLangFromUrl(Astro.url)
 const navigationConfig = {
 	name: i18n.siteConfig.title,
 	mainNav: [
@@ -94,8 +96,8 @@ const navigationConfig = {
     </main>
 
     <footer class='mt-auto flex w-full items-center justify-center gap-4'>
-      <!-- <ChangeLanguage />
-      <ThemeToggle /> -->
+      <ChangeLanguage client:only="react" locale={lang} />
+      <!-- <ThemeToggle /> -->
     </footer>
   </aside>
 </>

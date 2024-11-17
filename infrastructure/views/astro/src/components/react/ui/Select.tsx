@@ -1,6 +1,5 @@
 import { type ReactElement, forwardRef } from 'react'
 import { cn } from '@/lib/utils'
-import { IconClose } from '../Icons'
 import {
   Content,
   Group,
@@ -15,6 +14,7 @@ import {
   Value,
   Viewport,
 } from '@radix-ui/react-select'
+import { Close } from '@/components/icons'
 
 const Select = Root
 
@@ -82,7 +82,7 @@ const SelectItem = forwardRef<React.ElementRef<typeof Item>, React.ComponentProp
     >
       <span className='absolute left-2 flex h-3.5 w-3.5 items-center justify-center'>
         <ItemIndicator>
-          <IconClose className='h-4 w-4' />
+          <Close class='h-4 w-4' />
         </ItemIndicator>
       </span>
 
