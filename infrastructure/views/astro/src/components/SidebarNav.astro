@@ -7,6 +7,7 @@ import { Close, Menu } from './icons'
 import type { SidebarNavItem } from '@core/shared/domain/navBar'
 import { Button, buttonVariants } from './react/ui/Button'
 import { ChangeLanguage } from './react/ChangeLanguage'
+import ThemeSwitcher from './ThemeSwitcher.astro'
 
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
@@ -97,7 +98,7 @@ const navigationConfig = {
 
     <footer class='mt-auto flex w-full items-center justify-center gap-4'>
       <ChangeLanguage client:only="react" locale={lang} />
-      <!-- <ThemeToggle /> -->
+      <ThemeSwitcher />
     </footer>
   </aside>
 </>

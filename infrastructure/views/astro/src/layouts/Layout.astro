@@ -22,10 +22,19 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class={cn('scroll-smooth font-sans antialiased')}>
+	<body class={cn('scroll-smooth font-sans antialiased transition-colors duration-200 out-circ')}>
 		<main class='flex snap-y flex-col gap-20 lg:w-[calc(100%-16rem)]'>
 			<slot />
 			<SidebarNav />
 		</main>
 	</body>
 </html>
+
+<script>
+  if (localStorage.theme === 'dark' || 
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>

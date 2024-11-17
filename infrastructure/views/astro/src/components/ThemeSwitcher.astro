@@ -1,0 +1,31 @@
+---
+import { getI18N } from "@/i18n";
+import { Moon, Sun } from "./icons";
+import { Button } from "./react/ui/Button";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url)
+const i18n = getI18N({currentLocale: lang})
+---
+
+<Button id="switcher-theme-button" variant='ghost' size='icon' aria-label={i18n.commons.toggleTheme}>
+  <Sun class='h-4 w-4 rotate-0 scale-100 transition-transform duration-200 ease-out-circ dark:-rotate-90 dark:scale-0' />
+  <Moon class='absolute h-4 w-4 rotate-90 scale-0 transition-transform duration-200 ease-out-circ dark:rotate-0 dark:scale-100' />
+</Button>
+
+<script>
+  const switcherButton = document.getElementById('switcher-theme-button');
+
+  const toggleTheme = () => {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    if (isCurrentlyDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  switcherButton?.addEventListener('click', toggleTheme)
+</script>
