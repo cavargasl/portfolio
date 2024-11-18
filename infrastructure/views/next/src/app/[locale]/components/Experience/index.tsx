@@ -1,4 +1,3 @@
-import type { SidebarNavItem } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import Card from '@/components/ui/Card'
 import SectionContainer from '@/components/SectionContainer'
@@ -6,6 +5,7 @@ import { getCurrentLocale } from '@/locale/server'
 import { ExperienceList } from './components/ExperienceList'
 import { jobsServices } from '@core/jobs/application/jobService'
 import { localJobs } from '@core/jobs/infrastructure/localJobs.repository'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 
 interface ExperienceProps {
   navItem?: SidebarNavItem

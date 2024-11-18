@@ -1,4 +1,3 @@
-import type { SidebarNavItem } from '@/types'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/Separator'
 import {
@@ -51,6 +50,7 @@ import {
 } from '@/components/Icons'
 import SectionContainer from '@/components/SectionContainer'
 import SkillCard from '@/components/SkillCard'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 import { type SkillName } from '@core/skills/domain/skill'
 
 interface SkillsObject {

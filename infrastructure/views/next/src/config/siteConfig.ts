@@ -1,6 +1,6 @@
-import type { SidebarNavItem } from '@/types'
 import { getI18n } from '@/locale/server'
 import { siteConfig } from '@core/shared/const/siteConfig'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 
 export async function getSiteConfig() {
   const t = await getI18n()

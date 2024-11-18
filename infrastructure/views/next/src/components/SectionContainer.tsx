@@ -1,6 +1,6 @@
 import React from 'react'
-import { type SidebarNavItem } from '@/types'
 import { cn } from '@/lib/utils'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 
 type SectionContainerProps = {
   navItem?: SidebarNavItem

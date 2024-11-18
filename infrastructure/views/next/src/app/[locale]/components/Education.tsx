@@ -1,7 +1,7 @@
-import type { SidebarNavItem } from '@/types'
 import Card from '@/components/ui/Card'
 import SectionContainer from '@/components/SectionContainer'
 import { getScopedI18n } from '@/locale/server'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 
 interface EducationProps {
   navItem?: SidebarNavItem
