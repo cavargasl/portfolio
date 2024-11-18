@@ -4,6 +4,7 @@ import '@/styles/fonts.css'
 import { siteConfig } from '@core/shared/const/siteConfig';
 import { cn } from '@/lib/utils';
 import SidebarNav from '@/components/SidebarNav.astro';
+import { TailwindIndicator } from '@/components/react/TailwindIndicator';
 const { currentLocale } = Astro
 interface Props {
   title?: string
@@ -26,6 +27,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		<main class='flex snap-y flex-col gap-20 lg:w-[calc(100%-16rem)]'>
 			<slot />
 			<SidebarNav />
+			<TailwindIndicator />
 		</main>
 	</body>
 </html>
