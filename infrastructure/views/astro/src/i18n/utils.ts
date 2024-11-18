@@ -13,6 +13,6 @@ export function getLangFromUrl(url: URL):Language {
 // change when you setter prefixDefaultLocale in astro.config.mjs
 const showDefaultLang = false
 export function changeLocale(lang: Language) {
-  if(!showDefaultLang) return lang === DEFAULT_LANG ? '/' : `/${lang}`
+  if(!showDefaultLang) return lang === DEFAULT_LANG ? '/' : `/${lang}/`
   return `/${lang}/`
 }
