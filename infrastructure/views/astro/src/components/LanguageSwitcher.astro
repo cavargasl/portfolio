@@ -22,38 +22,64 @@ const displayChangeLanguage = {
 ---
 
 <div class="relative inline-block text-left">
-  <div
-    class="group transition-all"
+  <Button
+    aria-label={i18n.commons.openLanguageMenu}
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-controls="language-list"
+    variant={"ghost"}
   >
-    <Button
-      aria-expanded="true"
-      aria-haspopup="true"
-      aria-controls="list"
-      className='gap-1'
-      variant={"ghost"}
-    >
-      {displayLanguage[lang]}
-    </Button>
-    <ul
-      id="list"
-      class="group-hover:block group-hover:animate-fade-up group-hover:animate-duration-200 hidden absolute w-full bg-background p-2 rounded-sm bottom-full translate-y-full"
-    >
-      {
-        LANGUAGES.map((locale) => (
-          <li class="my-1">
-            <a
-              class={cn(buttonVariants({variant: "ghost"}), "w-full",
-               locale === lang && "pointer-events-none opacity-50"
-            )}
-              aria-label={displayChangeLanguage[locale]}
-              href={changeLocale(locale)}
-              aria-disabled={locale === lang}
-            >
-              {displayLanguage[locale]}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+    {displayLanguage[lang]}
+  </Button>
+  <ul
+    id="language-list"
+    class="animate-fade-up animate-duration-200 hidden absolute w-full bg-background p-2 rounded-sm bottom-full translate-y-full mb-1"
+  >
+    {
+      LANGUAGES.map((locale) => (
+        <li class="my-1">
+          <a
+            class={cn(buttonVariants({variant: "ghost"}), "w-full",
+            locale === lang && "pointer-events-none opacity-50"
+          )}
+            aria-label={displayChangeLanguage[locale]}
+            href={changeLocale(locale)}
+            aria-disabled={locale === lang}
+          >
+            {displayLanguage[locale]}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </div>
+
+<script>
+  const button = document.querySelector("[aria-controls='language-list']");
+  const menu = document.getElementById("language-list");
+
+  button?.addEventListener("click", () => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    if (isExpanded) {
+      button.setAttribute("aria-expanded", "false");
+      menu?.classList.add("hidden");
+      document.removeEventListener("click", handleDocumentClick);
+    } else {
+      button.setAttribute("aria-expanded", "true");
+      menu?.classList.remove("hidden");
+      document.addEventListener("click", handleDocumentClick);
+    }
+  });
+
+  function handleDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement | null;
+    if (!target) return;
+
+    if (!button?.contains(target) && !menu?.contains(target)) {
+      button?.setAttribute("aria-expanded", "false");
+      menu?.classList.add("hidden");
+      document.removeEventListener("click", handleDocumentClick);
+    }
+  }
+</script>
