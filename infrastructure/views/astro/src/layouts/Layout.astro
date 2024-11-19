@@ -24,7 +24,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		<title>{title}</title>
 	</head>
 	<body class={cn('scroll-smooth font-sans antialiased')}>
-		<main class='flex snap-y flex-col gap-20 lg:w-[calc(100%-16rem)]'>
+		<main class='flex snap-y flex-col gap-20 ml-auto lg:w-[calc(100%-16rem)]'>
 			<slot />
 			<SidebarNav />
 			<TailwindIndicator />
