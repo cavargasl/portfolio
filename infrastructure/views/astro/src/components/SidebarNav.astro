@@ -1,50 +1,15 @@
 ---
-import { cn } from '@/lib/utils'
+import { cn, siteConfigExtended } from '@/lib/utils'
 
 import { getI18N } from '@/i18n'
-import { getLangFromUrl } from '@/i18n/utils'
 import { Close, Menu } from './icons'
-import type { SidebarNavItem } from '@core/shared/domain/navBar'
 import { Button, buttonVariants } from './react/ui/Button'
-import { ChangeLanguage } from './react/ChangeLanguage'
 import ThemeSwitcher from './ThemeSwitcher.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
 
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
-const lang = getLangFromUrl(Astro.url)
-const navigationConfig = {
-	name: i18n.siteConfig.title,
-	mainNav: [
-		{
-			id: 'aboutMe',
-			title: i18n.siteConfig.sidebarNav.aboutMe,
-		},
-		{
-			id: 'skills',
-			title: i18n.siteConfig.sidebarNav.skills,
-		},
-		{
-			id: 'experience',
-			title: i18n.siteConfig.sidebarNav.experience,
-		},
-		{
-			id: 'projects',
-			title: i18n.siteConfig.sidebarNav.projects,
-		},
-		{
-			id: 'technicalTest',
-			title: i18n.siteConfig.sidebarNav.technicalTest,
-		},
-		{
-			id: 'education',
-			title: i18n.siteConfig.sidebarNav.education,
-		},
-		{
-			id: 'contact',
-			title: i18n.siteConfig.sidebarNav.contact,
-		}
-	]satisfies SidebarNavItem[]
-}
+const navigationConfig = siteConfigExtended(i18n)
 ---
 
 <>
@@ -71,7 +36,6 @@ const navigationConfig = {
     aria-label={i18n.commons.sidebarNav}
   >
     <span class='mb-auto' aria-hidden='true' />
-
     <main class='flex w-full flex-col items-center justify-center gap-8'>
       <img
         src='/images/profile.webp'
@@ -81,7 +45,7 @@ const navigationConfig = {
       />
       <nav class='w-full'>
         <ul class='flex flex-col gap-1'>
-          {navigationConfig.mainNav.map(item => (
+          {Object.values(navigationConfig.mainNav).map(item => (
             <li>
               <a
                 class={cn(buttonVariants({ variant: 'ghost' }), 'w-full text-lg font-semibold')}
@@ -97,7 +61,7 @@ const navigationConfig = {
     </main>
 
     <footer class='mt-auto flex w-full items-center justify-center gap-4'>
-      <ChangeLanguage client:only="react" locale={lang} />
+      <LanguageSwitcher/>
       <ThemeSwitcher />
     </footer>
   </aside>
@@ -110,16 +74,16 @@ const navigationConfig = {
   const closeMenuIcon = document.getElementById('close-menu-icon')
   let isOpen = false
 
-  function toogleIcons() {
+  function toggleIcons() {
     closeMenuIcon?.classList.toggle('hidden', isOpen)
     openMenuIcon?.classList.toggle('hidden', !isOpen)
   }
-  function toogleTraduction() {
+  function toggleTraduction() {
     const tOpen = menuButton?.getAttribute('data-open-label') ?? 'Abrir menú de navegación lateral'
     const tClose = menuButton?.getAttribute('data-close-label') ?? 'Cerrar menú de navegación lateral'
     menuButton?.setAttribute('aria-label', isOpen ? tOpen : tClose);
   }
-  function toogleSidebar() {
+  function toggleSidebar() {
     if(!isOpen){
       asideNav?.classList.remove('lg:translate-x-0')
       asideNav?.classList.remove('translate-x-full')
@@ -129,18 +93,18 @@ const navigationConfig = {
       asideNav?.classList.add('translate-x-full')
       asideNav?.classList.remove('translate-x-0')
     }
-    toogleIcons()
-    toogleTraduction()
+    toggleIcons()
+    toggleTraduction()
     isOpen = !isOpen
   }
 
   if(menuButton && asideNav) {
-    menuButton?.addEventListener('click', () => toogleSidebar())
+    menuButton?.addEventListener('click', () => toggleSidebar())
 
     asideNav?.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A') {
-        toogleSidebar()
+        toggleSidebar()
       }
     })  
   }else {

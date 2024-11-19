@@ -1,0 +1,59 @@
+---
+import { getI18N } from '@/i18n'
+import { getLangFromUrl } from '@/i18n/utils'
+import { cn } from '@/lib/utils'
+import { Button, buttonVariants } from './react/ui/Button'
+import { Languages, LANGUAGES } from '@core/locale/domain'
+import { changeLocale } from '@/i18n/utils'
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+const lang = getLangFromUrl(Astro.url)
+
+const displayLanguage = {
+  [Languages.ENGLISH]: i18n.commons.English,
+  [Languages.SPANISH]: i18n.commons.Spanish,
+}
+
+const displayChangeLanguage = {
+  [Languages.ENGLISH]: i18n.commons.changeToEnglish,
+  [Languages.SPANISH]: i18n.commons.changeToSpanish,
+}
+---
+
+<div class="relative inline-block text-left">
+  <div
+    class="group transition-all"
+  >
+    <Button
+      aria-expanded="true"
+      aria-haspopup="true"
+      aria-controls="list"
+      className='gap-1'
+      variant={"ghost"}
+    >
+      {displayLanguage[lang]}
+    </Button>
+    <ul
+      id="list"
+      class="group-hover:block group-hover:animate-fade-up group-hover:animate-duration-200 hidden absolute w-full bg-background p-2 rounded-sm bottom-full translate-y-full"
+    >
+      {
+        LANGUAGES.map((locale) => (
+          <li class="my-1">
+            <a
+              class={cn(buttonVariants({variant: "ghost"}), "w-full",
+               locale === lang && "pointer-events-none opacity-50"
+            )}
+              aria-label={displayChangeLanguage[locale]}
+              href={changeLocale(locale)}
+              aria-disabled={locale === lang}
+            >
+              {displayLanguage[locale]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

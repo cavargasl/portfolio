@@ -1,4 +1,4 @@
-const BASE_URL: Readonly<string> = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || 'http://127.0.0.1:3000'
+const BASE_URL: Readonly<string> = process.env.NEXT_PUBLIC_APP_URL || process.env.PUBLIC_APP_URL || 'http://127.0.0.1:3000'
 
 export const siteConfig = {
   name: 'Camilo Vargas | Frontend Developer',
