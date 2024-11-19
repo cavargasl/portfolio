@@ -6,8 +6,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@core/*": ["../../../core/*"],
-      "@icons/*": ["./src/components/icons/*"]
+      "@icons/*": ["./src/components/icons/*"],
+      "@react/*": ["./src/components/react/*"],
     }
   },
-  "include": [ "../../../core/**/*", "./**/*" ]
+  "include": [ "../../../core/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.astro","./**/*.cjs", "./**/*.mjs"],
 }

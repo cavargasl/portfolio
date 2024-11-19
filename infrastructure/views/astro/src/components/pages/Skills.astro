@@ -1,0 +1,46 @@
+---
+import { getI18N } from '@/i18n'
+import { cn, siteConfigExtended } from '@/lib/utils'
+import { skillsList } from '@react/SkillsList'
+import { Separator } from '@react/ui/Separator'
+import Card from '@react/ui/Card'
+import SectionContainer from '../SectionContainer.astro'
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const {mainNav} = siteConfigExtended(i18n)
+---
+
+<SectionContainer id={mainNav.skills.id} aria-label={mainNav.skills.title}>
+  <h3 class='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{mainNav.skills.title}</h3>
+  <div class='grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-16'>
+    {skillsList.map((item, idx) => (
+      <fieldset class={cn('relative flex flex-col gap-2 rounded-sm border-muted p-4', item.colSpan)}>
+        <legend class='line-clamp-1 w-full px-1 text-center text-2xl font-bold text-paragraph'>{item.title}</legend>
+        {idx > 0 && <Separator orientation='horizontal' className={cn('absolute left-0 top-[calc(-32px-1.25rem)] block sm:hidden')} />}
+        <div class={cn('grid auto-rows-[9rem] grid-cols-[repeat(auto-fit,9rem)] justify-center gap-6', item.justifyCenter)}>
+          {item.items.map(skill => {
+            const Icon = skill.icon
+            return (
+              <Card className='text-paragraph '>
+                <Icon />
+                <h4 class='text-center text-sm font-medium leading-none text-paragraph'>{skill.title}</h4>
+              </Card>
+            )
+          })}
+        </div>
+        {item.colSpan && (
+          <>
+            {idx > 0 && !skillsList[idx - 1].colSpan && (
+              <Separator orientation='horizontal' className='absolute left-0 top-[calc(-32px-2rem)] hidden sm:block' />
+            )}
+            {idx !== skillsList.length - 1 && <Separator orientation='horizontal' className='absolute -bottom-8 left-0 hidden sm:block' />}
+          </>
+        )}
+        {idx !== skillsList.length - 1 && !item.colSpan && !skillsList[idx + 1].colSpan && (
+          <Separator orientation='vertical' className={'absolute -right-8 bottom-0 hidden sm:block'} />
+        )}
+      </fieldset>
+    ))}
+  </div>
+</SectionContainer>
