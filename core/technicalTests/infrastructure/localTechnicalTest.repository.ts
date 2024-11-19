@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '@core/shared/const/infrastructure'
+import { DEFAULT_LANG } from '@core/locale/domain'
 
 import { type TechnicalTestRepository } from '../domain/technicalTestRepository'
 import { TechnicalTests } from './data'

@@ -1,5 +1,4 @@
-import { Languages, type Language } from "@core/locale/domain";
-import { DEFAULT_LANG } from "@core/shared/const/infrastructure";
+import { DEFAULT_LANG, Languages, type Language } from "@core/locale/domain";
 
 
 export function getLangFromUrl(url: URL):Language {

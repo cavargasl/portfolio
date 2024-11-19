@@ -1,7 +1,6 @@
-import { Languages } from '@core/locale/domain';
+import { DEFAULT_LANG, Languages } from '@core/locale/domain';
 import { default as English } from '@core/locale/messages/en';
 import { default as Spanish } from '@core/locale/messages/es';
-import { DEFAULT_LANG } from '@core/shared/const/infrastructure';
 import type { JSX } from 'astro/jsx-runtime';
 
 export const getI18N = ({
