@@ -1,20 +1,26 @@
 ---
-import '@/styles/global.css'
-import '@/styles/fonts.css'
-import { siteConfig } from '@core/shared/const/siteConfig';
-import { cn } from '@/lib/utils';
 import SidebarNav from '@/components/SidebarNav.astro';
 import { TailwindIndicator } from '@/components/react/TailwindIndicator';
-const { currentLocale } = Astro
+import { cn } from '@/lib/utils';
+import '@/styles/fonts.css';
+import '@/styles/global.css';
+import { siteConfig } from '@core/shared/const/siteConfig';
+const { currentLocale, cookies } = Astro
+const theme = cookies.get('theme')?.value;
 interface Props {
   title?: string
   description?: string
 }
 const { title = siteConfig.name, description = siteConfig.description } = Astro.props
+
+const themeClass: Record<string, string> = {
+	light: 'light',
+	dark: 'dark',
+}
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={currentLocale} class={theme && themeClass[theme]}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -22,6 +28,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		{theme === undefined && <link rel="stylesheet" href="/styles/prefers-theme.css" />}
 	</head>
 	<body class={cn('scroll-smooth font-sans antialiased')}>
 		<main class='flex snap-y flex-col gap-20 ml-auto lg:w-[calc(100%-16rem)]'>
@@ -33,10 +40,13 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 </html>
 
 <script>
-  if (localStorage.theme === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
+	const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+	if (!document.cookie.includes("theme")) {
+		if (prefersDarkScheme) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.add('light');
+		}
+	}
 </script>

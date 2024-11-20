@@ -20,10 +20,12 @@ const i18n = getI18N({currentLocale: lang})
     const isCurrentlyDark = document.documentElement.classList.contains('dark');
     if (isCurrentlyDark) {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.add('light');
+      document.cookie = `theme=light; path=/; expires=${new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString()}; SameSite=Strict;`;
     } else {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.remove('light');
+      document.cookie = `theme=dark; path=/; expires=${new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString()}; SameSite=Strict;`;
     }
   }
 

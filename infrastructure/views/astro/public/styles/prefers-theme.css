@@ -1,0 +1,32 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 8% 9%;
+    --foreground: 214 16% 74%;
+    --paragraph: 60 100% 100%;
+    --paragraph-foreground: 214 100% 15%;
+    --primary: 171 100% 46%;
+    --primary-foreground: 240 8% 9%;
+    --secondary: 350 100% 66%;
+    --secondary-foreground: 240 8% 9%;
+    --tertiary: 51 98% 65%;
+    --muted: 216 6% 15%;
+    --muted-foreground: 210 18% 96%;
+    --radius: 0.5rem;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: 60 100% 100%;
+    --foreground: 214 44% 19%;
+    --paragraph: 214 100% 15%;
+    --paragraph-foreground: 60 100% 100%;
+    --primary: 171 100% 46%;
+    --primary-foreground: 214 100% 15%;
+    --secondary: 350 100% 66%;
+    --secondary-foreground: 214 100% 15%;
+    --tertiary: 51 98% 65%;
+    --muted: 210 18% 96%;
+    --muted-foreground: 216 6% 15%;
+    --radius: 0.5rem;
+  }
+}

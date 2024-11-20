@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  .light {
     --background: 60 100% 100%;
     --foreground: 214 44% 19%;
 
@@ -23,7 +23,6 @@
 
     --radius: 0.5rem;
   }
-
   .dark {
     --background: 240 8% 9%;
     --foreground: 214 16% 74%;
@@ -31,12 +30,18 @@
     --paragraph: 60 100% 100%;
     --paragraph-foreground: 214 100% 15%;
 
+    --primary: 171 100% 46%;
     --primary-foreground: 240 8% 9%;
 
+    --secondary: 350 100% 66%;
     --secondary-foreground: 240 8% 9%;
+
+    --tertiary: 51 98% 65%;
 
     --muted: 216 6% 15%;
     --muted-foreground: 210 18% 96%;
+
+    --radius: 0.5rem;
   }
 }
 
