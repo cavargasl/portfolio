@@ -26,6 +26,27 @@ const themeClass: Record<string, string> = {
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link 
+			rel="preload" 
+			href="/fonts/fira-mono-latin-400-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/fira-mono-latin-700-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-400-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{theme === undefined && <link rel="stylesheet" href="/styles/prefers-theme.css" />}
