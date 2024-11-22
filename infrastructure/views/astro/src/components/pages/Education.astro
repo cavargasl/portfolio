@@ -1,0 +1,32 @@
+---
+import { getI18N } from "@/i18n";
+import { siteConfigExtended } from "@/lib/utils";
+import Card from "@react/ui/Card";
+import SectionContainer from "../SectionContainer.astro";
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const {mainNav: {education: {id, title}}} = siteConfigExtended(i18n);
+const courses = i18n.education.courses.items
+---
+<SectionContainer id={id} aria-label={title}>
+  <h3 class='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{title}</h3>
+      <main class='w-full max-w-4xl'>
+        <Card className='w-full items-start gap-0 border-2 border-primary bg-transparent p-1 sm:p-3'>
+          <h3 class='font-mono text-2xl font-bold'>{i18n.education.university.title}</h3>
+          <span class='text-xl'>{i18n.education.university.name}</span>
+          <span class='font-light'>{i18n.education.university.date}</span>
+          <br />
+          <p>{i18n.education.university.description}</p>
+        </Card>
+        <h3 class='mt-10 w-fit border-b-2 border-primary text-2xl font-semibold'>{i18n.education.courses.title}</h3>
+        <div class='mt-4 grid gap-4'>
+          {courses.map(course => (
+            <Card className='w-full items-start gap-0 border border-primary bg-transparent p-1 sm:p-3'>
+              <h3 class='font-mono text-lg font-bold'>{course.title}</h3>
+              <span class=''>{course.where}</span>
+            </Card>
+          ))}
+        </div>
+      </main>
+</SectionContainer>
