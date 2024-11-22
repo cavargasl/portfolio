@@ -1,0 +1,87 @@
+---
+import { getI18N } from "@/i18n";
+import { getLangFromUrl } from "@/i18n/utils";
+import { siteConfigExtended } from "@/lib/utils";
+import { technicalTestService } from "@core/technicalTests/application/technicalTestService";
+import type { TechnicalTest } from "@core/technicalTests/domain/technicalTest";
+import { localMarkdownTechnicalTest } from "@core/technicalTests/infrastructure/localMarkdownTechnicalTest.repository";
+import { Badge } from "@react/ui/Badge";
+import { ExternalLink } from "../icons";
+import { GitHub } from "../icons/brand";
+import SectionContainer from "../SectionContainer.astro";
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const lang = getLangFromUrl(Astro.url)
+const {mainNav: {technicalTest: {id, title}}} = siteConfigExtended(i18n);
+
+const service = technicalTestService(localMarkdownTechnicalTest())
+let techTest: TechnicalTest[] = []
+try {
+  techTest = await service.getAll({
+    lang,
+    order: 'desc',
+  })
+} catch (error) {
+  console.error('Error getting technical tests:', error)
+}
+
+function removerObjectInString(str: string, url?: string): string {
+  return str.replace(
+    /\{url\}/g,
+    url
+      ? `<a href="${url}" target='_blank' rel='noopener noreferrer' aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
+        link
+      </a>`
+      : ''
+  )
+}
+---
+<SectionContainer id={id} aria-label={title}>
+  <h3 class='border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl'>{i18n.commons.techTest}</h3>
+  {techTest.length ? (
+    <div class='grid grid-cols-[repeat(auto-fill,minmax(min(100%,25rem),1fr))] gap-6'>
+      {techTest.map(test => (
+        <div class='neumorphism flex flex-col border border-primary/40'>
+          <div class='grid h-full content-between gap-4 p-4'>
+            <header class='grid grid-cols-[1fr,auto] gap-2'>
+              <p class='text-xl font-bold leading-none'>{test.title}</p>
+              <div class='inline-flex gap-2'>
+                {test.github.map(url => (
+                  <a href={url} aria-label={url}>
+                    <GitHub class='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
+                  </a>
+                ))}
+                {test.webSite && (
+                  <a href={test.webSite} aria-label={test.webSite}>
+                    <ExternalLink class='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
+                  </a>
+                )}
+              </div>
+              <span class='font-semibold leading-none'>{test.enterprise}</span>
+              <span class='col-span-2 text-sm font-light'>{test.testTime}</span>
+            </header>
+            <div
+              class={test.isMarkdown ? 'markdown-content line-clamp-[8] leading-tight' : 'line-clamp-[8] leading-tight'}
+              set:html={test.isMarkdown ? test.description : removerObjectInString(test.description.toString(), test.urlDescription)}
+            />
+
+            <footer class='flex flex-col gap-1'>
+              <div class='flex flex-wrap gap-1'>
+                {test.skills.map(skill => (
+                  <Badge variant={'default'}>
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </footer>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div class='flex flex-col items-center justify-center'>
+      <h3 class='text-center text-2xl font-bold'>{'Not found any technical test 😥'}</h3>
+    </div>
+  )}
+</SectionContainer>
