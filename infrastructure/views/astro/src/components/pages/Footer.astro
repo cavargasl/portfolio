@@ -1,0 +1,23 @@
+---
+import { customT, getI18N } from "@/i18n"
+import { siteConfig } from "@core/shared/const/siteConfig"
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const {links} = siteConfig
+---
+<footer class='flex flex-col items-center justify-center bg-muted-foreground p-6 lg:px-12'>
+  <p class='flex flex-wrap justify-center gap-1 text-center text-background'>
+    {customT(i18n.footer.content, {
+      fullName: (
+        <a
+          href={links.LinkedIn}
+          class='line-clamp-1 font-bold hover:underline'
+          aria-label='GitHub'
+        >
+          Camilo Vargas
+        </a>
+      ),
+    })}
+  </p>
+</footer>
