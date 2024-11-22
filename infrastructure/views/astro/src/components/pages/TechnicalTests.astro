@@ -6,9 +6,9 @@ import { technicalTestService } from "@core/technicalTests/application/technical
 import type { TechnicalTest } from "@core/technicalTests/domain/technicalTest";
 import { localMarkdownTechnicalTest } from "@core/technicalTests/infrastructure/localMarkdownTechnicalTest.repository";
 import { Badge } from "@react/ui/Badge";
-import { ExternalLink } from "../icons";
-import { GitHub } from "../icons/brand";
 import SectionContainer from "../SectionContainer.astro";
+import { ExternalLink } from "@icons/index";
+import { GitHub } from "@icons/brand";
 
 const { currentLocale } = Astro
 const i18n = getI18N({currentLocale})

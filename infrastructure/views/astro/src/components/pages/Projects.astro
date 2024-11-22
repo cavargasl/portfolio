@@ -6,9 +6,9 @@ import SectionContainer from "../SectionContainer.astro";
 import { projectsServices } from "@core/projects/application/projectService";
 import { localProjects } from "@core/projects/infrastructure/localProjects.repository";
 import { AspectRatio } from "@react/ui/AspectRatio";
-import { ExternalLink, Image } from "../icons";
-import { GitHub } from "../icons/brand";
 import { Badge } from "../react/ui/Badge";
+import { ExternalLink, Image } from "@icons/index";
+import { GitHub } from "@icons/brand";
 
 const { currentLocale } = Astro
 const i18n = getI18N({currentLocale})

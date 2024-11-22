@@ -1,8 +1,8 @@
 ---
 import { getI18N } from "@/i18n";
-import { Moon, Sun } from "./icons";
-import { Button } from "./react/ui/Button";
 import { getLangFromUrl } from "@/i18n/utils";
+import { Moon, Sun } from "@icons/index";
+import { Button } from "./react/ui/Button";
 
 const lang = getLangFromUrl(Astro.url)
 const i18n = getI18N({currentLocale: lang})

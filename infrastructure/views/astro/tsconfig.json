@@ -4,10 +4,10 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
       "@core/*": ["../../../core/*"],
-      "@icons/*": ["./src/components/icons/*"],
+      "@icons/*": ["src/components/Icons/*"],
       "@react/*": ["./src/components/react/*"],
+      "@/*": ["./src/*"],
     }
   },
   "include": [ "../../../core/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.astro","./**/*.cjs", "./**/*.mjs"],

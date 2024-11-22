@@ -14,7 +14,7 @@ import {
   Value,
   Viewport,
 } from '@radix-ui/react-select'
-import { Close } from '@/components/icons'
+import { Close } from '@icons/index'
 
 const Select = Root
 

@@ -2,10 +2,10 @@
 import { cn, siteConfigExtended } from '@/lib/utils'
 
 import { getI18N } from '@/i18n'
-import { Close, Menu } from './icons'
 import { Button, buttonVariants } from './react/ui/Button'
 import ThemeSwitcher from './ThemeSwitcher.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
+import { Close, Menu } from '@icons/index'
 
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
