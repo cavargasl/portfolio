@@ -1,6 +1,6 @@
 import type { getI18N } from '@/i18n'
 import { siteConfig } from '@core/shared/const/siteConfig'
-import type { SidebarNavItem, IdsNav } from '@core/shared/domain/navBar'
+import type { SidebarNavItem } from '@core/shared/domain/navBar'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 

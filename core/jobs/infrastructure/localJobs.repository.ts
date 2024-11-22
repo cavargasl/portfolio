@@ -6,7 +6,7 @@ import { type JobDTO } from './dto'
 export const localJobs = (): JobRepository => ({
   getAll: async (params) => {
     // simulates a fetch from a remote API with DTO data
-    const jobsDTO = (await Jobs[params.lang]) as JobDTO[]
+    const jobsDTO = Jobs[params.lang] as JobDTO[]
     return jobsAdapter(jobsDTO)
   },
 })

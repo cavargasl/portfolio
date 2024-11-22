@@ -25,10 +25,10 @@ export function ChangeLanguage({locale}: Props) {
         {locale === 'es' ? i18n.commons.Spanish : i18n.commons.English}
       </SelectTrigger>
       <SelectContent side='top' className='bg-background p-0'>
-        <Button variant='ghost' aria-label={i18n.commons.changeToEnglish} onClick={(e) => toggleLang("en")} disabled={locale === 'en'}>
+        <Button variant='ghost' aria-label={i18n.commons.changeToEnglish} onClick={() => toggleLang("en")} disabled={locale === 'en'}>
           {i18n.commons.English}
         </Button>
-        <Button variant='ghost' aria-label={i18n.commons.changeToSpanish} onClick={(e) => toggleLang("es")} disabled={locale === 'es'}>
+        <Button variant='ghost' aria-label={i18n.commons.changeToSpanish} onClick={() => toggleLang("es")} disabled={locale === 'es'}>
           {i18n.commons.Spanish}
         </Button>
       </SelectContent>
