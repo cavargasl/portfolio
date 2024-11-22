@@ -12,6 +12,7 @@ const esProjects: Project[] = [
     skills: [
       'TypeScript',
       'Next.js',
+      'Astro',
       'Tailwind CSS',
       'Git',
       'GitHub',

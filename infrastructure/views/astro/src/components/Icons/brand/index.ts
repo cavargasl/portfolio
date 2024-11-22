@@ -1,5 +1,6 @@
 export { default as Angular } from './Angular.astro';
 export { default as AntDesign } from './AntDesign.astro';
+export { default as Astro } from './AstroBrand.astro';
 export { default as Atlassian } from './Atlassian.astro';
 export { default as Auth0 } from './Auth0.astro';
 export { default as Axios } from './Axios.astro';
