@@ -47,6 +47,20 @@ const themeClass: Record<string, string> = {
 			type="font/woff2" 
 			crossorigin
 		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-600-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-800-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{theme === undefined && <link rel="stylesheet" href="/styles/prefers-theme.css" />}
