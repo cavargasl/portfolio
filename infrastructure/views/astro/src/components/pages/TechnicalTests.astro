@@ -4,18 +4,18 @@ import { getLangFromUrl } from "@/i18n/utils";
 import { siteConfigExtended } from "@/lib/utils";
 import { technicalTestService } from "@core/technicalTests/application/technicalTestService";
 import type { TechnicalTest } from "@core/technicalTests/domain/technicalTest";
-import { localMarkdownTechnicalTest } from "@core/technicalTests/infrastructure/localMarkdownTechnicalTest.repository";
+import { localTechnicalTest } from "@core/technicalTests/infrastructure/localTechnicalTest.repository";
+import { GitHub } from "@icons/brand";
+import { ExternalLink } from "@icons/index";
 import { Badge } from "@react/ui/Badge";
 import SectionContainer from "../SectionContainer.astro";
-import { ExternalLink } from "@icons/index";
-import { GitHub } from "@icons/brand";
 
 const { currentLocale } = Astro
 const i18n = getI18N({currentLocale})
 const lang = getLangFromUrl(Astro.url)
 const {mainNav: {technicalTest: {id, title}}} = siteConfigExtended(i18n);
 
-const service = technicalTestService(localMarkdownTechnicalTest())
+const service = technicalTestService(localTechnicalTest())
 let techTest: TechnicalTest[] = []
 try {
   techTest = await service.getAll({
