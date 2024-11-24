@@ -76,12 +76,9 @@
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted));
-    border-radius: 5px;
+    @apply bg-muted-foreground/30 rounded-sm cursor-all-scroll;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--foreground));
-  }
+  
 }
 
 @layer utilities {

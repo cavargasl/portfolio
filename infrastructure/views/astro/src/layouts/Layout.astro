@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import '@/styles/fonts.css';
 import '@/styles/global.css';
 import { siteConfig } from '@core/shared/const/siteConfig';
+import ScrollIndicator from '@react/ScrollIndicator';
 const { currentLocale, cookies } = Astro
 const theme = cookies.get('theme')?.value;
 interface Props {
@@ -67,6 +68,7 @@ const themeClass: Record<string, string> = {
 	</head>
 	<body class={cn('scroll-smooth font-sans antialiased')}>
 		<main class='flex snap-y flex-col gap-20 ml-auto lg:w-[calc(100%-16rem)]'>
+			<ScrollIndicator client:load />
 			<slot />
 			<SidebarNav />
 			<TailwindIndicator />
