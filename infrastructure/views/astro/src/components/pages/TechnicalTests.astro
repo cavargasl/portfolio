@@ -30,7 +30,7 @@ function removerObjectInString(str: string, url?: string): string {
   return str.replace(
     /\{url\}/g,
     url
-      ? `<a href="${url}" target='_blank' rel='noopener noreferrer' aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
+      ? `<a href="${url}" aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
         link
       </a>`
       : ''
