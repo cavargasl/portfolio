@@ -6,6 +6,7 @@ export const skillNameOrdered = [
   // Frameworks y bibliotecas esenciales
   'React.js',
   'Next.js',
+  'Astro',
   'React Native',
   'Angular',
 

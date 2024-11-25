@@ -1,0 +1,35 @@
+---
+import { type Job } from "@core/jobs/domain/job";
+import { Badge } from "@react/ui/Badge";
+import Card from "@react/ui/Card";
+
+interface Props {
+  item: Job
+}
+const { item } = Astro.props;
+---
+<Card className='w-full items-start p-2 sm:p-6'>
+  <header class='flex flex-col flex-wrap items-baseline justify-between'>
+    <h2 class='text-left text-xl font-medium'>{item.position}</h2>
+    <h2 class='text-left text-lg'>{item.title}</h2>
+    <span class='text-sm font-light'>{item.date}</span>
+  </header>
+  <ul>
+    {item.descriptions.map(description => (
+      <li
+        class="relative flex items-center gap-2 pl-7 before:absolute before:left-0 before:top-0 before:text-primary before:content-['👉']"
+      >
+        {description}
+      </li>
+    ))}
+  </ul>
+  <footer class='flex flex-col gap-1'>
+    <div class='flex flex-wrap gap-1'>
+      {item.skills.map(skill => (
+        <Badge variant={'outline'}>
+          {skill}
+        </Badge>
+      ))}
+    </div>
+  </footer>
+</Card>

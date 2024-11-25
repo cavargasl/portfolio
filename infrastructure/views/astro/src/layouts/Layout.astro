@@ -1,0 +1,107 @@
+---
+import SidebarNav from '@/components/SidebarNav.astro';
+import { TailwindIndicator } from '@/components/react/TailwindIndicator';
+import { cn } from '@/lib/utils';
+import '@/styles/fonts.css';
+import '@/styles/global.css';
+import { siteConfig } from '@core/shared/const/siteConfig';
+import ScrollIndicator from '@react/ScrollIndicator';
+const { currentLocale, cookies } = Astro
+const theme = cookies.get('theme')?.value;
+interface Props {
+  title?: string
+  description?: string
+}
+const { title = siteConfig.name, description = siteConfig.description } = Astro.props
+
+const themeClass: Record<string, string> = {
+	light: 'light',
+	dark: 'dark',
+}
+---
+
+<!doctype html>
+<html lang={currentLocale} class={theme && themeClass[theme]}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={siteConfig.name} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:image" content={siteConfig.ogImage} />
+    <meta property="og:locale" content={currentLocale} />
+		<meta property="og:site_name" content={siteConfig.siteName} />
+		 <!-- Twitter Cards -->
+		 <meta name="twitter:card" content="summary_large_image" />
+		 <meta name="twitter:title" content={siteConfig.name} />
+		 <meta name="twitter:description" content={siteConfig.description} />
+		 <meta name="twitter:image" content={siteConfig.ogImage} />
+		 <meta name="twitter:site" content="@cavargasl" />
+		 <meta name="twitter:creator" content="@cavargasl" />
+
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link 
+			rel="preload" 
+			href="/fonts/fira-mono-latin-400-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/fira-mono-latin-700-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-400-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-600-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/karla-latin-800-normal.woff2" 
+			as="font" 
+			type="font/woff2" 
+			crossorigin
+		/>
+		
+		{theme === undefined && <link rel="stylesheet" href="/styles/prefers-theme.css" />}
+	</head>
+	<body class={cn('scroll-smooth font-sans antialiased')}>
+		<main class='flex snap-y flex-col gap-20 ml-auto lg:w-[calc(100%-16rem)]'>
+			<ScrollIndicator client:load />
+			<slot />
+			<SidebarNav />
+			<TailwindIndicator />
+		</main>
+	</body>
+</html>
+
+<script>
+	const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+	if (!document.cookie.includes("theme")) {
+		if (prefersDarkScheme) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.add('light');
+		}
+	}
+</script>

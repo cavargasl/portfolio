@@ -1,0 +1,33 @@
+---
+import { getI18N } from "@/i18n";
+import SectionContainer from "../SectionContainer.astro";
+import { siteConfigExtended } from "@/lib/utils";
+import { jobsServices } from "@core/jobs/application/jobService";
+import { localJobs } from "@core/jobs/infrastructure/localJobs.repository";
+import { getLangFromUrl } from "@/i18n/utils";
+import { Separator } from "@react/ui/Separator";
+import CardJob from "../CardJob.astro";
+import Dot from "../ui/Dot.astro";
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const lang = getLangFromUrl(Astro.url)
+const {mainNav: {experience: {id, title}}} = siteConfigExtended(i18n);
+const experience = await jobsServices(localJobs()).getAll({lang})
+---
+<SectionContainer id={id} aria-label={title}>
+  <h3 class='border-b-4 border-primary text-4xl font-bold sm:text-5xl'>{title}</h3>
+  <div
+    class={`relative grid w-full grid-cols-[1.5rem_1fr] justify-items-center gap-x-1 gap-y-6 sm:gap-6 sm:gap-x-4 2xl:grid-cols-[1fr_1.5rem_1fr] 2xl:gap-x-8 max-w-[850px] 2xl:max-w-none`}
+  >
+    <Separator orientation="vertical" className="absolute left-3 bg-secondary 2xl:left-1/2" />
+    {experience.map((item, idx) => (
+      <>
+      <Dot class="col-start-1 2xl:hidden" />
+      {idx % 2 === 0 ? <CardJob item={item} /> : null}
+      <Dot class="col-start-2 hidden 2xl:flex" />
+      {idx % 2 !== 0 ? <CardJob item={item} /> : null}
+    </>
+    ))}
+  </div>
+</SectionContainer>

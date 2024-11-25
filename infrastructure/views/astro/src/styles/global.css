@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .light {
+    --background: 60 100% 100%;
+    --foreground: 214 44% 19%;
+
+    --paragraph: 214 100% 15%;
+    --paragraph-foreground: 60 100% 100%;
+
+    --primary: 171 100% 46%;
+    --primary-foreground: 214 100% 15%;
+
+    --secondary: 350 100% 66%;
+    --secondary-foreground: 214 100% 15%;
+
+    --tertiary: 51 98% 65%;
+
+    --muted: 210 18% 96%;
+    --muted-foreground: 216 6% 15%;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 8% 9%;
+    --foreground: 214 16% 74%;
+
+    --paragraph: 60 100% 100%;
+    --paragraph-foreground: 214 100% 15%;
+
+    --primary: 171 100% 46%;
+    --primary-foreground: 240 8% 9%;
+
+    --secondary: 350 100% 66%;
+    --secondary-foreground: 240 8% 9%;
+
+    --tertiary: 51 98% 65%;
+
+    --muted: 216 6% 15%;
+    --muted-foreground: 210 18% 96%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply box-border;
+    font-size: 18px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-paragraph;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-sm cursor-all-scroll;
+  }
+  
+}
+
+@layer utilities {
+  .markdown-content strong {
+    @apply font-bold text-paragraph/90;
+  }
+  .markdown-content a {
+    @apply text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline whitespace-nowrap;
+  }
+  .markdown-content ol {
+    @apply list-decimal pl-4 gap-2;
+  }
+
+  .neumorphism {
+    @apply rounded-sm bg-gradient-to-br dark:from-primary/20 dark:to-primary/10 from-primary/10 to-primary/5;
+  }
+}

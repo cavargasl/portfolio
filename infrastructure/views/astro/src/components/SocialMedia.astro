@@ -1,0 +1,39 @@
+---
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./react/ui/Button";
+import { siteConfig } from "@core/shared/const/siteConfig";
+import { getI18N } from "@/i18n";
+import { GitHub, LinkedIn, X } from "@icons/brand";
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+---
+
+<div class='flex gap-6'>
+  <a
+    href={siteConfig.links.github}
+    class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'group text-secondary hover:bg-transparent hover:text-secondary animate-fade-up animate-delay-0 animate-duration-[1200ms]')}
+    aria-label={i18n.siteConfig.socialLinks.github}
+  >
+    <span class='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
+      <GitHub class='h-8 w-8' />
+    </span>
+  </a>
+  <a
+    href={siteConfig.links.LinkedIn}
+    class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'group text-secondary hover:bg-transparent hover:text-secondary animate-fade-up animate-delay-75 animate-duration-[1200ms]')}
+    aria-label={i18n.siteConfig.socialLinks.LinkedIn}
+  >
+    <span class='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
+      <LinkedIn class='h-8 w-8' />
+    </span>
+  </a>
+  <a
+    href={siteConfig.links.twitter}
+    class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'group text-secondary hover:bg-transparent hover:text-secondary animate-fade-up animate-delay-100 animate-duration-[1200ms]')}
+    aria-label={i18n.siteConfig.socialLinks.twitter}
+  >
+    <span class='transition-transform duration-200 ease-out-expo group-hover:-translate-y-1'>
+      <X class='h-8 w-8' />
+    </span>
+  </a>
+</div>

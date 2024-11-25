@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["../../../core/*"],
+      "@icons/*": ["src/components/Icons/*"],
+      "@react/*": ["./src/components/react/*"],
+      "@/*": ["./src/*"],
+    }
+  },
+  "include": [ "../../../core/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.astro","./**/*.cjs", "./**/*.mjs"],
+}

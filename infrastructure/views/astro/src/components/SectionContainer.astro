@@ -1,0 +1,19 @@
+---
+import { cn } from "@/lib/utils";
+type Props  = {
+  id: string
+  'aria-label': string
+} & astroHTML.JSX.HTMLAttributes
+const { class: className, id, ...props } = Astro.props;
+---
+
+<section
+  id={id}
+  class={cn(
+    'mx-auto flex h-full min-h-screen w-full max-w-screen-2xl snap-start flex-col items-center gap-16 p-8 lg:px-12',
+    className
+  )}
+  {...props}
+>
+  <slot />
+</section>

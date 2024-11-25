@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import type { SidebarNavItem } from '@/types'
 import { AspectRatio } from '@/components/ui/AspectRatio'
 import { Badge } from '@/components/ui/Badge'
 import { BrandGitHub, IconExternalLink, IconImage } from '@/components/Icons'
@@ -8,6 +7,7 @@ import SectionContainer from '@/components/SectionContainer'
 import { getCurrentLocale } from '@/locale/server'
 import { projectsServices } from '@core/projects/application/projectService'
 import { localProjects } from '@core/projects/infrastructure/localProjects.repository'
+import { type SidebarNavItem } from '@core/shared/domain/navBar'
 
 type ProjectsProps = {
   navItem?: SidebarNavItem

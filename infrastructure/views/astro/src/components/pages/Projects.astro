@@ -1,0 +1,68 @@
+---
+import { getI18N } from "@/i18n";
+import { getLangFromUrl } from "@/i18n/utils";
+import { siteConfigExtended } from "@/lib/utils";
+import SectionContainer from "../SectionContainer.astro";
+import { projectsServices } from "@core/projects/application/projectService";
+import { localProjects } from "@core/projects/infrastructure/localProjects.repository";
+import { AspectRatio } from "@react/ui/AspectRatio";
+import { Badge } from "../react/ui/Badge";
+import { ExternalLink, Image } from "@icons/index";
+import { GitHub } from "@icons/brand";
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const lang = getLangFromUrl(Astro.url)
+const {mainNav: {projects: {id, title}}} = siteConfigExtended(i18n);
+
+const projectsService = projectsServices(localProjects())
+const projects = await projectsService.getAll(lang)
+---
+<SectionContainer id={id} aria-label={title}>
+  <h3 class='border-b-4 border-secondary text-4xl font-bold sm:text-5xl'>{title}</h3>
+  <div class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,25rem),1fr))] gap-8'>
+    {projects.map(project => (
+      <div class='flex flex-col rounded-sm border border-secondary shadow-md shadow-secondary'>
+        <AspectRatio ratio={16 / 9} className='rounded-t-sm'>
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              class='inset-0 rounded-t-sm object-cover'
+              sizes='(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 32vw'
+            />
+          ) : (
+            <Image stroke-width='1' class='inset-0 h-full w-full rounded-t-sm bg-muted object-cover text-background' />
+          )}
+        </AspectRatio>
+        <div class='grid h-full content-between gap-4 p-4'>
+          <header class='flex w-full justify-between gap-2'>
+            <p class='text-2xl font-bold leading-none'>{project.title}</p>
+            <div class='inline-flex gap-2'>
+              {project.webSite && (
+                <a href={project.webSite} aria-label={project.webSite}>
+                  <ExternalLink class='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-secondary' />
+                </a>
+              )}
+              {project.github.map(url => (
+                <a href={url} aria-label={url}>
+                  <GitHub class='h-5 w-5 transition-colors duration-200 ease-out-expo hover:text-primary' />
+                </a>
+              ))}
+            </div>
+          </header>
+          <p class='line-clamp-3 leading-tight' title={project.description.toString()}>
+            {project.description}
+          </p>
+          <footer class='flex flex-wrap gap-1'>
+            {project.skills.map(skill => (
+              <Badge variant={'secondary'}>
+                {skill}
+              </Badge>
+            ))}
+          </footer>
+        </div>
+      </div>
+    ))}
+  </div>
+</SectionContainer>

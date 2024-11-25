@@ -1,0 +1,149 @@
+---
+import { cn, siteConfigExtended } from '@/lib/utils'
+
+import { getI18N } from '@/i18n'
+import { Button, buttonVariants } from './react/ui/Button'
+import ThemeSwitcher from './ThemeSwitcher.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+import { Close, Menu } from '@icons/index'
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+const navigationConfig = siteConfigExtended(i18n)
+---
+
+<>
+  <Button
+    id='menu-button'
+    variant='ghost'
+    size='icon'
+    className='fixed right-2 top-2 z-50 bg-background sm:right-8 sm:top-5 lg:hidden'
+    aria-label={i18n.commons.openSidebarNav}
+    data-open-label={i18n.commons.openSidebarNav}
+    data-close-label={i18n.commons.closeSidebarNav}
+  >
+    <Menu id="open-menu-icon" class='h-6 w-6' />
+    <Close id="close-menu-icon" class='h-6 w-6 hidden' />
+  </Button>
+
+  <aside
+    id="aside-nav"
+    class={cn(
+      'fixed left-0 top-0 z-40 flex min-h-screen w-full translate-x-0 flex-col items-center justify-center gap-8 bg-muted px-4 py-8 transition-transform ease-out-circ lg:w-64',
+      'duration-300 ease-in-out-expo',
+      'lg:translate-x-0 -translate-x-full'
+    )}
+    aria-label={i18n.commons.sidebarNav}
+  >
+    <span class='mb-auto' aria-hidden='true' />
+    <main class='flex w-full flex-col items-center justify-center gap-8'>
+      <img
+        src='/images/profile.webp'
+        alt={navigationConfig.name}
+        loading="eager"
+        class='object-cover'
+      />
+      <nav class='w-full'>
+        <ul class='flex flex-col gap-1'>
+          {Object.values(navigationConfig.mainNav).map(item => (
+            <li>
+              <a
+                class={cn(buttonVariants({ variant: 'ghost' }), 'w-full text-lg font-semibold')}
+                href={`#${item.id}`}
+                aria-label={item.title}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </main>
+
+    <footer class='mt-auto flex w-full items-center justify-center gap-4'>
+      <LanguageSwitcher/>
+      <ThemeSwitcher />
+    </footer>
+  </aside>
+</>
+
+<script>
+  const menuButton = document.getElementById('menu-button')
+  const asideNav = document.getElementById('aside-nav')
+  const openMenuIcon = document.getElementById('open-menu-icon')
+  const closeMenuIcon = document.getElementById('close-menu-icon')
+  let isOpen = false
+
+  function toggleIcons() {
+    closeMenuIcon?.classList.toggle('hidden', isOpen)
+    openMenuIcon?.classList.toggle('hidden', !isOpen)
+  }
+  function toggleTraduction() {
+    const tOpen = menuButton?.getAttribute('data-open-label') ?? 'Abrir menú de navegación lateral'
+    const tClose = menuButton?.getAttribute('data-close-label') ?? 'Cerrar menú de navegación lateral'
+    menuButton?.setAttribute('aria-label', isOpen ? tOpen : tClose);
+  }
+  function toggleSidebar() {
+    if(!isOpen){
+      asideNav?.classList.remove('lg:--x-0')
+      asideNav?.classList.remove('-translate-x-full')
+      asideNav?.classList.add('translate-x-0')
+    }else {
+      asideNav?.classList.add('lg:translate-x-0')
+      asideNav?.classList.add('-translate-x-full')
+      asideNav?.classList.remove('translate-x-0')
+    }
+    toggleIcons()
+    toggleTraduction()
+    isOpen = !isOpen
+  }
+
+  if(menuButton && asideNav) {
+    menuButton?.addEventListener('click', () => toggleSidebar())
+
+    asideNav?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A') {
+        toggleSidebar()
+      }
+    })  
+  }else {
+    console.error('menuButton or asideNav not found')
+  }
+ 
+</script>
+
+<style>
+ img {
+  display: none;
+  }
+
+  @media (min-height: 500px) {
+    img {
+      width: 60px;
+      height: 60px;
+      display: block;
+    }
+  }
+  @media (min-height: 655px) {
+    img {
+      width: 112px;
+      height: 112px;
+      display: block;
+    }
+  }
+  @media (min-height: 705px) {
+    img {
+      width: 172px;
+      height: 172px;
+      display: block;
+    }
+  }
+  @media (min-height: 765px) {
+    img {
+      width: 232px;
+      height: 232px;
+      display: block;
+    }
+  }
+</style>

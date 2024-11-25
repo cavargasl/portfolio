@@ -1,0 +1,12 @@
+---
+import { cn } from "@/lib/utils";
+interface Props extends astroHTML.JSX.HtmlHTMLAttributes {}
+const { class: className, ...props } = Astro.props;
+---
+
+<span
+  class={cn('z-10 flex h-6 w-6 items-center justify-center rounded-full border border-secondary bg-background', className)}
+  {...props}
+>
+  <span class={cn('h-3 w-3 rounded-full bg-secondary', className)} {...props} />
+</span>

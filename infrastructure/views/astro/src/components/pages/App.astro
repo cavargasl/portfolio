@@ -1,0 +1,18 @@
+---
+import SocialMedia from '@/components/SocialMedia.astro';
+import { getI18N} from '@/i18n';
+import SectionContainer from '../SectionContainer.astro';
+import { siteConfigExtended } from '@/lib/utils';
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+const {mainNav} = siteConfigExtended(i18n)
+---
+
+<SectionContainer id={mainNav.aboutMe.id} aria-label={mainNav.aboutMe.title} class='justify-center'>
+  <div class='flex flex-col items-center gap-2 lg:w-fit'>
+    <h1 class='w-full bg-gradient-to-r from-primary to-tertiary bg-clip-text text-center font-mono text-6xl font-bold !leading-[1.12] text-transparent sm:text-7xl md:whitespace-nowrap'>Camilo Vargas</h1>
+    <h2 class='text-center text-xl text-foreground/80'>{i18n.home.iAm}</h2>
+  </div>
+  <p class='w-full text-center text-xl md:w-[47ch] xl:w-[66ch]'>{i18n.home.welcome}</p>
+  <SocialMedia />
+</SectionContainer>
