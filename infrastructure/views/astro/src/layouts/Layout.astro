@@ -24,7 +24,26 @@ const themeClass: Record<string, string> = {
 <html lang={currentLocale} class={theme && themeClass[theme]}>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph -->
+		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta property="og:title" content={siteConfig.name} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:image" content={siteConfig.ogImage} />
+    <meta property="og:locale" content={currentLocale} />
+		<meta property="og:site_name" content={siteConfig.siteName} />
+		 <!-- Twitter Cards -->
+		 <meta name="twitter:card" content="summary_large_image" />
+		 <meta name="twitter:title" content={siteConfig.name} />
+		 <meta name="twitter:description" content={siteConfig.description} />
+		 <meta name="twitter:image" content={siteConfig.ogImage} />
+		 <meta name="twitter:site" content="@cavargasl" />
+		 <meta name="twitter:creator" content="@cavargasl" />
+
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link 
@@ -62,8 +81,7 @@ const themeClass: Record<string, string> = {
 			type="font/woff2" 
 			crossorigin
 		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		
 		{theme === undefined && <link rel="stylesheet" href="/styles/prefers-theme.css" />}
 	</head>
 	<body class={cn('scroll-smooth font-sans antialiased')}>

@@ -27,14 +27,14 @@ const esProjects: Project[] = [
       'lint-staged',
       'Jest',
     ],
-    image: '/images/og.png',
+    image: '/images/og.webp',
     github: ['https://github.com/cavargasl/portfolio'],
   },
   {
     title: 'Hackathon · Periferia',
     description:
       'Aplicación de ReactJs y NestJs, mediante solicitudes HTTP al backend se puede detectar patrones de más de cuatro letras iguales en una matriz de NxN en diferentes direcciones (oblicua, horizontal o vertical) para recibir la respuesta, Además, registra los intentos consultados y calcula su promedio, brindando una solución completa y eficiente con las mejores practicas. En El front se muestran los intentos consultados (satisfactorios y fallido) y un promedio, gracias a la lógica implementada en backend.',
-    image: '/images/hackathon.png',
+    image: '/images/hackathon.webp',
     github: ['https://github.com/cavargasl/hackathon-periferia-front', 'https://github.com/cavargasl/hackathon-periferia-back'],
     skills: ['TypeScript', 'React.js', 'Nest.js', 'Chakra UI', 'Git', 'GitHub', 'Axios', 'MySQL', 'Type ORM', 'Class Validator'],
   },
@@ -42,7 +42,7 @@ const esProjects: Project[] = [
     title: 'Comercio electrónico · Amar',
     description:
       'Sitio web de comercio electrónico, donde se pueden comprar productos de belleza y cuidado personal. Se implementa un carrito de compras para proceder a pagar por WhatsApp desplegado en Vercel.',
-    image: '/images/amar.png',
+    image: '/images/amar.webp',
     webSite: 'http://amar-shop.vercel.app/',
     github: ['https://github.com/cavargasl/eCommerce-Amar'],
     skills: ['TypeScript', 'Next.js', 'Git', 'GitHub', 'Chakra UI', 'Axios', 'Redux'],
