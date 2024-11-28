@@ -20,10 +20,6 @@ export const siteConfigExtended = (t:ReturnType<typeof getI18N>): SiteConfigExte
       id: 'aboutMe',
       title: t.siteConfig.sidebarNav.aboutMe,
     },
-    skills: {
-      id: 'skills',
-      title: t.siteConfig.sidebarNav.skills,
-    },
     experience: {
       id: 'experience',
       title: t.siteConfig.sidebarNav.experience,
@@ -39,6 +35,10 @@ export const siteConfigExtended = (t:ReturnType<typeof getI18N>): SiteConfigExte
     education: {
       id: 'education',
       title: t.siteConfig.sidebarNav.education,
+    },
+    skills: {
+      id: 'skills',
+      title: t.siteConfig.sidebarNav.skills,
     },
     contact: {
       id: 'contact',
