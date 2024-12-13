@@ -175,6 +175,7 @@ const esTechnicalTests: TechnicalTest[] = [
       'Desarrolla una aplicación web utilizando React que consuma la API {url} pública de GitHub para obtener una lista de usuarios y mostrar información de sus perfiles, permitiéndote proponer, idear y plasmar tu filosofía de trabajo. Usa un framework CSS de tu elección para asegurar compatibilidad entre navegadores, e integra una librería de iconos (se sugiere Font Awesome o Glyphicons) donde consideres necesario.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/double-v-partners_test'],
+    webSite: 'https://double-v-partners-test.vercel.app/',
     enterprise: 'Double V Partners',
     skills: [
       'TypeScript',
