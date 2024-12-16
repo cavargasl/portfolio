@@ -47,3 +47,4 @@ export { default as Vitest } from './Vitest.astro';
 export { default as VSCode } from './VSCode.astro';
 export { default as X } from './X.astro';
 export { default as Zod } from './Zod.astro';
+export { default as Ionic } from './Ionic.astro';

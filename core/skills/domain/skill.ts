@@ -7,6 +7,7 @@ export const skillNameOrdered = [
   'React.js',
   'Next.js',
   'Astro',
+  'Ionic',
   'React Native',
   'Angular',
 
