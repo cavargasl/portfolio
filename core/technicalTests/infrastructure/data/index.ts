@@ -193,6 +193,18 @@ const esTechnicalTests: TechnicalTest[] = [
     order: 13,
     urlDescription: 'https://api.github.com/',
   },
+  {
+    title: 'Lista de deseados de productos',
+    description:
+      'La prueba consistió en desarrollar una aplicación de lista de deseos que permite a los usuarios visualizar productos consumidos de la API {url} y añadirlos a la lista, filtrarlos y ordenarlos por nombre, precio y fecha de adición, además de añadir o eliminar de deseados. Se solicitó utilizar React e Ionic para la interfaz de usuario, implementar alguna arquitectura como extra, aplicar buenas prácticas de código y patrones de diseño. La solución entregada es estructurada, escalable y bien documentada.',
+    testTime: 'Tiempo para la prueba: 2 días',
+    github: ['https://github.com/cavargasl/wishlistifytest'],
+    webSite: 'https://wishlistifytest.vercel.app',
+    enterprise: 'Double V Partners',
+    skills: ['TypeScript', 'React.js', 'Tailwind CSS', 'Axios', 'Hexagonal Architecture', 'Clean Code', 'Ionic'],
+    order: 14,
+    urlDescription: 'https://fakeapi.platzi.com/',
+  },
 ]
 
 const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testTime' | 'order'>[] = [
@@ -286,6 +298,13 @@ const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testT
       'Develop a web application using React that consumes the public GitHub API {url} to retrieve a list of users and display information from their profiles, allowing you to propose, ideate, and showcase your work philosophy. Use a CSS framework of your choice to ensure cross-browser compatibility, and integrate an icon library (suggested: Font Awesome or Glyphicons) wherever necessary.',
     testTime: 'Time for the test: 2 days',
     order: 13,
+  },
+  {
+    title: 'Wishlistify App',
+    description:
+      'The test consisted in developing a wishlist app that allows users to view products consumed from the API {url} and add them to the list, filter them and sort them by name, price and date of addition, as well as add or remove from wishlist. The solution was requested to use React and Ionic for the user interface, implement some architecture such as extra, apply good code practices and design patterns. The delivered solution is structured, scalable and well documented.',
+    testTime: 'Time for the test: 2 days',
+    order: 14,
   },
 ]
 

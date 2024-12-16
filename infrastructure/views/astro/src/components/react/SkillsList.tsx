@@ -46,7 +46,8 @@ import {
   VSCode,
   Vitest,
   Zod,
-  Astro
+  Astro,
+  Ionic
 } from '@icons/brand'
 
 interface SkillsObject {
@@ -98,6 +99,10 @@ export const skillsList: SkillsObject[] = [
       {
         title: 'Astro',
         icon: Astro,
+      },
+      {
+        title: 'Ionic',
+        icon: Ionic,
       },
       {
         title: 'Angular',
