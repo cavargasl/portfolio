@@ -14,7 +14,6 @@ const esProjects: Project[] = [
       'Next.js',
       'Astro',
       'Tailwind CSS',
-      'Git',
       'GitHub',
       'Radix',
       'clsx',
@@ -29,6 +28,15 @@ const esProjects: Project[] = [
     ],
     image: '/images/og.webp',
     github: ['https://github.com/cavargasl/portfolio'],
+  },
+  {
+    title: 'E-Commerce · Copiservys',
+    description:
+      'Plataforma online de venta de impresoras, accesorios, respuestos y suministros, además ofrece servicio técnico a domicilio. Enlazado con una base de datos de productos en excel y vendido en WhatsApp.',
+    webSite: 'https://www.copiservys.com/',
+    github: ['https://github.com/cavargasl/copiservys'],
+    skills: ['TypeScript', 'Git', 'GitHub', 'Next.js', 'Tailwind CSS', 'Shadcn/ui', 'Redux', 'Hexagonal Architecture'],
+    image: '/images/copiservys.webp',
   },
   {
     title: 'Hackathon · Periferia',
@@ -59,6 +67,11 @@ const tempEnProjects = [
   {
     title: 'Portfolio',
     description: 'Personal web portfolio, where you can find information about me, my skills, my work experience and my projects.',
+  },
+  {
+    title: 'E-Commerce · Copiservys',
+    description:
+      'Online sales platform for printers, accessories, repairs and supplies, also offers technical service at home. Linked to an excel database of products and sold on WhatsApp.',
   },
   {
     title: 'Hackathon frontend · Periferia',
