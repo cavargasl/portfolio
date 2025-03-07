@@ -4,14 +4,17 @@ const esTechnicalTests: TechnicalTest[] = [
   {
     title: 'Componente de pasos a paso',
     description:
-      'Prueba técnica que consta en realizar un componente de pasos a paso utilizando NextJs, Typescript y TailwindCSS que reciba por hijos un numero indefinido de pasos, dicho componente debe ser totalmente customizable. Basado en Stepper componente de Material Tailwind {url}',
+      'Prueba técnica que consta en realizar un componente de pasos a paso utilizando NextJs, Typescript y TailwindCSS que reciba por hijos un numero indefinido de pasos, dicho componente debe ser totalmente customizable. Basado en Stepper componente de {url}',
     testTime: 'Tiempo para la prueba: 3 días',
     github: ['https://github.com/cavargasl/promarketing-test'],
     webSite: 'https://promarketing-test.vercel.app/',
     enterprise: 'ProMarketing',
     skills: ['TypeScript', 'Next.js', 'Git', 'GitHub', 'Tailwind CSS', 'clsx', 'Tailwind-merge'],
     order: 9,
-    urlDescription: 'https://www.material-tailwind.com/docs/react/stepper',
+    metaDescription: {
+      title: 'Material Tailwind',
+      url: 'https://www.material-tailwind.com/docs/react/stepper',
+    },
   },
   {
     title: 'Maquetación pagina de producto',
@@ -23,7 +26,10 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Maquila Internacional de Confección (MIC)',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Chakra UI', 'Redux', 'Styled Components'],
     order: 8,
-    urlDescription: 'https://www.moviesshop.co/chaqueta-genero-neutro-mandalorian-236732/p?skuId=12253',
+    metaDescription: {
+      title: 'Moviesshop',
+      url: 'https://www.moviesshop.co/chaqueta-genero-neutro-mandalorian-236732/p?skuId=12253',
+    },
   },
   {
     title: 'Capturar información personal',
@@ -45,7 +51,10 @@ const esTechnicalTests: TechnicalTest[] = [
     enterprise: 'Cobrando BPO',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Chakra UI', 'Material UI', 'SASS', 'Redux', 'Axios', 'React Query'],
     order: 6,
-    urlDescription: 'https://www.coinlore.com/cryptocurrency-data-api',
+    metaDescription: {
+      title: 'Coinlore',
+      url: 'https://www.coinlore.com/cryptocurrency-data-api',
+    },
   },
   {
     title: 'Subasta de propiedades',
@@ -60,55 +69,67 @@ const esTechnicalTests: TechnicalTest[] = [
   {
     title: 'Listado de post',
     description:
-      'Realizar una web para el consumo de la API REST {url}, tener en cuenta la documentación y buenas practicas de desarrollo. Se debe mostrar en el inicio los Post con sus respectivos comentarios paginados en una tabla, cada post debe tener el botón de eliminar, se debe crear los formularios respectivos para publicar y actualizar un Post y mostrar una ventana (modal) de notificación para cualquiera de las operaciones realizadas.',
+      'Realizar una web para el consumo de la API {url}, tener en cuenta la documentación y buenas practicas de desarrollo. Se debe mostrar en el inicio los Post con sus respectivos comentarios paginados en una tabla, cada post debe tener el botón de eliminar, se debe crear los formularios respectivos para publicar y actualizar un Post y mostrar una ventana (modal) de notificación para cualquiera de las operaciones realizadas.',
     testTime: 'Tiempo para la prueba: 3 días',
     github: ['https://github.com/cavargasl/empleamos-temporales-test'],
     webSite: 'https://empleamos-temporales-test.netlify.app/',
     enterprise: 'Empleamos Temporales',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Material UI', 'Redux', 'React Hook Form', 'Axios', 'Styled Components'],
     order: 4,
-    urlDescription: 'https://jsonplaceholder.typicode.com/',
+    metaDescription: {
+      title: 'JSONPlaceholder',
+      url: 'https://jsonplaceholder.typicode.com/',
+    },
   },
   {
     title: 'Red social',
     description:
-      'Realizar en React una web que incluya un inicio de sesión utilizando autenticado externo y datos de la API {url}, en el inicio de la pagina listar los Post y cada uno debe contener foto y nombre del usuario que hizo el post, imagen y texto del post, tags del post, cantidad de likes y comentarios, se debe mostrar un modal con todos los comentarios, Se debe mostrar un modal con toda la información del usuario que hizo el post, Se deben poder filtrar los posts por tag, La información del usuario autenticado debe ser mostrada la parte superior.',
+      'Realizar en React una web que incluya un inicio de sesión utilizando autenticado externo y datos de la {url}, en el inicio de la pagina listar los Post y cada uno debe contener foto y nombre del usuario que hizo el post, imagen y texto del post, tags del post, cantidad de likes y comentarios, se debe mostrar un modal con todos los comentarios, Se debe mostrar un modal con toda la información del usuario que hizo el post, Se deben poder filtrar los posts por tag, La información del usuario autenticado debe ser mostrada la parte superior.',
     testTime: 'Tiempo para la prueba: 1 día',
     github: ['https://github.com/cavargasl/titaMedia-test'],
     webSite: 'https://titamedia-test.netlify.app/',
     enterprise: 'Tita Media',
     skills: ['TypeScript', 'React.js', 'Git', 'GitHub', 'Redux', 'React Hook Form', 'Axios', 'Styled Components', 'Auth0'],
     order: 3,
-    urlDescription: 'https://dummyapi.io/',
+    metaDescription: {
+      title: 'DummyAPI',
+      url: 'https://dummyapi.io/',
+    },
   },
   {
     title: 'Formulario de registro',
     description:
-      'Prueba de desarrollo con React y Express en donde se realiza un formulario de registro con los campos y el diseño que está en el PDF {url}. La idea es guardar todos estos campos al igual que una imagen y generar una opción para que el usuario pueda entrar con el usuario y contraseña que asignó y pueda ver los registró que colocó en el formulario. Además debe existir un rol de administrador donde pueda ver los datos registrados, las preguntas y las imágenes subidas. Además debe tener la posibilidad de cambiar las preguntas como: Comida Favorita, Artista favorito, Lugar favorito y Color favorito sin afectar los datos ya registrados en la base de datos.',
+      'Prueba de desarrollo con React y Express en donde se realiza un formulario de registro con los campos y el diseño que está en el {url}. La idea es guardar todos estos campos al igual que una imagen y generar una opción para que el usuario pueda entrar con el usuario y contraseña que asignó y pueda ver los registró que colocó en el formulario. Además debe existir un rol de administrador donde pueda ver los datos registrados, las preguntas y las imágenes subidas. Además debe tener la posibilidad de cambiar las preguntas como: Comida Favorita, Artista favorito, Lugar favorito y Color favorito sin afectar los datos ya registrados en la base de datos.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/test-weplot-front', 'https://github.com/cavargasl/test-weplot-back'],
     webSite: 'https://test-weplot.netlify.app/',
     enterprise: 'Intuition Business',
     skills: ['JavaScript', 'React.js', 'Git', 'GitHub', 'React Hook Form', 'SASS', 'Express.js', 'Node.js', 'MongoDB'],
     order: 2,
-    urlDescription: '/documents/test_weplot.pdf',
+    metaDescription: {
+      title: 'Test Weplot PDF',
+      url: '/documents/test_weplot.pdf',
+    },
   },
   {
     title: 'lista To-Do 1',
     description:
-      'Realizar en React una lista To-Do, la cual es una serie de ítems, organizados, que corresponden a las tareas pendientes del usuario. debe contener las siguientes características: Permitir al usuario ver una lista con las actividades pendientes, permitir al usuario agregar una nueva actividad a la lista, permitir al usuario marcar una actividad como realizada, permitir al usuario eliminar una actividad de la lista, permitir editar la descripción de una actividad, permitir filtrar lista de actividades por texto de descripción, permitir al usuario llenar la lista de actividades con frases aleatorias de gatos {url} indicando cuantas quiere agregar.',
+      'Realizar en React una lista To-Do, la cual es una serie de ítems, organizados, que corresponden a las tareas pendientes del usuario. debe contener las siguientes características: Permitir al usuario ver una lista con las actividades pendientes, permitir al usuario agregar una nueva actividad a la lista, permitir al usuario marcar una actividad como realizada, permitir al usuario eliminar una actividad de la lista, permitir editar la descripción de una actividad, permitir filtrar lista de actividades por texto de descripción, permitir al usuario llenar la lista de actividades con frases aleatorias de {url} indicando cuantas quiere agregar.',
     testTime: 'Tiempo para la prueba: 1 día',
     github: ['https://github.com/cavargasl/test-lya-electronic'],
     webSite: 'https://test-lya-electronic.netlify.app/',
     enterprise: 'LA Electronic',
     skills: ['JavaScript', 'React.js', 'Git', 'GitHub', 'SASS', 'Ant Design'],
     order: 1,
-    urlDescription: 'https://catfact.ninja/',
+    metaDescription: {
+      title: 'Cat Facts',
+      url: 'https://catfact.ninja/',
+    },
   },
   {
     title: 'lista To-Do 2',
     description:
-      'La aplicación es una herramienta de gestión de tareas que ayuda a los usuarios a organizar sus actividades diarias de manera eficiente. Permite ver consumiendo la API {url}, agregar, editar y eliminar actividades de una lista. Los usuarios pueden marcar las actividades como realizadas y filtrarlas según su estado (pendientes o completadas) o descripción. El diseño es responsive y ofrece una experiencia de usuario agradable para mantenerse organizado y productivo.',
+      'La aplicación es una herramienta de gestión de tareas que ayuda a los usuarios a organizar sus actividades diarias de manera eficiente. Permite a traves del consumo de la API {url}, agregar, editar y eliminar actividades de una lista. Los usuarios pueden marcar las actividades como realizadas y filtrarlas según su estado (pendientes o completadas) o descripción. El diseño es responsive y ofrece una experiencia de usuario agradable para mantenerse organizado y productivo.',
     testTime: 'Tiempo para la prueba: 3 días',
     github: ['https://github.com/cavargasl/cs3-test'],
     webSite: 'https://cs3-test-camilovargas123.vercel.app/',
@@ -130,7 +151,10 @@ const esTechnicalTests: TechnicalTest[] = [
       'clsx',
     ],
     order: 10,
-    urlDescription: 'https://reqres.in/api/',
+    metaDescription: {
+      title: 'Reqres',
+      url: 'https://reqres.in/api/',
+    },
   },
   {
     title: 'Autenticación y CRUD',
@@ -156,23 +180,29 @@ const esTechnicalTests: TechnicalTest[] = [
       'React Router Dom',
     ],
     order: 11,
-    urlDescription: 'https://reqres.in/api/',
+    metaDescription: {
+      title: 'Reqres',
+      url: 'https://reqres.in/api/',
+    },
   },
   {
     title: 'To-Do-List Mobile',
     description:
-      'Desarrollar una aplicación de "to-do list" inspirado en el diseño "Dona mobile composer interactions" de @JakubAntalik {url}, usando React Native, donde el usuario pueda agregar, marcar como realizado o eliminar elementos de la lista, almacenando los datos localmente en el dispositivo y utilizando React Hooks para la gestión de estado. La app debe incluir animaciones simples al agregar, marcar o eliminar elementos, y se permite el uso de librerías de animación como react-native-reanimated. La apariencia debe ser minimalista, con un campo de entrada para nuevas tareas y una lista de ítems.',
+      'Desarrollar una aplicación de "to-do list" inspirado en el diseño "Dona mobile composer interactions" de {url}, usando React Native, donde el usuario pueda agregar, marcar como realizado o eliminar elementos de la lista, almacenando los datos localmente en el dispositivo y utilizando React Hooks para la gestión de estado. La app debe incluir animaciones simples al agregar, marcar o eliminar elementos, y se permite el uso de librerías de animación como react-native-reanimated. La apariencia debe ser minimalista, con un campo de entrada para nuevas tareas y una lista de ítems.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/DoneApp_test'],
     enterprise: 'Colurs, dinero sin fronteras',
     skills: ['TypeScript', 'React Native', 'Git', 'GitHub', 'CSS'],
     order: 12,
-    urlDescription: 'https://dribbble.com/shots/14568765-Dona-mobile-composer-interactions',
+    metaDescription: {
+      title: '@JakubAntalik',
+      url: 'https://dribbble.com/shots/14568765-Dona-mobile-composer-interactions',
+    },
   },
   {
     title: 'GitHub user search app',
     description:
-      'Desarrolla una aplicación web utilizando React que consuma la API {url} pública de GitHub para obtener una lista de usuarios y mostrar información de sus perfiles, permitiéndote proponer, idear y plasmar tu filosofía de trabajo. Usa un framework CSS de tu elección para asegurar compatibilidad entre navegadores, e integra una librería de iconos (se sugiere Font Awesome o Glyphicons) donde consideres necesario.',
+      'Desarrolla una aplicación web utilizando React que consuma la API pública de {url} para obtener una lista de usuarios y mostrar información de sus perfiles, permitiéndote proponer, idear y plasmar tu filosofía de trabajo. Usa un framework CSS de tu elección para asegurar compatibilidad entre navegadores, e integra una librería de iconos (se sugiere Font Awesome o Glyphicons) donde consideres necesario.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/double-v-partners_test'],
     webSite: 'https://double-v-partners-test.vercel.app/',
@@ -191,19 +221,25 @@ const esTechnicalTests: TechnicalTest[] = [
       'lint-staged',
     ],
     order: 13,
-    urlDescription: 'https://api.github.com/',
+    metaDescription: {
+      title: 'GitHub',
+      url: 'https://api.github.com/',
+    },
   },
   {
     title: 'Lista de deseados de productos',
     description:
-      'La prueba consistió en desarrollar una aplicación de lista de deseos que permite a los usuarios visualizar productos consumidos de la API {url} y añadirlos a la lista, filtrarlos y ordenarlos por nombre, precio y fecha de adición, además de añadir o eliminar de deseados. Se solicitó utilizar React e Ionic para la interfaz de usuario, implementar alguna arquitectura como extra, aplicar buenas prácticas de código y patrones de diseño. La solución entregada es estructurada, escalable y bien documentada.',
+      'La prueba consistió en desarrollar una aplicación de lista de deseos que permite a los usuarios visualizar productos consumidos de la {url} y añadirlos a la lista, filtrarlos y ordenarlos por nombre, precio y fecha de adición, además de añadir o eliminar de deseados. Se solicitó utilizar React e Ionic para la interfaz de usuario, implementar alguna arquitectura como extra, aplicar buenas prácticas de código y patrones de diseño. La solución entregada es estructurada, escalable y bien documentada.',
     testTime: 'Tiempo para la prueba: 2 días',
     github: ['https://github.com/cavargasl/wishlistifytest'],
     webSite: 'https://wishlistifytest.vercel.app',
     enterprise: 'Double V Partners',
     skills: ['TypeScript', 'React.js', 'Tailwind CSS', 'Axios', 'Hexagonal Architecture', 'Clean Code', 'Ionic'],
     order: 14,
-    urlDescription: 'https://fakeapi.platzi.com/',
+    metaDescription: {
+      title: 'FakeAPI',
+      url: 'https://fakeapi.platzi.com/',
+    },
   },
   {
     title: 'QR Code Manager',
@@ -214,7 +250,10 @@ const esTechnicalTests: TechnicalTest[] = [
     webSite: 'https://lafabrica-test.vercel.app/',
     enterprise: 'La Fábrica LTD',
     skills: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Firebase', 'Hexagonal Architecture', 'Clean Code', 'Clerk', 'Shadcn/ui'],
-    urlDescription: 'https://www.qrcode-koala.com/',
+    metaDescription: {
+      title: 'QR Koala',
+      url: 'https://www.qrcode-koala.com/',
+    },
     order: 15,
   },
 ]
@@ -265,7 +304,7 @@ const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testT
   {
     title: 'Social network',
     description:
-      "Create a React web application that features an external authentication and utilizes data from the API {url}. On the homepage, list Posts, each of which should display the user's photo and name who created the post, the post's image and text, post tags, number of likes and comments. Clicking on a post should open a modal displaying all comments related to that post. Another modal should show detailed information about the user who created the post. Users should be able to filter posts by tags. The authenticated user's information should be displayed at the header page.",
+      "Create a React web application that features an external authentication and utilizes data from the {url}. On the homepage, list Posts, each of which should display the user's photo and name who created the post, the post's image and text, post tags, number of likes and comments. Clicking on a post should open a modal displaying all comments related to that post. Another modal should show detailed information about the user who created the post. Users should be able to filter posts by tags. The authenticated user's information should be displayed at the header page.",
     testTime: 'Time for the test: 1 day',
     order: 3,
   },
@@ -307,14 +346,14 @@ const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testT
   {
     title: 'GitHub user search app',
     description:
-      'Develop a web application using React that consumes the public GitHub API {url} to retrieve a list of users and display information from their profiles, allowing you to propose, ideate, and showcase your work philosophy. Use a CSS framework of your choice to ensure cross-browser compatibility, and integrate an icon library (suggested: Font Awesome or Glyphicons) wherever necessary.',
+      'Develop a web application using React that consumes the public {url} API to retrieve a list of users and display information from their profiles, allowing you to propose, ideate, and showcase your work philosophy. Use a CSS framework of your choice to ensure cross-browser compatibility, and integrate an icon library (suggested: Font Awesome or Glyphicons) wherever necessary.',
     testTime: 'Time for the test: 2 days',
     order: 13,
   },
   {
     title: 'Wishlistify App',
     description:
-      'The test consisted in developing a wishlist app that allows users to view products consumed from the API {url} and add them to the list, filter them and sort them by name, price and date of addition, as well as add or remove from wishlist. The solution was requested to use React and Ionic for the user interface, implement some architecture such as extra, apply good code practices and design patterns. The delivered solution is structured, scalable and well documented.',
+      'The test consisted in developing a wishlist app that allows users to view products consumed from the {url} and add them to the list, filter them and sort them by name, price and date of addition, as well as add or remove from wishlist. The solution was requested to use React and Ionic for the user interface, implement some architecture such as extra, apply good code practices and design patterns. The delivered solution is structured, scalable and well documented.',
     testTime: 'Time for the test: 2 days',
     order: 14,
   },

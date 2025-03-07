@@ -3,7 +3,7 @@ import { getI18N } from "@/i18n";
 import { getLangFromUrl } from "@/i18n/utils";
 import { siteConfigExtended } from "@/lib/utils";
 import { technicalTestService } from "@core/technicalTests/application/technicalTestService";
-import type { TechnicalTest } from "@core/technicalTests/domain/technicalTest";
+import type { MetaDescription, TechnicalTest } from "@core/technicalTests/domain/technicalTest";
 import { localTechnicalTest } from "@core/technicalTests/infrastructure/localTechnicalTest.repository";
 import { GitHub } from "@icons/brand";
 import { ExternalLink } from "@icons/index";
@@ -26,17 +26,15 @@ try {
   console.error('Error getting technical tests:', error)
 }
 
-function removerObjectInString(str: string, url?: string): string {
-  return str.replace(
-    /\{url\}/g,
-    url
-      ? `<a href="${url}" aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
-        link
-      </a>`
-      : ''
-  )
+
+function replaceWithMetaDescription(text: string, meta?: MetaDescription): string {
+  if (!meta) return text;
+  return text.replace(/\{url\}/g, `<a href="${meta.url}" aria-label={url} class='text-secondary/90 transition-colors duration-200 ease-out-expo hover:text-primary/90 underline'>
+  ${meta.title}
+  </a>`);
 }
 ---
+
 <SectionContainer id={id} aria-label={title}>
   <h3 class='border-b-4 border-primary text-left text-3xl font-bold sm:text-4xl'>{i18n.commons.techTest}</h3>
   {techTest.length ? (
@@ -63,7 +61,7 @@ function removerObjectInString(str: string, url?: string): string {
             </header>
             <div
               class={test.isMarkdown ? 'markdown-content line-clamp-[8] leading-tight' : 'line-clamp-[8] leading-tight'}
-              set:html={test.isMarkdown ? test.description : removerObjectInString(test.description.toString(), test.urlDescription)}
+              set:html={test.isMarkdown ? test.description : replaceWithMetaDescription(test.description.toString(), test.metaDescription)}
             />
 
             <footer class='flex flex-col gap-1'>

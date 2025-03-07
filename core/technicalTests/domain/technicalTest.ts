@@ -1,9 +1,13 @@
 import { type Project } from '@core/projects/domain/project'
 
+export type MetaDescription = {
+  title: string
+  url: string
+}
 export type TechnicalTest = Project & {
   testTime: string
   enterprise: string
   order: number
-  urlDescription?: string
+  metaDescription?: MetaDescription
   isMarkdown?: boolean
 }
