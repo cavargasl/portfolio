@@ -205,6 +205,18 @@ const esTechnicalTests: TechnicalTest[] = [
     order: 14,
     urlDescription: 'https://fakeapi.platzi.com/',
   },
+  {
+    title: 'QR Code Manager',
+    description:
+      'Tomar la pagina web {url} y crear una copia la cual tenga como objetivo desarrollar un MVP de la misma, QR Koala consta de una aplicación que genera códigos QR personalizados y rastreables, permite visualizar estadísticas de uso, tiene un panel de administración para su gestión',
+    testTime: 'Tiempo para la prueba: 2 días',
+    github: ['https://github.com/cavargasl/lafabrica_test'],
+    webSite: 'https://lafabrica-test.vercel.app/',
+    enterprise: 'La Fábrica LTD',
+    skills: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Firebase', 'Hexagonal Architecture', 'Clean Code', 'Clerk', 'Shadcn/ui'],
+    urlDescription: 'https://www.qrcode-koala.com/',
+    order: 15,
+  },
 ]
 
 const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testTime' | 'order'>[] = [
@@ -305,6 +317,13 @@ const TempEnTechnicalTests: Pick<TechnicalTest, 'title' | 'description' | 'testT
       'The test consisted in developing a wishlist app that allows users to view products consumed from the API {url} and add them to the list, filter them and sort them by name, price and date of addition, as well as add or remove from wishlist. The solution was requested to use React and Ionic for the user interface, implement some architecture such as extra, apply good code practices and design patterns. The delivered solution is structured, scalable and well documented.',
     testTime: 'Time for the test: 2 days',
     order: 14,
+  },
+  {
+    title: 'QR Code Manager',
+    description:
+      'Take the web page {url} and create a copy that aims to develop an MVP of the same, QR Koala consists of an application that generates personalized and trackable QR codes, allows viewing usage statistics, has an administration panel for its management',
+    testTime: 'Time for the test: 2 days',
+    order: 15,
   },
 ]
 
